@@ -51,7 +51,7 @@ const services = [
     stats: [
       { label: "Average Time Waste", value: "340%" },
       { label: "Conversion Rate Boost", value: "127% (hypothetical)" },
-      { label: "Client Satisfaction", value: "98% (your mom included)" },
+      { label: "Client Satisfaction", value: "98% (your GF included)" },
     ],
     technologies: ["samay ki barbadi", "React (obviously)", "Regret.js"],
     cta: "Waste More Time",
