@@ -3,7 +3,7 @@
 import { motion } from "framer-motion"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { User, MapPin, Calendar, Code, Heart, Zap } from "lucide-react"
+import { User, MapPin, Calendar, Target, Users, TrendingUp, BookOpen, Lightbulb, BarChart } from "lucide-react"
 
 export function AboutMe() {
   const containerVariants = {
@@ -41,9 +41,12 @@ export function AboutMe() {
   }
 
   const skills = [
-    { name: "Kuch Na krna", icon: Code },
-    { name: "UI/UX Design", icon: Heart },
-    { name: "Performance Optimization", icon: Zap }
+    { name: "Product Management", icon: Target },
+    { name: "User Research", icon: Users },
+    { name: "Content Strategy", icon: TrendingUp },
+    { name: "Training Design", icon: BookOpen },
+    { name: "Process Optimization", icon: Lightbulb },
+    { name: "Data Analytics", icon: BarChart }
   ]
 
   return (
@@ -58,13 +61,9 @@ export function AboutMe() {
         >
           {/* Section Header */}
           <motion.div variants={itemVariants} className="text-center space-y-4">
-            <h2 className="text-4xl sm:text-5xl font-bold">
-              <span className="text-foreground">About </span>
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 to-green-600">
-                Me
-              </span>
-            </h2>
+            
             <div className="h-px w-24 bg-gradient-to-r from-transparent via-primary to-transparent mx-auto" />
+            
           </motion.div>
 
           {/* Main Card */}
@@ -116,19 +115,20 @@ export function AboutMe() {
                         animate={{ scale: [1, 1.2, 1] }}
                         transition={{ duration: 2, repeat: Infinity }}
                       />
+                      
                     </div>
 
                     <div className="text-center space-y-2">
-                      <h3 className="text-2xl font-bold text-foreground">Parth</h3>
-                      <p className="text-emerald-500 font-medium">the BULLY boy</p>
+                      <h3 className="text-2xl font-bold text-foreground">Parth Khandal</h3>
+                      <p className="text-emerald-500 font-medium">Product-Oriented Professional</p>
                       <div className="flex items-center justify-center space-x-4 text-sm text-muted-foreground">
                         <div className="flex items-center space-x-1">
                           <MapPin className="w-4 h-4" />
-                          <span>Jaipur, India</span>
+                          <span>India</span>
                         </div>
                         <div className="flex items-center space-x-1">
                           <Calendar className="w-4 h-4" />
-                          <span>Kunwara</span>
+                          <span>B.Tech Mechatronics</span>
                         </div>
                       </div>
                     </div>
@@ -139,6 +139,8 @@ export function AboutMe() {
                     variants={itemVariants}
                     className="md:col-span-2 space-y-6"
                   >
+                    {/* Centered About Me Heading */}
+                    
                     <div className="space-y-4">
                       <motion.p
                         className="text-lg leading-relaxed text-muted-foreground"
@@ -146,9 +148,10 @@ export function AboutMe() {
                         whileInView={{ opacity: 1 }}
                         transition={{ duration: 0.8, delay: 0.5 }}
                       >
-                        Hello! I'm a passionate Kunwara with a love for Kunwaris 
-                        that make a difference. With expertise spanning modern irritating and bullying small kids and college girls , I specialize in 
-                        building scalable techniques that combine beautiful girls with robust figures.
+                        Hello! I'm an analytical and creative Product-Oriented Professional with a passion for 
+                        cross-functional collaboration, content strategy, and digital product development. With 
+                        experience across technical and non-technical domains, I thrive at aligning teams to 
+                        deliver business-impacting outcomes.
                       </motion.p>
 
                       <motion.p
@@ -157,9 +160,10 @@ export function AboutMe() {
                         whileInView={{ opacity: 1 }}
                         transition={{ duration: 0.8, delay: 0.7 }}
                       >
-                        When I'm not bullying, you'll find me exploring new technologies, contributing to open-source 
-                        bullying projects, or brainstorming the next big idea. I believe in writing clean, maintainable code 
-                        and creating solutions that not only work perfectly but also delight users.
+                        Specializing in user research, product documentation, content architecture, and digital 
+                        optimization — I bring a structured yet innovative approach to solving complex problems. 
+                        My background in Mechatronics Engineering provides me with a unique technical foundation 
+                        for product development.
                       </motion.p>
 
                       <motion.p
@@ -168,8 +172,9 @@ export function AboutMe() {
                         whileInView={{ opacity: 1 }}
                         transition={{ duration: 0.8, delay: 0.9 }}
                       >
-                        I'm always excited to take on new challenges and collaborate with fellow creators who share 
-                        the same passion for innovation and excellence. Let's build something amazing together!
+                        From developing training programs for defense equipment to optimizing transformer efficiency 
+                        and creating SEO strategies that drive 60% organic growth, I consistently deliver measurable 
+                        results. Let's collaborate to create impactful solutions together!
                       </motion.p>
                     </div>
 
@@ -179,7 +184,7 @@ export function AboutMe() {
                       variants={itemVariants}
                     >
                       <h4 className="text-xl font-semibold text-foreground">What I Do</h4>
-                      <div className="grid sm:grid-cols-3 gap-4">
+                      <div className="grid sm:grid-cols-2 gap-4">
                         {skills.map((skill, index) => (
                           <motion.div
                             key={skill.name}
@@ -204,9 +209,9 @@ export function AboutMe() {
                       className="space-y-4"
                       variants={itemVariants}
                     >
-                      <h4 className="text-xl font-semibold text-foreground">Tech Stack</h4>
+                      <h4 className="text-xl font-semibold text-foreground">Skills & Tools</h4>
                       <div className="flex flex-wrap gap-2">
-                        {["React", "Next.js", "TypeScript", "Node.js", "Python", "PostgreSQL", "MongoDB", "AWS"].map((tech, index) => (
+                        {["Product Management", "User Research", "Agile/Scrum", "Content Strategy", "SEO", "A/B Testing", "Power BI", "SQL", "GenAI", "CMS Management", "Campaign Optimization", "Technical Documentation"].map((tech, index) => (
                           <motion.div
                             key={tech}
                             initial={{ opacity: 0, scale: 0 }}

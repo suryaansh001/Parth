@@ -6,13 +6,112 @@ import { NavBar } from "@/components/nav-bar"
 import { Footer } from "@/components/footer"
 import { ThemeToggle } from "@/components/theme-toggle"
 import { SpinningEarth } from "@/components/spinning-earth"
+import { useForm, ValidationError } from '@formspree/react';
 import { TypingHero } from "@/components/typing-hero"
 import { AboutMe } from "@/components/about-me"
 import { motion } from "framer-motion"
-import { Calendar, Mail, Users } from "lucide-react"
+import { Calendar, Mail, Users, Phone, MessageCircle, MapPin, GraduationCap, Briefcase, Award, Code, Building, ExternalLink, CheckCircle, Star, TrendingUp, Globe } from "lucide-react"
 import { ServicesViewportSection } from "@/components/services-viewport-section"
 
 export default function Home() {
+  const contactMethods = [
+    {
+      name: "Email",
+      value: "parthwork25@gmail.com",
+      icon: Mail,
+      href: "mailto:parthwork25@gmail.com",
+      description: "Drop me an email anytime"
+    },
+    {
+      name: "Phone",
+      value: "+91 7413882466",
+      icon: Phone,
+      href: "tel:+917413882466",
+      description: "Call for urgent matters"
+    },
+    {
+      name: "WhatsApp",
+      value: "Message me",
+      icon: MessageCircle,
+      href: "https://wa.me/917413882466",
+      description: "Quick chat on WhatsApp"
+    },
+    {
+      name: "LinkedIn",
+      value: "Connect with me",
+      icon: ExternalLink,
+      href: "#",
+      description: "Professional networking"
+    }
+  ]
+
+  const education = [
+    {
+      degree: "Bachelor of Technology (B.Tech)",
+      field: "Mechatronics Engineering",
+      institution: "Lovely Professional University (LPU)",
+      year: "Jul 2019 – Jul 2023",
+      grade: "Graduated"
+    }
+  ]
+
+  const experience = [
+    {
+      role: "Instructional Designer – Product Training",
+      company: "Smiths Detection",
+      period: "Sep 2024 – Jun 2025",
+      description: "Developed 12+ technical training programs for mission-critical defense equipment used globally. Collaborated with SMEs, engineers & service teams to build user-centric learning journeys.",
+      achievements: [
+        "Reduced technical staff training time by 28% through modular, simplified content",
+        "Achieved an average learner satisfaction rating of 8.2/10 via iterative feedback loops",
+        "Standardized 30+ training assets for structural consistency and scalability"
+      ]
+    },
+    {
+      role: "Associate Product Manager",
+      company: "Saumya Vidyut",
+      period: "Nov 2023 – Aug 2024",
+      description: "Improved transformer efficiency by 18% through process and feedback optimization. Co-developed an internal tool for managing tenders and billing with features like competitor tracking and product fit suggestions.",
+      achievements: [
+        "Created comprehensive training manuals and structured documentation",
+        "Led user-focused product documentation strategies aligned with stakeholder goals"
+      ]
+    },
+    {
+      role: "Content Writer – Product & Tech",
+      company: "StarAgile",
+      period: "Sep 2022 – Oct 2023",
+      description: "Authored 150+ SEO-optimized articles on topics like AI, Agile, Scrum, and Product Management — driving a 60% boost in organic reach.",
+      achievements: [
+        "Increased landing page conversions by 15% through user-focused content and UX collaboration",
+        "Managed Clevertap and performance ad campaigns across Google, Meta, and LinkedIn",
+        "Raised email open rates from 0.12% to 3.56% using A/B testing and segmentation",
+        "Delivered custom training programs tailored to business skill gaps and growth needs"
+      ]
+    }
+  ]
+
+  const skills = [
+    "Product Requirement Gathering",
+    "User Research & Journey Mapping",
+    "Agile & Scrum Methodologies",
+    "Sprint Planning & Backlog Prioritization",
+    "Cross-functional Collaboration",
+    "Stakeholder Communication",
+    "Technical Documentation",
+    "Content Strategy & CMS Management",
+    "SEO & A/B Testing",
+    "Power BI & SQL",
+    "Campaign Optimization (Google, Meta, LinkedIn)",
+    "GenAI Integration"
+  ]
+
+  const certifications = [
+    "Certified Scrum Master – Scrum Alliance",
+    "Product Management: An Introduction",
+    "Microsoft AI Product Manager Professional Certificate"
+  ]
+
   return (
     <main className="relative min-h-screen bg-background text-foreground overflow-x-hidden">
       {/* Background layers */}
@@ -31,182 +130,450 @@ export default function Home() {
       <div className="relative z-10">
         <NavBar />
 
-        {/* Hero section with better contrast */}
-        <section className="flex flex-col items-center justify-center min-h-[90vh] px-4 sm:px-6">
-          <div className="max-w-4xl mx-auto text-center space-y-6">
-            {/* Enhanced hero with better contrast */}
-            <div className="relative">
-              {/* Background for better contrast in light mode */}
-              <div className="absolute inset-0 bg-background/80 dark:bg-transparent rounded-2xl blur-3xl"></div>
-              <div className="relative z-10">
+        {/* Hero section with full-width translucent card */}
+        <section className="relative">
+          <div className="absolute inset-0 bg-black/85 backdrop-blur-sm z-0"></div>
+          <div className="relative z-10 flex flex-col items-center justify-center min-h-[90vh] px-4 sm:px-6 py-20">
+            <div className="max-w-4xl mx-auto text-center space-y-6 w-full">
+              <motion.div
+                className="space-y-6"
+                initial={{ opacity: 0, y: 30, scale: 0.9 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+              >
                 <TypingHero />
-              </div>
-            </div>
+                
+                <div className="h-px w-24 bg-gradient-to-r from-transparent via-primary to-transparent mx-auto my-6"></div>
+                
+                <p className="text-white/90 max-w-2xl mx-auto font-medium text-lg leading-relaxed">
+                  Analytical and creative <strong className="text-white">Product-Oriented Professional</strong> with a passion for cross-functional collaboration, 
+                  content strategy, and digital product development. Specializing in user research, product documentation, 
+                  content architecture, and digital optimization.
+                </p>
 
-            <div className="h-px w-24 bg-gradient-to-r from-transparent via-primary to-transparent mx-auto my-8"></div>
-
-            {/* Enhanced description with better contrast */}
-            <div className="relative">
-              <div className="absolute inset-0 bg-background/60 dark:bg-transparent rounded-xl blur-2xl"></div>
-              <p className="relative z-10 text-muted-foreground max-w-xl mx-auto font-medium">
-                Transforming ideas into powerful digital solutions that drive growth and innovation for forward-thinking
-                businesses.
-              </p>
+                {/* Quick stats or highlights */}
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mt-8">
+                  <div className="text-center p-4 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20">
+                    <TrendingUp className="w-8 h-8 text-emerald-400 mx-auto mb-2" />
+                    <div className="text-2xl font-bold text-white">150+</div>
+                    <div className="text-sm text-white/70">Articles Written</div>
+                  </div>
+                  <div className="text-center p-4 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20">
+                    <Users className="w-8 h-8 text-blue-400 mx-auto mb-2" />
+                    <div className="text-2xl font-bold text-white">12+</div>
+                    <div className="text-sm text-white/70">Training Programs</div>
+                  </div>
+                  <div className="text-center p-4 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 col-span-2 md:col-span-1">
+                    <Star className="w-8 h-8 text-yellow-400 mx-auto mb-2" />
+                    <div className="text-2xl font-bold text-white">8.2/10</div>
+                    <div className="text-sm text-white/70">Satisfaction Rating</div>
+                  </div>
+                </div>
+              </motion.div>
             </div>
           </div>
         </section>
 
-        {/* About Me section */}
-        <AboutMe />
-
-        {/* Services viewport section */}
-        <ServicesViewportSection />
-
-        {/* Enhanced Contact section */}
-        <section id="contact" className="py-20 px-4 sm:px-6 relative">
-          <div className="max-w-4xl mx-auto text-center space-y-12">
-            <div className="space-y-6">
-              <motion.h2
-                className="text-4xl sm:text-5xl font-bold"
+        {/* About Me section with full-width translucent card */}
+        <section className="relative">
+          <div className="absolute inset-0 bg-black/85 backdrop-blur-sm z-0"></div>
+          <div className="relative z-10 py-20 px-4 sm:px-6">
+            <div className="max-w-6xl mx-auto">
+              <motion.div
+                className="text-center mb-16"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
               >
-                <span className="text-foreground">Get in </span>
-                <span className="bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 to-green-600">
-                  Touch
-                </span>
-              </motion.h2>
-              <motion.div
-                className="h-px w-24 bg-gradient-to-r from-transparent via-primary to-transparent mx-auto"
-                initial={{ scaleX: 0 }}
-                whileInView={{ scaleX: 1 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
-              />
-              <motion.p
-                className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.3 }}
-              >
-                Have a project in mind or want to collaborate? I'd love to hear from you.{" "}
-                Send me a message and I'll get back to you as soon as possible.
-              </motion.p>
+                <h2 className="text-4xl sm:text-5xl font-bold mb-4">
+                  <span className="text-white">About </span>
+                  <span className="bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 to-green-600">
+                    Me
+                  </span>
+                </h2>
+                <div className="h-px w-24 bg-gradient-to-r from-transparent via-primary to-transparent mx-auto"></div>
+              </motion.div>
+              <AboutMe />
             </div>
+          </div>
+        </section>
 
+        {/* Education Section */}
+        <section className="py-20 px-4 sm:px-6">
+          <div className="max-w-6xl mx-auto">
+            
             <motion.div
-              className="pt-8"
+              className="backdrop-blur-lg bg-card/90 border border-border rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 max-w-2xl mx-auto"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.5 }}
+              transition={{ duration: 0.6 }}
             >
-              <div className="max-w-2xl mx-auto">
-                {/* Contact Form using Formspree */}
-                <form
-                  action="https://formspree.io/f/YOUR_FORM_ID"
-                  method="POST"
-                  className="space-y-6"
-                >
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div className="space-y-2">
-                      <label htmlFor="name" className="block text-sm font-medium text-left">
-                        Full Name *
-                      </label>
-                      <input
-                        type="text"
-                        id="name"
-                        name="name"
-                        required
-                        className="w-full px-4 py-3 rounded-lg border border-border bg-background focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all duration-200"
-                        placeholder="Your Name"
-                      />
-                    </div>
-                    <div className="space-y-2">
-                      <label htmlFor="email" className="block text-sm font-medium text-left">
-                        Email Address *
-                      </label>
-                      <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        required
-                        className="w-full px-4 py-3 rounded-lg border border-border bg-background focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all duration-200"
-                        placeholder="Enter your E-mail"
-                      />
-                    </div>
-                  </div>
+              <motion.div
+              className="text-center mb-16"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+            >
+              <h2 className="text-4xl sm:text-5xl font-bold mb-4">
+                <span className="text-foreground">My </span>
+                <span className="bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 to-green-600">
+                  Education
+                </span>
+              </h2>
+              <div className="h-px w-24 bg-gradient-to-r from-transparent via-primary to-transparent mx-auto"></div>
+            </motion.div>
 
-                  <div className="space-y-2">
-                    <label htmlFor="subject" className="block text-sm font-medium text-left">
-                      Subject
-                    </label>
-                    <input
-                      type="text"
-                      id="subject"
-                      name="subject"
-                      className="w-full px-4 py-3 rounded-lg border border-border bg-background focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all duration-200"
-                      placeholder="Project Collaboration"
-                    />
-                  </div>
-
-                  <div className="space-y-2">
-                    <label htmlFor="message" className="block text-sm font-medium text-left">
-                      Message *
-                    </label>
-                    <textarea
-                      id="message"
-                      name="message"
-                      required
-                      rows={6}
-                      className="w-full px-4 py-3 rounded-lg border border-border bg-background focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all duration-200 resize-vertical"
-                      placeholder="What's on your mind?"
-                    />
-                  </div>
-
-                  {/* Hidden field to capture form source */}
-                  <input type="hidden" name="_subject" value="New Contact Form Submission - Portfolio" />
-                  <input type="hidden" name="_next" value="https://yourwebsite.com/thank-you" />
-
-                  <div className="pt-4">
-                    <button
-                      type="submit"
-                      className="w-full md:w-auto px-8 py-4 bg-gradient-to-r from-emerald-500 to-green-600 text-white rounded-lg font-medium text-lg hover:from-emerald-400 hover:to-green-500 transition-all duration-300 transform hover:scale-105 hover:shadow-[0_0_25px_rgba(52,211,153,0.4)] focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2 focus:ring-offset-background"
-                    >
-                      <span className="flex items-center justify-center space-x-2">
-                        <Mail className="w-5 h-5" />
-                        <span>Send Message</span>
-                      </span>
-                    </button>
-                  </div>
-                </form>
-
-                <div className="mt-12 pt-8 border-t border-border">
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
-                    <div className="flex flex-col items-center space-y-2">
-                      <div className="w-12 h-12 bg-emerald-100 dark:bg-emerald-900/20 rounded-full flex items-center justify-center">
-                        <Mail className="w-6 h-6 text-emerald-600 dark:text-emerald-400" />
-                      </div>
-                      <div className="text-sm font-medium">Email</div>
-                      <p className="text-sm text-muted-foreground">parth@example.com</p>
-                    </div>
-                    <div className="flex flex-col items-center space-y-2">
-                      <div className="w-12 h-12 bg-emerald-100 dark:bg-emerald-900/20 rounded-full flex items-center justify-center">
-                        <Calendar className="w-6 h-6 text-emerald-600 dark:text-emerald-400" />
-                      </div>
-                      <div className="text-sm font-medium">Response Time</div>
-                      <p className="text-sm text-muted-foreground">Within 24 hours</p>
-                    </div>
-                    <div className="flex flex-col items-center space-y-2">
-                      <div className="w-12 h-12 bg-emerald-100 dark:bg-emerald-900/20 rounded-full flex items-center justify-center">
-                        <Users className="w-6 h-6 text-emerald-600 dark:text-emerald-400" />
-                      </div>
-                      <div className="text-sm font-medium">Availability</div>
-                      <p className="text-sm text-muted-foreground">Open for projects</p>
-                    </div>
-                  </div>
+              <div className="flex items-start space-x-4">
+                <div className="w-12 h-12 bg-emerald-100 dark:bg-emerald-900/20 rounded-full flex items-center justify-center flex-shrink-0">
+                  <GraduationCap className="w-6 h-6 text-emerald-600 dark:text-emerald-400" />
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-xl font-semibold mb-1">{education[0].degree}</h3>
+                  <p className="text-emerald-600 dark:text-emerald-400 font-medium mb-2">{education[0].field}</p>
+                  <p className="text-muted-foreground text-sm mb-2">{education[0].institution}</p>
+                  <span className="text-sm text-muted-foreground bg-emerald-100 dark:bg-emerald-900/20 text-emerald-700 dark:text-emerald-300 px-3 py-1 rounded-full">
+                    {education[0].year}
+                  </span>
                 </div>
               </div>
             </motion.div>
+          </div>
+        </section>
+
+        {/* Experience Section */}
+        <section className="py-20 px-4 sm:px-6">
+          <div className="max-w-6xl mx-auto">
+            <motion.div
+              className="backdrop-blur-lg bg-card/90 border border-border rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+            >
+              <div className="text-center mb-8">
+                <h2 className="text-4xl sm:text-5xl font-bold mb-4">
+                  <span className="text-foreground">Work </span>
+                  <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-600">
+                    Experience
+                  </span>
+                </h2>
+                <div className="h-px w-24 bg-gradient-to-r from-transparent via-primary to-transparent mx-auto"></div>
+              </div>
+
+              <div className="space-y-6">
+              {experience.map((exp, index) => (
+                <motion.div
+                  key={index}
+                  className="backdrop-blur-lg bg-card/80 border border-border rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300"
+                  initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                >
+                  <div className="flex items-start space-x-4">
+                    <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900/20 rounded-full flex items-center justify-center flex-shrink-0">
+                      <Briefcase className="w-6 h-6 text-blue-600 dark:text-blue-400" />
+                    </div>
+                    <div className="flex-1">
+                      <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-3">
+                        <div>
+                          <h3 className="text-xl font-semibold mb-1">{exp.role}</h3>
+                          <p className="text-blue-600 dark:text-blue-400 font-medium flex items-center">
+                            <Building className="w-4 h-4 mr-1" />
+                            {exp.company}
+                          </p>
+                        </div>
+                        <span className="text-sm text-muted-foreground bg-background/50 px-3 py-1 rounded-full mt-2 sm:mt-0">
+                          {exp.period}
+                        </span>
+                      </div>
+                      <p className="text-muted-foreground mb-4">{exp.description}</p>
+                      {exp.achievements && (
+                        <div className="space-y-2">
+                          {exp.achievements.map((achievement, achIndex) => (
+                            <div key={achIndex} className="flex items-start space-x-2">
+                              <CheckCircle className="w-4 h-4 text-emerald-500 mt-0.5 flex-shrink-0" />
+                              <span className="text-sm text-muted-foreground">{achievement}</span>
+                            </div>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                </motion.div>                ))}
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Skills Section */}
+        <section className="py-20 px-4 sm:px-6">
+          <div className="max-w-6xl mx-auto">
+            
+
+            <motion.div
+              className="backdrop-blur-lg bg-card/80 border border-border rounded-2xl p-8 shadow-lg"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+            >
+              <motion.div
+              className="text-center mb-16"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+            >
+              <h2 className="text-4xl sm:text-5xl font-bold mb-4">
+                <span className="text-foreground">My </span>
+                <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600">
+                  Skills
+                </span>
+              </h2>
+              <div className="h-px w-24 bg-gradient-to-r from-transparent via-primary to-transparent mx-auto"></div>
+            </motion.div>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                {skills.map((skill, index) => (
+                  <motion.div
+                    key={index}
+                    className="flex items-center space-x-3 p-3 rounded-lg bg-background/30 border border-border/50 hover:bg-background/50 transition-colors"
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.3, delay: index * 0.05 }}
+                  >
+                    <Code className="w-5 h-5 text-purple-500 flex-shrink-0" />
+                    <span className="text-sm font-medium">{skill}</span>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Services viewport section */}
+        <ServicesViewportSection />
+
+        {/* Certifications Section */}
+        <section className="py-20 px-4 sm:px-6">
+          <div className="max-w-6xl mx-auto">
+            <motion.div
+              className="text-center mb-16"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+            >
+              <h2 className="text-4xl sm:text-5xl font-bold mb-4">
+                <span className="text-foreground">My </span>
+                <span className="bg-clip-text text-transparent bg-gradient-to-r from-orange-400 to-red-600">
+                  Certifications
+                </span>
+              </h2>
+              <div className="h-px w-24 bg-gradient-to-r from-transparent via-primary to-transparent mx-auto"></div>
+            </motion.div>
+
+            <motion.div
+              className="backdrop-blur-lg bg-card/80 border border-border rounded-2xl p-8 shadow-lg"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+            >
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {certifications.map((cert, index) => (
+                  <motion.div
+                    key={index}
+                    className="flex items-center space-x-3 p-4 rounded-lg bg-background/30 border border-border/50 hover:bg-background/50 transition-all duration-300 hover:scale-105"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.4, delay: index * 0.1 }}
+                  >
+                    <div className="w-10 h-10 bg-orange-100 dark:bg-orange-900/20 rounded-full flex items-center justify-center flex-shrink-0">
+                      <Award className="w-5 h-5 text-orange-600 dark:text-orange-400" />
+                    </div>
+                    <span className="text-sm font-medium">{cert}</span>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Enhanced Contact section with full-width translucent card */}
+        <section id="contact" className="relative">
+          <div className="absolute inset-0 bg-black/85 backdrop-blur-sm z-0"></div>
+          <div className="relative z-10 py-20 px-4 sm:px-6">
+            <div className="max-w-4xl mx-auto text-center space-y-12">
+              <div className="space-y-6">
+                <motion.h2
+                  className="text-4xl sm:text-5xl font-bold"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6 }}
+                >
+                  <span className="text-white">Get in </span>
+                  <span className="bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 to-green-600">
+                    Touch
+                  </span>
+                </motion.h2>
+                <motion.div
+                  className="h-px w-24 bg-gradient-to-r from-transparent via-primary to-transparent mx-auto"
+                  initial={{ scaleX: 0 }}
+                  whileInView={{ scaleX: 1 }}
+                  transition={{ duration: 0.8, delay: 0.2 }}
+                />
+                <motion.p
+                  className="text-lg text-white/90 max-w-2xl mx-auto leading-relaxed"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.3 }}
+                >
+                  Have a project in mind or want to collaborate? I'd love to hear from you.{" "}
+                  Send me a message and I'll get back to you as soon as possible.
+                </motion.p>
+              </div>
+
+              {/* Contact Methods Cards */}
+              <motion.div
+                className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-8 shadow-lg mb-8"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+              >
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                  {contactMethods.map((method, index) => (
+                    <Link
+                      key={index}
+                      href={method.href}
+                      className="group p-4 rounded-lg bg-white/10 border border-white/20 hover:bg-white/20 transition-all duration-300 hover:scale-105 hover:border-emerald-400/50"
+                    >
+                      <div className="flex flex-col items-center space-y-3">
+                        <div className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center group-hover:bg-white/30 transition-colors">
+                          <method.icon className="w-5 h-5 text-emerald-400" />
+                        </div>
+                        <div className="text-center">
+                          <div className="font-semibold text-sm text-white">{method.name}</div>
+                          <div className="text-xs text-white/70 mt-1">{method.description}</div>
+                          <div className="text-sm font-medium text-emerald-400 mt-2">
+                            {method.value}
+                          </div>
+                        </div>
+                      </div>
+                    </Link>
+                  ))}
+                </div>
+              </motion.div>
+
+              {/* Contact Form Card */}
+              <motion.div
+                className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-3xl p-8 shadow-2xl"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.5 }}
+              >
+                <div className="max-w-2xl mx-auto">
+                  {/* Contact Form using Formspree */}
+                  <form
+                    action="https://formspree.io/f/xeozklrl"
+                    method="POST"
+                    className="space-y-6"
+                  >
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      <div className="space-y-2">
+                        <label htmlFor="name" className="block text-sm font-medium text-left text-white">
+                          Full Name *
+                        </label>
+                        <input
+                          type="text"
+                          id="name"
+                          name="name"
+                          required
+                          className="w-full px-4 py-3 rounded-lg border border-white/30 bg-white/10 backdrop-blur-sm text-white placeholder-white/60 focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all duration-200"
+                          placeholder="Your Name"
+                        />
+                      </div>
+                      <div className="space-y-2">
+                        <label htmlFor="email" className="block text-sm font-medium text-left text-white">
+                          Email Address *
+                        </label>
+                        <input
+                          type="email"
+                          id="email"
+                          name="email"
+                          required
+                          className="w-full px-4 py-3 rounded-lg border border-white/30 bg-white/10 backdrop-blur-sm text-white placeholder-white/60 focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all duration-200"
+                          placeholder="Enter your E-mail"
+                        />
+                      </div>
+                    </div>
+
+                    <div className="space-y-2">
+                      <label htmlFor="subject" className="block text-sm font-medium text-left text-white">
+                        Subject
+                      </label>
+                      <input
+                        type="text"
+                        id="subject"
+                        name="subject"
+                        className="w-full px-4 py-3 rounded-lg border border-white/30 bg-white/10 backdrop-blur-sm text-white placeholder-white/60 focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all duration-200"
+                        placeholder="Project Collaboration"
+                      />
+                    </div>
+
+                    <div className="space-y-2">
+                      <label htmlFor="message" className="block text-sm font-medium text-left text-white">
+                        Message *
+                      </label>
+                      <textarea
+                        id="message"
+                        name="message"
+                        required
+                        rows={6}
+                        className="w-full px-4 py-3 rounded-lg border border-white/30 bg-white/10 backdrop-blur-sm text-white placeholder-white/60 focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all duration-200 resize-vertical"
+                        placeholder="What's on your mind?"
+                      />
+                    </div>
+
+                    {/* Hidden field to capture form source */}
+                    <input type="hidden" name="_subject" value="New Contact Form Submission - Portfolio" />
+                    <input type="hidden" name="_next" value="https://parth-bice.vercel.app/" />
+
+                    <div className="pt-4">
+                      <button
+                        type="submit"
+                        className="w-full md:w-auto px-8 py-4 bg-gradient-to-r from-emerald-500 to-green-600 text-white rounded-lg font-medium text-lg hover:from-emerald-400 hover:to-green-500 transition-all duration-300 transform hover:scale-105 hover:shadow-[0_0_25px_rgba(52,211,153,0.4)] focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2 focus:ring-offset-black/30"
+                      >
+                        <span className="flex items-center justify-center space-x-2">
+                          <Mail className="w-5 h-5" />
+                          <span>Send Message</span>
+                        </span>
+                      </button>
+                    </div>
+                  </form>
+
+                  <div className="mt-12 pt-8 border-t border-white/20">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+                      <div className="flex flex-col items-center space-y-2">
+                        <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
+                          <Mail className="w-6 h-6 text-emerald-400" />
+                        </div>
+                        <div className="text-sm font-medium text-white">Email</div>
+                        <p className="text-sm text-white/70">parthwork25@gmail.com</p>
+                      </div>
+                      <div className="flex flex-col items-center space-y-2">
+                        <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
+                          <Calendar className="w-6 h-6 text-emerald-400" />
+                        </div>
+                        <div className="text-sm font-medium text-white">Response Time</div>
+                        <p className="text-sm text-white/70">Within 24 hours</p>
+                      </div>
+                      <div className="flex flex-col items-center space-y-2">
+                        <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
+                          <Users className="w-6 h-6 text-emerald-400" />
+                        </div>
+                        <div className="text-sm font-medium text-white">Availability</div>
+                        <p className="text-sm text-white/70">Open for projects</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
           </div>
         </section>
 

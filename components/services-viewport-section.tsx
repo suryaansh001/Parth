@@ -28,153 +28,122 @@ import {
   Gauge,
   Sparkles,
   Activity,
+  FileText,
+  Brain,
+  CheckCircle,
+  BookOpen,
+  PieChart,
+  Search,
+  Mail,
+  Eye,
+  MousePointer,
+  Cpu,
+  Server,
+  Settings,
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
+
 const services = [
   {
-    id: "website",
-    title: "Timepass Websites",
-    subtitle: "Modern, Fast & Totally Unnecessary",
+    id: "training",
+    title: "Instructional Design & Product Training",
+    subtitle: "Tech Training for Real-World Missions",
     description:
-      "Why just scroll reels when you can waste hours building a website no one asked for? Powered by shiny frameworks and empty promises, these sites *look fast* even if no one visits them.",
-    icon: <Globe className="w-8 h-8" />,
-    color: "emerald",
-    gradient: "from-emerald-500 to-green-600",
-    bgGradient: "from-emerald-500/10 to-green-600/10",
-    features: [
-      { icon: <Rocket className="w-5 h-5" />, text: "So fast it outruns your career decisions" },
-      { icon: <Shield className="w-5 h-5" />, text: "Security so strong, even you can't get in" },
-      { icon: <Target className="w-5 h-5" />, text: "Designed to convert (if you're lucky)" },
-      { icon: <Gauge className="w-5 h-5" />, text: "99.9% uptime. For that 1 visitor." },
-    ],
-    stats: [
-      { label: "Average Time Waste", value: "340%" },
-      { label: "Conversion Rate Boost", value: "127% (hypothetical)" },
-      { label: "Client Satisfaction", value: "98% (your GF included)" },
-    ],
-    technologies: ["samay ki barbadi", "React (obviously)", "Regret.js"],
-    cta: "Waste More Time",
-  },
-  {
-    id: "mobile",
-    title: "Nalla Pun Apps",
-    subtitle: "Native & Gossip-Enabled",
-    description:
-      "Mobile apps built for the sole purpose of spreading chugli, wasting battery, and sending annoying notifications at 3AM.",
-    icon: <Smartphone className="w-8 h-8" />,
-    color: "blue",
-    gradient: "from-blue-500 to-cyan-600",
-    bgGradient: "from-blue-500/10 to-cyan-600/10",
-    features: [
-      { icon: <Users className="w-5 h-5" />, text: "Cross-platform gossip compatibility" },
-      { icon: <Zap className="w-5 h-5" />, text: "Real-time rumors" },
-      { icon: <Lock className="w-5 h-5" />, text: "Password-protected pettiness" },
-      { icon: <BarChart className="w-5 h-5" />, text: "Analytics to measure your nallapan" },
-    ],
-    stats: [
-      { label: "free", value: "4.8★ (from fake accounts)" },
-      { label: "User barabadi", value: "85%" },
-      { label: "Gossip Speed", value: "2x Faster than WhatsApp" },
-    ],
-    technologies: ["Flutter-shutter", "Chugli Framework", "BatteryDrainer v2.0"],
-    cta: "Start Spreading Chugli",
-  },
-  {
-    id: "digital",
-    title: "Dusron Ki Burai Automation",
-    subtitle: "AI for Ajeeb Intentions",
-    description:
-      "Make burai scalable. Automate your complaints, forward your taunts, and let AI do the legwork of judging people for you.",
-    icon: <Laptop className="w-8 h-8" />,
+      "Designed and delivered mission-critical training for defense-grade detection systems like LCD, Hi-Trax, XDi, and Trace. Turned complex tech into digestible content for global government agencies.",
+    icon: <Users className="w-8 h-8" />,
     color: "purple",
     gradient: "from-purple-500 to-pink-600",
     bgGradient: "from-purple-500/10 to-pink-600/10",
     features: [
-      { icon: <Cog className="w-5 h-5" />, text: "Automated backbiting workflows" },
-      { icon: <Database className="w-5 h-5" />, text: "Juicy data storage for future gossip" },
-      { icon: <Cloud className="w-5 h-5" />, text: "Burai from anywhere (cloud powered)" },
-      { icon: <Layers className="w-5 h-5" />, text: "Multi-layered passive aggression" },
+      { icon: <Zap className="w-5 h-5" />, text: "Reduced training time by 28%" },
+      { icon: <Award className="w-5 h-5" />, text: "Rated 8.2/10 by learners" },
+      { icon: <Layers className="w-5 h-5" />, text: "Standardized 30+ training assets" },
+      { icon: <Cog className="w-5 h-5" />, text: "Modular, scalable content design" },
     ],
     stats: [
-      { label: "Efficiency Increase", value: "250% (in ruining moods)" },
-      { label: "Cost Reduction", value: "60% (emotional cost not included)" },
-      { label: "Error Reduction", value: "95% (less accidental compliments)" },
+      { label: "Trainings Built", value: "12+" },
+      { label: "Learner Rating", value: "8.2/10" },
+      { label: "Training Time Saved", value: "28%" },
     ],
-    technologies: ["Node.js", "PettyML", "SpillAI", "AWS (All-Wala Slander)"],
-    cta: "Start Your Burai",
+    technologies: ["Trace", "LCD", "Hi-Trax", "XDi"],
+    cta: "Explore Learning Frameworks",
+    company: "smiths-detection",
   },
   {
-    id: "mechanical",
-    title: "Mechanical Mayhem",
-    subtitle: "Break Things Scientifically",
+    id: "product-mgmt",
+    title: "Product Management",
+    subtitle: "From Insights to Execution",
     description:
-      "Designs so precise, they might actually work. Build robots, machines, or furniture you’ll never finish assembling.",
-    icon: <Cog className="w-8 h-8" />,
-    color: "orange",
-    gradient: "from-orange-500 to-red-600",
-    bgGradient: "from-orange-500/10 to-red-600/10",
-    features: [
-      { icon: <Lightbulb className="w-5 h-5" />, text: "Ideas that defy logic AND gravity" },
-      { icon: <Code className="w-5 h-5" />, text: "CAD that nobody can understand" },
-      { icon: <Package className="w-5 h-5" />, text: "Prototypes held together by hope" },
-      { icon: <Award className="w-5 h-5" />, text: "Award for 'Most Complicated Screw'" },
-    ],
-    stats: [
-      { label: "Design Accuracy", value: "99.7% (rest is jugaad)" },
-      { label: "Time to Prototype", value: "72 hours of panic" },
-      { label: "Manufacturing Ready", value: "Only on paper" },
-    ],
-    technologies: ["SolidWrongs", "AutoChaos", "ANSYS-still-confused", "3D Printer (jammed)"],
-    cta: "Make It. Break It.",
-  },
-  {
-    id: "product",
-    title: "Product Dev (aka Endless Pivoting)",
-    subtitle: "From Idea to Infinite Iteration",
-    description:
-      "Take your million-dollar idea and turn it into a product that gets ghosted by users after day one. We got you.",
+      "Led development of internal tools for transformer efficiency and tender/billing automation. Streamlined product fit analysis and structured product documentation based on feedback loops.",
     icon: <Package className="w-8 h-8" />,
     color: "cyan",
     gradient: "from-cyan-500 to-blue-600",
     bgGradient: "from-cyan-500/10 to-blue-600/10",
     features: [
-      { icon: <Target className="w-5 h-5" />, text: "Aimless market research" },
-      { icon: <Rocket className="w-5 h-5" />, text: "MVP (Mostly Very Pointless)" },
-      { icon: <TrendingUp className="w-5 h-5" />, text: "Strategy that sounds smart" },
-      { icon: <Star className="w-5 h-5" />, text: "Polishing something no one wants" },
+      { icon: <Gauge className="w-5 h-5" />, text: "Boosted transformer efficiency by 18%" },
+      { icon: <Database className="w-5 h-5" />, text: "Built tender tracking & billing tool" },
+      { icon: <Sparkles className="w-5 h-5" />, text: "User-focused documentation design" },
+      { icon: <Target className="w-5 h-5" />, text: "Competitor-based product mapping" },
     ],
     stats: [
-      { label: "Success Rate", value: "92% (in dreams)" },
-      { label: "Time to Market", value: "40% faster burnout" },
-      { label: "ROI Average", value: "3.2x confusion" },
+      { label: "Efficiency Gain", value: "18%" },
+      { label: "Tool Built", value: "Tender Tracker" },
+      { label: "Process Impact", value: "High" },
     ],
-    technologies: ["Lean Confusion", "Agile-ish", "Hope-driven DevOps", "Fake Analytics"],
-    cta: "Launch... something",
+    technologies: ["Agile", "Product Fit Analysis", "Documentation"],
+    cta: "View Product Tools",
+    company: "saumya-vidyut",
   },
   {
-    id: "architecture",
-    title: "Vastu-Enabled Aesthetic Andaaz",
-    subtitle: "Spaces That Confuse & Inspire",
+    id: "content",
+    title: "Content Strategy & SEO",
+    subtitle: "Write. Rank. Repeat.",
     description:
-      "We design spaces that no one can afford, filled with creative angles and invisible doors. Inspired by YouTube, built for reels.",
-    icon: <Building2 className="w-8 h-8" />,
-    color: "indigo",
-    gradient: "from-indigo-500 to-purple-600",
-    bgGradient: "from-indigo-500/10 to-purple-600/10",
+      "From PM & Agile to AI & Scrum — crafted 150+ SEO-rich content pieces that didn't just rank but converted. Boosted site reach, campaign CTRs, and user engagement through structured storytelling.",
+    icon: <Laptop className="w-8 h-8" />,
+    color: "green",
+    gradient: "from-green-500 to-emerald-600",
+    bgGradient: "from-green-500/10 to-emerald-600/10",
     features: [
-      { icon: <Lightbulb className="w-5 h-5" />, text: "Sustainability that looks green" },
-      { icon: <Layers className="w-5 h-5" />, text: "3D tours to make you jealous" },
-      { icon: <Shield className="w-5 h-5" />, text: "Legally confusing blueprints" },
-      { icon: <Award className="w-5 h-5" />, text: "Award-winning renderings only" },
+      { icon: <BarChart className="w-5 h-5" />, text: "60% increase in organic reach" },
+      { icon: <TrendingUp className="w-5 h-5" />, text: "15% better landing page conversions" },
+      { icon: <Shield className="w-5 h-5" />, text: "CTR optimization via A/B testing" },
+      { icon: <Cloud className="w-5 h-5" />, text: "Email open rates jumped to 3.56%" },
     ],
     stats: [
-      { label: "Projects Completed", value: "150+ (at least on paper)" },
-      { label: "Client Satisfaction", value: "96% (after coffee)" },
-      { label: "On-Time Delivery", value: "98% (if you're chill)" },
+      { label: "Articles Written", value: "150+" },
+      { label: "Organic Growth", value: "+60%" },
+      { label: "Open Rate Uplift", value: "3.56%" },
     ],
-    technologies: ["SketchUp-Drama", "Revit (revise-it)", "Lumion (illusion)", "Ctrl+C Architecture"],
-    cta: "Pretend You Can Afford This",
+    technologies: ["SEO", "CleverTap", "Google Ads", "LinkedIn", "Meta"],
+    cta: "Read My Work",
+    company: "staragile",
+  },
+  {
+    id: "skills",
+    title: "Tech Stack & Tooling",
+    subtitle: "The Magic Behind the Mayhem",
+    description:
+      "A fusion of data, documentation, AI, and storytelling. Whether it's Power BI for dashboards or SQL for insights — these tools turn ideas into outcomes.",
+    icon: <Lightbulb className="w-8 h-8" />,
+    color: "yellow",
+    gradient: "from-yellow-400 to-orange-500",
+    bgGradient: "from-yellow-400/10 to-orange-500/10",
+    features: [
+      { icon: <Database className="w-5 h-5" />, text: "Data-driven product insights" },
+      { icon: <Activity className="w-5 h-5" />, text: "A/B Testing & analytics" },
+      { icon: <Lock className="w-5 h-5" />, text: "Secure stakeholder documentation" },
+      { icon: <Zap className="w-5 h-5" />, text: "CMS Management & SEO mastery" },
+    ],
+    stats: [
+      { label: "Dashboards Built", value: "10+" },
+      { label: "SQL Scripts Written", value: "150+" },
+      { label: "Certifications", value: "3+" },
+    ],
+    technologies: ["Power BI", "SQL", "CMS", "Scrum", "AI Tools"],
+    
+    company: "tech-stack",
   },
 ]
 
@@ -253,8 +222,6 @@ export function ServicesViewportSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          
-
           <h2 className="text-5xl sm:text-6xl font-black mb-6 leading-tight">
             <span className="text-white">Projects That  </span>
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 via-blue-400 to-purple-400">
@@ -263,7 +230,7 @@ export function ServicesViewportSection() {
           </h2>
 
           <p className="text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
-            Comprehensive solutions designed to accelerate  business growth .
+            Comprehensive solutions designed to accelerate business growth.
           </p>
         </motion.div>
 
@@ -294,9 +261,9 @@ export function ServicesViewportSection() {
                           ? {
                               scale: [1, 1.2, 1],
                               boxShadow: [
-                                `0 0 0 0 rgba(${service.color === "emerald" ? "16,185,129" : service.color === "blue" ? "59,130,246" : service.color === "purple" ? "147,51,234" : service.color === "orange" ? "249,115,22" : service.color === "cyan" ? "6,182,212" : "99,102,241"}, 0.4)`,
-                                `0 0 0 10px rgba(${service.color === "emerald" ? "16,185,129" : service.color === "blue" ? "59,130,246" : service.color === "purple" ? "147,51,234" : service.color === "orange" ? "249,115,22" : service.color === "cyan" ? "6,182,212" : "99,102,241"}, 0)`,
-                                `0 0 0 0 rgba(${service.color === "emerald" ? "16,185,129" : service.color === "blue" ? "59,130,246" : service.color === "purple" ? "147,51,234" : service.color === "orange" ? "249,115,22" : service.color === "cyan" ? "6,182,212" : "99,102,241"}, 0.4)`,
+                                `0 0 0 0 rgba(${service.color === "purple" ? "147,51,234" : service.color === "cyan" ? "6,182,212" : service.color === "green" ? "16,185,129" : "245,158,11"}, 0.4)`,
+                                `0 0 0 10px rgba(${service.color === "purple" ? "147,51,234" : service.color === "cyan" ? "6,182,212" : service.color === "green" ? "16,185,129" : "245,158,11"}, 0)`,
+                                `0 0 0 0 rgba(${service.color === "purple" ? "147,51,234" : service.color === "cyan" ? "6,182,212" : service.color === "green" ? "16,185,129" : "245,158,11"}, 0.4)`,
                               ],
                             }
                           : {}
@@ -428,6 +395,7 @@ export function ServicesViewportSection() {
                     {/* CTA */}
                     <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
                       <Button
+                      onClick={() => window.location.href = `/projects/${service.company}`}
                         className={`bg-gradient-to-r ${service.gradient} hover:shadow-lg hover:shadow-${service.color}-500/25 text-white px-8 py-3 text-lg font-medium`}
                       >
                         {service.cta}
@@ -460,20 +428,16 @@ export function ServicesViewportSection() {
 function ServiceUIGraphic({ service, index }: { service: any; index: number }) {
   const getServiceGraphic = () => {
     switch (service.id) {
-      case "website":
-        return <WebsiteUIGraphic service={service} />
-      case "mobile":
-        return <MobileUIGraphic service={service} />
-      case "digital":
-        return <DigitalSystemsUIGraphic service={service} />
-      case "mechanical":
-        return <MechanicalUIGraphic service={service} />
-      case "product":
-        return <ProductUIGraphic service={service} />
-      case "architecture":
-        return <ArchitectureUIGraphic service={service} />
+      case "training":
+        return <TrainingUIGraphic service={service} />
+      case "product-mgmt":
+        return <ProductManagementUIGraphic service={service} />
+      case "content":
+        return <ContentSEOUIGraphic service={service} />
+      case "skills":
+        return <TechStackUIGraphic service={service} />
       default:
-        return <WebsiteUIGraphic service={service} />
+        return <TrainingUIGraphic service={service} />
     }
   }
 
@@ -494,472 +458,561 @@ function ServiceUIGraphic({ service, index }: { service: any; index: number }) {
   )
 }
 
-function WebsiteUIGraphic({ service }: { service: any }) {
+function TrainingUIGraphic({ service }: { service: any }) {
   return (
     <div className="space-y-6">
-      {/* Enhanced Browser Window */}
-      <div className="bg-gray-800 rounded-lg overflow-hidden shadow-2xl">
-        <div className="flex items-center space-x-2 px-4 py-3 bg-gray-700">
-          <div className="w-3 h-3 bg-red-500 rounded-full animate-pulse"></div>
-          <div className="w-3 h-3 bg-yellow-500 rounded-full animate-pulse" style={{ animationDelay: "0.2s" }}></div>
-          <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse" style={{ animationDelay: "0.4s" }}></div>
-          <div className="flex-1 bg-gray-600 rounded px-3 py-1 ml-4">
-            <span className="text-xs text-gray-300">https://yourwebsite.com</span>
-          </div>
-          <div className="flex space-x-1">
-            <div className="w-4 h-4 bg-gray-600 rounded"></div>
-            <div className="w-4 h-4 bg-gray-600 rounded"></div>
-          </div>
-        </div>
-        <div className="p-6 bg-gradient-to-br from-gray-800 to-gray-900 min-h-[200px]">
-          <div className="space-y-4">
-            <motion.div
-              className="h-6 bg-gradient-to-r from-emerald-500 to-green-500 rounded w-3/4"
-              animate={{ opacity: [0.7, 1, 0.7] }}
-              transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
-            ></motion.div>
-            <div className="h-3 bg-gray-600 rounded w-full"></div>
-            <div className="h-3 bg-gray-600 rounded w-2/3"></div>
-            <div className="grid grid-cols-3 gap-4 mt-6">
-              {[0, 1, 2].map((i) => (
-                <motion.div
-                  key={i}
-                  className="h-16 bg-gradient-to-br from-gray-700 to-gray-600 rounded"
-                  animate={{ y: [0, -2, 0] }}
-                  transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY, delay: i * 0.3 }}
-                ></motion.div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Enhanced Performance Metrics */}
-      <div className="grid grid-cols-2 gap-4">
-        <motion.div className="bg-gray-800 rounded-lg p-4 border border-emerald-500/20" whileHover={{ scale: 1.05 }}>
-          <div className="flex items-center justify-between mb-2">
-            <span className="text-xs text-gray-400">Speed Score</span>
-            <Gauge className="w-4 h-4 text-emerald-400" />
-          </div>
-          <div className="text-2xl font-bold text-emerald-400">98/100</div>
-          <div className="w-full bg-gray-700 rounded-full h-1 mt-2">
-            <motion.div
-              className="bg-emerald-500 h-1 rounded-full"
-              initial={{ width: 0 }}
-              animate={{ width: "98%" }}
-              transition={{ duration: 2, ease: "easeOut" }}
-            ></motion.div>
-          </div>
-        </motion.div>
-        <motion.div className="bg-gray-800 rounded-lg p-4 border border-green-500/20" whileHover={{ scale: 1.05 }}>
-          <div className="flex items-center justify-between mb-2">
-            <span className="text-xs text-gray-400">Uptime</span>
-            <Activity className="w-4 h-4 text-green-400" />
-          </div>
-          <div className="text-2xl font-bold text-green-400">99.9%</div>
-          <div className="flex space-x-1 mt-2">
-            {[...Array(10)].map((_, i) => (
-              <motion.div
-                key={i}
-                className="w-2 h-4 bg-green-500 rounded-sm"
-                animate={{ height: [8, 16, 8] }}
-                transition={{ duration: 1, repeat: Number.POSITIVE_INFINITY, delay: i * 0.1 }}
-              ></motion.div>
-            ))}
-          </div>
-        </motion.div>
-      </div>
-    </div>
-  )
-}
-
-function MobileUIGraphic({ service }: { service: any }) {
-  return (
-    <div className="flex justify-center space-x-4">
-      {/* Enhanced Phone Mockup */}
-      <div className="relative">
-        <motion.div
-          className="w-48 h-96 bg-gray-900 rounded-3xl border-4 border-gray-700 overflow-hidden shadow-2xl"
-          animate={{ rotateY: [0, 5, 0, -5, 0] }}
-          transition={{ duration: 6, repeat: Number.POSITIVE_INFINITY }}
-        >
-          <div className="h-6 bg-gray-800 flex items-center justify-center">
-            <div className="w-16 h-1 bg-gray-600 rounded-full"></div>
-          </div>
-          <div className="p-4 space-y-4 bg-gradient-to-b from-gray-900 to-black">
-            <div className="flex items-center space-x-3">
-              <motion.div
-                className="w-10 h-10 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full"
-                animate={{ rotate: [0, 360] }}
-                transition={{ duration: 4, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
-              ></motion.div>
-              <div className="flex-1">
-                <div className="h-3 bg-gray-700 rounded w-3/4 mb-1"></div>
-                <div className="h-2 bg-gray-800 rounded w-1/2"></div>
-              </div>
-            </div>
-            <div className="grid grid-cols-2 gap-3">
-              {[
-                { from: "blue-500", to: "cyan-500" },
-                { from: "purple-500", to: "pink-500" },
-                { from: "emerald-500", to: "green-500" },
-                { from: "orange-500", to: "red-500" },
-              ].map((gradient, i) => (
-                <motion.div
-                  key={i}
-                  className={`h-20 bg-gradient-to-br from-${gradient.from} to-${gradient.to} rounded-lg`}
-                  animate={{ scale: [1, 1.05, 1] }}
-                  transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY, delay: i * 0.5 }}
-                ></motion.div>
-              ))}
-            </div>
-            <div className="space-y-2">
-              <motion.div
-                className="h-3 bg-gray-700 rounded"
-                animate={{ width: ["100%", "80%", "100%"] }}
-                transition={{ duration: 3, repeat: Number.POSITIVE_INFINITY }}
-              ></motion.div>
-              <div className="h-3 bg-gray-700 rounded w-4/5"></div>
-              <div className="h-3 bg-gray-700 rounded w-3/5"></div>
-            </div>
-          </div>
-        </motion.div>
-      </div>
-
-      {/* Enhanced App Analytics */}
-      <div className="space-y-4">
-        {[
-          { label: "Downloads", value: "2.4M", color: "blue", icon: Users },
-          { label: "Rating", value: "4.8★", color: "yellow", icon: Star },
-          { label: "Retention", value: "85%", color: "green", icon: TrendingUp },
-        ].map((metric, i) => (
-          <motion.div
-            key={i}
-            className={`bg-gray-800 rounded-lg p-4 w-32 border border-${metric.color}-500/20`}
-            whileHover={{ scale: 1.1, y: -5 }}
-            animate={{ y: [0, -2, 0] }}
-            transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY, delay: i * 0.7 }}
-          >
-            <div className="flex items-center justify-between mb-1">
-              <span className="text-xs text-gray-400">{metric.label}</span>
-              <metric.icon className={`w-3 h-3 text-${metric.color}-400`} />
-            </div>
-            <div className={`text-lg font-bold text-${metric.color}-400`}>{metric.value}</div>
-          </motion.div>
-        ))}
-      </div>
-    </div>
-  )
-}
-
-function DigitalSystemsUIGraphic({ service }: { service: any }) {
-  return (
-    <div className="space-y-6">
-      {/* Enhanced Dashboard */}
+      {/* Training Dashboard */}
       <div className="bg-gray-800 rounded-lg p-6 border border-purple-500/20">
         <div className="flex items-center justify-between mb-4">
-          <h3 className="text-white font-semibold">System Dashboard</h3>
-          <div className="flex space-x-2">
-            <motion.div
-              className="w-2 h-2 bg-green-400 rounded-full"
-              animate={{ opacity: [0.5, 1, 0.5] }}
-              transition={{ duration: 1, repeat: Number.POSITIVE_INFINITY }}
-            ></motion.div>
-            <span className="text-xs text-green-400">Online</span>
+          <div>
+            <h3 className="text-white font-semibold">Smiths Detection Training Hub</h3>
+            <span className="text-xs text-purple-300">Sep 2024 – Jun 2025</span>
+          </div>
+          <div className="flex items-center space-x-2">
+            <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+            <span className="text-xs text-green-400">Active</span>
           </div>
         </div>
-        <div className="grid grid-cols-3 gap-4">
+        
+        {/* Training Modules */}
+        <div className="space-y-3">
           {[
-            { label: "CPU Usage", value: "23%", color: "purple" },
-            { label: "Memory", value: "1.2GB", color: "cyan" },
-            { label: "Requests", value: "15.2K", color: "emerald" },
-          ].map((stat, i) => (
-            <motion.div key={i} className="bg-gray-700 rounded p-3" whileHover={{ scale: 1.05 }}>
-              <div className="text-xs text-gray-400">{stat.label}</div>
-              <div className={`text-lg font-bold text-${stat.color}-400`}>{stat.value}</div>
-              <div className="w-full bg-gray-600 rounded-full h-1 mt-1">
+            { name: "LCD Detection System", progress: 95, status: "completed" },
+            { name: "Hi-Trax Scanner Training", progress: 87, status: "active" },
+            { name: "XDi Technology Overview", progress: 92, status: "completed" },
+            { name: "Trace Detection Protocol", progress: 76, status: "active" },
+          ].map((module, i) => (
+            <motion.div
+              key={i}
+              className="bg-gray-700/50 rounded-lg p-3"
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: i * 0.2 }}
+            >
+              <div className="flex items-center justify-between mb-2">
+                <span className="text-sm text-white font-medium">{module.name}</span>
+                <div className="flex items-center space-x-2">
+                  {module.status === "completed" ? (
+                    <CheckCircle className="w-4 h-4 text-green-400" />
+                  ) : (
+                    <motion.div 
+                      className="w-4 h-4 border-2 border-purple-400 rounded-full border-t-transparent"
+                      animate={{ rotate: 360 }}
+                      transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
+                    />
+                  )}
+                  <span className="text-xs text-purple-400 font-mono">{module.progress}%</span>
+                </div>
+              </div>
+              <div className="w-full bg-gray-600 rounded-full h-1.5">
                 <motion.div
-                  className={`bg-${stat.color}-500 h-1 rounded-full`}
+                  className="bg-purple-500 h-1.5 rounded-full"
                   initial={{ width: 0 }}
-                  animate={{ width: `${Math.random() * 80 + 20}%` }}
-                  transition={{ duration: 2, ease: "easeOut" }}
-                ></motion.div>
+                  animate={{ width: `${module.progress}%` }}
+                  transition={{ duration: 2, ease: "easeOut", delay: i * 0.3 }}
+                />
               </div>
             </motion.div>
           ))}
         </div>
       </div>
 
-      {/* Enhanced Workflow Automation */}
-      <div className="bg-gray-800 rounded-lg p-4 border border-purple-500/10">
-        <div className="text-sm text-gray-400 mb-3">Active Workflows</div>
-        <div className="space-y-2">
-          {[
-            { name: "Data Processing", status: "Running", color: "green" },
-            { name: "Email Automation", status: "Scheduled", color: "blue" },
-            { name: "Report Generation", status: "Complete", color: "emerald" },
-          ].map((workflow, i) => (
+      {/* Learner Feedback Stats */}
+      <div className="grid grid-cols-2 gap-4">
+        <motion.div 
+          className="bg-gray-800 rounded-lg p-4 border border-purple-500/20" 
+          whileHover={{ scale: 1.05 }}
+        >
+          <div className="flex items-center justify-between mb-2">
+            <span className="text-xs text-gray-400">Learner Rating</span>
+            <Star className="w-4 h-4 text-yellow-400" />
+          </div>
+          <div className="text-2xl font-bold text-purple-400">8.2/10</div>
+          <div className="flex space-x-1 mt-2">
+            {[...Array(5)].map((_, i) => (
+              <motion.div
+                key={i}
+                className={`w-3 h-3 rounded-full ${i < 4 ? 'bg-yellow-400' : 'bg-gray-600'}`}
+                animate={{ scale: [1, 1.1, 1] }}
+                transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY, delay: i * 0.2 }}
+              />
+            ))}
+          </div>
+        </motion.div>
+        
+        <motion.div 
+          className="bg-gray-800 rounded-lg p-4 border border-pink-500/20" 
+          whileHover={{ scale: 1.05 }}
+        >
+          <div className="flex items-center justify-between mb-2">
+            <span className="text-xs text-gray-400">Time Saved</span>
+            <Zap className="w-4 h-4 text-pink-400" />
+          </div>
+          <div className="text-2xl font-bold text-pink-400">28%</div>
+          <div className="text-xs text-pink-300 mt-1">Training Efficiency</div>
+        </motion.div>
+      </div>
+
+      {/* Training Asset Library */}
+      <div className="bg-gray-800/50 rounded-lg p-4">
+        <div className="text-sm text-gray-400 mb-3">Standardized Assets</div>
+        <div className="grid grid-cols-4 gap-2">
+          {[...Array(8)].map((_, i) => (
             <motion.div
               key={i}
-              className="flex items-center justify-between py-2 px-3 bg-gray-700/50 rounded"
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
+              className="h-12 bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded border border-purple-500/30 flex items-center justify-center"
+              animate={{ opacity: [0.5, 1, 0.5] }}
+              transition={{ duration: 3, repeat: Number.POSITIVE_INFINITY, delay: i * 0.4 }}
+            >
+              <FileText className="w-4 h-4 text-purple-400" />
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </div>
+  )
+}
+
+function ProductManagementUIGraphic({ service }: { service: any }) {
+  return (
+    <div className="space-y-6">
+      {/* Product Dashboard */}
+      <div className="bg-gray-800 rounded-lg p-6 border border-cyan-500/20">
+        <div className="flex items-center justify-between mb-4">
+          <div>
+            <h3 className="text-white font-semibold">Saumya Vidyut Product Hub</h3>
+            <span className="text-xs text-cyan-300">Nov 2023 – Aug 2024</span>
+          </div>
+          <Rocket className="w-5 h-5 text-cyan-400" />
+        </div>
+        
+        {/* Active Projects */}
+        <div className="space-y-3">
+          {[
+            { project: "Transformer Efficiency Tool", progress: 85, impact: "18% boost" },
+            { project: "Tender Tracking System", progress: 100, impact: "Automated" },
+            { project: "Billing Automation", progress: 73, impact: "In Progress" },
+          ].map((item, i) => (
+            <motion.div
+              key={i}
+              className="bg-gray-700/50 rounded-lg p-3"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.2 }}
             >
-              <div className="flex items-center space-x-2">
-                <motion.div
-                  className={`w-2 h-2 rounded-full bg-${workflow.color}-400`}
-                  animate={workflow.status === "Running" ? { opacity: [0.5, 1, 0.5] } : {}}
-                  transition={{ duration: 1, repeat: workflow.status === "Running" ? Number.POSITIVE_INFINITY : 0 }}
-                ></motion.div>
-                <span className="text-sm text-white">{workflow.name}</span>
+              <div className="flex items-center justify-between mb-2">
+                <span className="text-sm text-white font-medium">{item.project}</span>
+                <div className="flex items-center space-x-2">
+                  <Badge className="bg-cyan-500/20 text-cyan-400 text-xs border-cyan-500/30">
+                    {item.impact}
+                  </Badge>
+                </div>
               </div>
-              <span className={`text-xs px-2 py-1 rounded bg-${workflow.color}-500/20 text-${workflow.color}-400`}>
-                {workflow.status}
+              <div className="flex items-center space-x-3">
+                <div className="flex-1 bg-gray-600 rounded-full h-2">
+                  <motion.div
+                    className="bg-cyan-500 h-2 rounded-full"
+                    initial={{ width: 0 }}
+                    animate={{ width: `${item.progress}%` }}
+                    transition={{ duration: 2, ease: "easeOut", delay: i * 0.3 }}
+                  />
+                </div>
+                <span className="text-xs text-cyan-400 font-mono">{item.progress}%</span>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+
+      {/* Product Analytics */}
+      <div className="grid grid-cols-2 gap-4">
+        <motion.div 
+          className="bg-gray-800 rounded-lg p-4 border border-cyan-500/20" 
+          whileHover={{ scale: 1.05 }}
+        >
+          <div className="flex items-center justify-between mb-2">
+            <span className="text-xs text-gray-400">Efficiency Gain</span>
+            <Gauge className="w-4 h-4 text-cyan-400" />
+          </div>
+          <div className="text-2xl font-bold text-cyan-400">+18%</div>
+          <div className="w-full bg-gray-600 rounded-full h-1.5 mt-2">
+            <motion.div
+              className="bg-cyan-500 h-1.5 rounded-full"
+              initial={{ width: 0 }}
+              animate={{ width: "72%" }}
+              transition={{ duration: 2, ease: "easeOut" }}
+            />
+          </div>
+        </motion.div>
+        
+        <motion.div 
+          className="bg-gray-800 rounded-lg p-4 border border-blue-500/20" 
+          whileHover={{ scale: 1.05 }}
+        >
+          <div className="flex items-center justify-between mb-2">
+            <span className="text-xs text-gray-400">Process Impact</span>
+            <Target className="w-4 h-4 text-blue-400" />
+          </div>
+          <div className="text-2xl font-bold text-blue-400">High</div>
+          <div className="text-xs text-blue-300 mt-1">Stakeholder Feedback</div>
+        </motion.div>
+      </div>
+
+      {/* Product Roadmap */}
+      <div className="bg-gray-800/50 rounded-lg p-4">
+        <div className="text-sm text-gray-400 mb-3">Development Pipeline</div>
+        <div className="space-y-2">
+          {[
+            { phase: "Research & Analysis", status: "completed" },
+            { phase: "Product Fit Analysis", status: "completed" },
+            { phase: "Documentation Design", status: "active" },
+            { phase: "User Testing", status: "pending" },
+          ].map((phase, i) => (
+            <motion.div
+              key={i}
+              className="flex items-center space-x-3 py-2"
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: i * 0.1 }}
+            >
+              <motion.div
+                className={`w-3 h-3 rounded-full ${
+                  phase.status === "completed" ? "bg-green-400" : 
+                  phase.status === "active" ? "bg-cyan-400" : "bg-gray-600"
+                }`}
+                animate={phase.status === "active" ? { 
+                  scale: [1, 1.2, 1], 
+                  opacity: [0.7, 1, 0.7] 
+                } : {}}
+                transition={{ 
+                  duration: 1.5, 
+                  repeat: phase.status === "active" ? Number.POSITIVE_INFINITY : 0 
+                }}
+              />
+              <span className="text-sm text-white">{phase.phase}</span>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </div>
+  )
+}
+
+function ContentSEOUIGraphic({ service }: { service: any }) {
+  return (
+    <div className="space-y-6">
+      {/* Content Performance Dashboard */}
+      <div className="bg-gray-800 rounded-lg p-6 border border-green-500/20">
+        <div className="flex items-center justify-between mb-4">
+          <div>
+            <h3 className="text-white font-semibold">StarAgile Content Studio</h3>
+            <span className="text-xs text-green-300">Sep 2022 – Oct 2023</span>
+          </div>
+          <TrendingUp className="w-5 h-5 text-green-400" />
+        </div>
+        
+        {/* Content Metrics */}
+        <div className="grid grid-cols-2 gap-4 mb-4">
+          <div className="bg-gray-700/50 rounded-lg p-3">
+            <div className="flex items-center justify-between mb-1">
+              <span className="text-xs text-gray-400">Articles Published</span>
+              <FileText className="w-3 h-3 text-green-400" />
+            </div>
+            <div className="text-xl font-bold text-green-400">150+</div>
+          </div>
+          <div className="bg-gray-700/50 rounded-lg p-3">
+            <div className="flex items-center justify-between mb-1">
+              <span className="text-xs text-gray-400">Organic Growth</span>
+              <BarChart className="w-3 h-3 text-emerald-400" />
+            </div>
+            <div className="text-xl font-bold text-emerald-400">+60%</div>
+          </div>
+        </div>
+
+        {/* Email & Campaign Analytics */}
+        <div className="bg-gray-700/30 rounded-lg p-4">
+          <div className="flex items-center justify-between mb-3">
+            <span className="text-sm text-gray-300">CleverTap Campaign Performance</span>
+            <Mail className="w-4 h-4 text-green-400" />
+          </div>
+          <div className="grid grid-cols-3 gap-3 text-center">
+            <div>
+              <div className="text-lg font-bold text-green-400">0.12%</div>
+              <div className="text-xs text-gray-400">Initial Rate</div>
+            </div>
+            <ArrowRight className="w-4 h-4 text-gray-400 self-center justify-self-center" />
+            <div>
+              <div className="text-lg font-bold text-emerald-400">3.56%</div>
+              <div className="text-xs text-gray-400">Optimized Rate</div>
+            </div>
+          </div>
+          <div className="mt-3 flex space-x-1">
+            {["Google", "Meta", "LinkedIn"].map((platform, i) => (
+              <motion.div
+                key={i}
+                className="flex-1 text-center py-1 bg-green-500/20 rounded text-xs text-green-300"
+                animate={{ opacity: [0.7, 1, 0.7] }}
+                transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY, delay: i * 0.3 }}
+              >
+                {platform}
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Email & Campaign Analytics */}
+      <div className="grid grid-cols-2 gap-4">
+        <motion.div 
+          className="bg-gray-800 rounded-lg p-4 border border-green-500/20" 
+          whileHover={{ scale: 1.05 }}
+        >
+          <div className="flex items-center justify-between mb-2">
+            <span className="text-xs text-gray-400">Email Optimization</span>
+            <Mail className="w-4 h-4 text-green-400" />
+          </div>
+          <div className="flex items-center space-x-2 mb-1">
+            <div className="text-sm font-bold text-red-400">0.12%</div>
+            <ArrowRight className="w-3 h-3 text-gray-400" />
+            <div className="text-lg font-bold text-green-400">3.56%</div>
+          </div>
+          <div className="text-xs text-green-300">A/B Testing Success</div>
+        </motion.div>
+        
+        <motion.div 
+          className="bg-gray-800 rounded-lg p-4 border border-emerald-500/20" 
+          whileHover={{ scale: 1.05 }}
+        >
+          <div className="flex items-center justify-between mb-2">
+            <span className="text-xs text-gray-400">Landing Pages</span>
+            <MousePointer className="w-4 h-4 text-emerald-400" />
+          </div>
+          <div className="text-2xl font-bold text-emerald-400">+15%</div>
+          <div className="text-xs text-emerald-300 mt-1">Conversion Boost</div>
+        </motion.div>
+      </div>
+
+      {/* Content Topics and Platforms */}
+      <div className="bg-gray-800/50 rounded-lg p-4">
+        <div className="text-sm text-gray-400 mb-3">Content Categories & Platforms</div>
+        <div className="space-y-3">
+          <div className="flex flex-wrap gap-2">
+            {[
+              { topic: "AI", size: "large" },
+              { topic: "Product Management", size: "large" },
+              { topic: "Agile", size: "medium" },
+              { topic: "Scrum", size: "medium" },
+              { topic: "Tech Strategy", size: "small" },
+            ].map((tag, i) => (
+              <motion.div
+                key={i}
+                className={`px-3 py-1 rounded-full bg-gradient-to-r from-green-500/20 to-emerald-500/20 border border-green-500/30 ${
+                  tag.size === "large" ? "text-sm font-medium" : tag.size === "medium" ? "text-xs" : "text-xs opacity-75"
+                }`}
+                animate={{ scale: [1, 1.05, 1] }}
+                transition={{ 
+                  duration: 3, 
+                  repeat: Number.POSITIVE_INFINITY, 
+                  delay: i * 0.5 
+                }}
+              >
+                <span className="text-green-400">{tag.topic}</span>
+              </motion.div>
+            ))}
+          </div>
+          
+          {/* Campaign Platforms */}
+          <div className="pt-2 border-t border-gray-700">
+            <div className="text-xs text-gray-500 mb-2">Campaign Platforms</div>
+            <div className="flex space-x-3">
+              {["CleverTap", "Google Ads", "Meta", "LinkedIn"].map((platform, i) => (
+                <motion.div
+                  key={i}
+                  className="text-xs px-2 py-1 bg-green-500/10 text-green-300 rounded border border-green-500/20"
+                  animate={{ opacity: [0.6, 1, 0.6] }}
+                  transition={{ 
+                    duration: 2.5, 
+                    repeat: Number.POSITIVE_INFINITY, 
+                    delay: i * 0.4 
+                  }}
+                >
+                  {platform}
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+function TechStackUIGraphic({ service }: { service: any }) {
+  return (
+    <div className="space-y-6">
+      {/* Tech Stack Overview */}
+      <div className="bg-gray-800 rounded-lg p-6 border border-yellow-500/20">
+        <div className="flex items-center justify-between mb-4">
+          <h3 className="text-white font-semibold">Technology Arsenal</h3>
+          <Cpu className="w-5 h-5 text-yellow-400" />
+        </div>
+        
+        {/* Tech Categories */}
+        <div className="grid grid-cols-2 gap-4">
+          {[
+            { 
+              category: "Data & Analytics", 
+              tools: ["Power BI", "SQL", "Excel"], 
+              icon: <Database className="w-4 h-4" />,
+              color: "yellow"
+            },
+            { 
+              category: "Development", 
+              tools: ["CMS", "APIs", "Git"], 
+              icon: <Code className="w-4 h-4" />,
+              color: "orange"
+            },
+            { 
+              category: "Project Management", 
+              tools: ["Scrum", "Agile", "Jira"], 
+              icon: <Settings className="w-4 h-4" />,
+              color: "amber"
+            },
+            { 
+              category: "AI & Automation", 
+              tools: ["GPT", "Claude", "Automation"], 
+              icon: <Brain className="w-4 h-4" />,
+              color: "yellow"
+            },
+          ].map((stack, i) => (
+            <motion.div
+              key={i}
+              className="bg-gray-700/50 rounded-lg p-3"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: i * 0.2 }}
+              whileHover={{ scale: 1.02 }}
+            >
+              <div className="flex items-center space-x-2 mb-2">
+                <div className={`text-${stack.color}-400`}>{stack.icon}</div>
+                <span className="text-sm text-white font-medium">{stack.category}</span>
+              </div>
+              <div className="space-y-1">
+                {stack.tools.map((tool, j) => (
+                  <motion.div
+                    key={j}
+                    className={`text-xs px-2 py-1 bg-${stack.color}-500/20 text-${stack.color}-400 rounded border border-${stack.color}-500/30 inline-block mr-1`}
+                    animate={{ opacity: [0.7, 1, 0.7] }}
+                    transition={{ 
+                      duration: 2, 
+                      repeat: Number.POSITIVE_INFINITY, 
+                      delay: (i * 0.5) + (j * 0.2) 
+                    }}
+                  >
+                    {tool}
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+
+      {/* Skills Proficiency */}
+      <div className="bg-gray-800 rounded-lg p-4 border border-yellow-500/10">
+        <div className="text-sm text-gray-400 mb-3">Skill Proficiency</div>
+        <div className="space-y-3">
+          {[
+            { skill: "Power BI", level: 95, category: "advanced" },
+            { skill: "SQL", level: 88, category: "advanced" },
+            { skill: "Content Strategy", level: 92, category: "expert" },
+            { skill: "Project Management", level: 90, category: "advanced" },
+            { skill: "AI Integration", level: 85, category: "advanced" },
+          ].map((skill, i) => (
+            <motion.div
+              key={i}
+              className="flex items-center justify-between"
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: i * 0.1 }}
+            >
+              <div className="flex items-center space-x-3">
+                <span className="text-sm text-white min-w-[120px]">{skill.skill}</span>
+                <div className="flex-1 bg-gray-600 rounded-full h-2 w-32">
+                  <motion.div
+                    className="bg-gradient-to-r from-yellow-400 to-orange-500 h-2 rounded-full"
+                    initial={{ width: 0 }}
+                    animate={{ width: `${skill.level}%` }}
+                    transition={{ duration: 2, ease: "easeOut", delay: i * 0.2 }}
+                  />
+                </div>
+              </div>
+              <div className="flex items-center space-x-2">
+                <span className="text-xs text-yellow-400 font-mono">{skill.level}%</span>
+                <Badge className={`text-xs ${
+                  skill.category === "expert" ? "bg-yellow-500/20 text-yellow-400 border-yellow-500/30" :
+                  "bg-orange-500/20 text-orange-400 border-orange-500/30"
+                }`}>
+                  {skill.category}
+                </Badge>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+
+      {/* Certification & Learning */}
+      <div className="grid grid-cols-2 gap-4">
+        <motion.div 
+          className="bg-gray-800 rounded-lg p-4 border border-yellow-500/20" 
+          whileHover={{ scale: 1.05 }}
+        >
+          <div className="flex items-center justify-between mb-2">
+            <span className="text-xs text-gray-400">Certifications</span>
+            <Award className="w-4 h-4 text-yellow-400" />
+          </div>
+          <div className="text-2xl font-bold text-yellow-400">3+</div>
+          <div className="text-xs text-yellow-300 mt-1">Active & Current</div>
+        </motion.div>
+        
+        <motion.div 
+          className="bg-gray-800 rounded-lg p-4 border border-orange-500/20" 
+          whileHover={{ scale: 1.05 }}
+        >
+          <div className="flex items-center justify-between mb-2">
+            <span className="text-xs text-gray-400">Tools Mastered</span>
+            <Sparkles className="w-4 h-4 text-orange-400" />
+          </div>
+          <div className="text-2xl font-bold text-orange-400">15+</div>
+          <div className="text-xs text-orange-300 mt-1">Production Ready</div>
+        </motion.div>
+      </div>
+
+      {/* Live Dashboard Simulation */}
+      <div className="bg-gray-800/50 rounded-lg p-4">
+        <div className="text-sm text-gray-400 mb-3">Live Analytics Dashboard</div>
+        <div className="grid grid-cols-3 gap-2">
+          {[...Array(6)].map((_, i) => (
+            <motion.div
+              key={i}
+              className="h-16 bg-gradient-to-br from-yellow-500/20 to-orange-500/20 rounded border border-yellow-500/30 flex flex-col items-center justify-center"
+              animate={{ 
+                scale: [1, 1.02, 1],
+                opacity: [0.7, 1, 0.7] 
+              }}
+              transition={{ 
+                duration: 3, 
+                repeat: Number.POSITIVE_INFINITY, 
+                delay: i * 0.5 
+              }}
+            >
+              <PieChart className="w-4 h-4 text-yellow-400 mb-1" />
+              <span className="text-xs text-yellow-300">
+                {["Users", "Revenue", "Growth", "Retention", "CTR", "ROI"][i]}
               </span>
             </motion.div>
           ))}
         </div>
-      </div>
-    </div>
-  )
-}
-
-function MechanicalUIGraphic({ service }: { service: any }) {
-  return (
-    <div className="space-y-6">
-      {/* Enhanced CAD Interface */}
-      <div className="bg-gray-800 rounded-lg p-6 border border-orange-500/20">
-        <div className="flex items-center justify-between mb-4">
-          <h3 className="text-white font-semibold">CAD Workspace</h3>
-          <div className="flex space-x-2">
-            <motion.div
-              className="w-6 h-6 bg-gradient-to-r from-orange-500 to-red-500 rounded flex items-center justify-center"
-              animate={{ rotate: [0, 360] }}
-              transition={{ duration: 4, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
-            >
-              <Code className="w-3 h-3 text-white" />
-            </motion.div>
-          </div>
-        </div>
-        <div className="bg-gray-900 rounded p-4 h-40 relative overflow-hidden border border-orange-500/10">
-          {/* Enhanced 3D Grid */}
-          <div className="absolute inset-0 opacity-30">
-            <svg className="w-full h-full" viewBox="0 0 200 100">
-              <defs>
-                <pattern id="cad-grid" width="15" height="15" patternUnits="userSpaceOnUse">
-                  <path d="M 15 0 L 0 0 0 15" fill="none" stroke="#f97316" strokeWidth="0.3" />
-                </pattern>
-              </defs>
-              <rect width="100%" height="100%" fill="url(#cad-grid)" />
-            </svg>
-          </div>
-
-          {/* Enhanced 3D Object */}
-          <div className="absolute inset-0 flex items-center justify-center">
-            <motion.div
-              className="relative"
-              animate={{
-                rotateX: [0, 15, 0, -15, 0],
-                rotateY: [0, 25, 0, -25, 0],
-              }}
-              transition={{ duration: 8, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" }}
-            >
-              <div className="w-20 h-20 bg-gradient-to-br from-orange-500 via-red-500 to-orange-600 rounded-lg shadow-2xl">
-                {/* 3D Effect Lines */}
-                <div className="absolute inset-2 border border-orange-300/50 rounded"></div>
-                <div className="absolute inset-4 border border-orange-200/30 rounded"></div>
-              </div>
-              {/* Shadow */}
-              <motion.div
-                className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-16 h-4 bg-black/30 rounded-full blur-sm"
-                animate={{ scale: [1, 1.1, 1] }}
-                transition={{ duration: 8, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" }}
-              ></motion.div>
-            </motion.div>
-          </div>
-
-          {/* CAD Tools */}
-          <div className="absolute top-2 left-2 flex space-x-1">
-            {[...Array(4)].map((_, i) => (
-              <motion.div
-                key={i}
-                className="w-2 h-2 bg-orange-400/60 rounded-sm"
-                animate={{ opacity: [0.6, 1, 0.6] }}
-                transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY, delay: i * 0.3 }}
-              ></motion.div>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      {/* Enhanced Design Specs */}
-      <div className="grid grid-cols-2 gap-4">
-        <motion.div className="bg-gray-800 rounded-lg p-4 border border-orange-500/20" whileHover={{ scale: 1.05 }}>
-          <div className="text-xs text-gray-400 mb-1">Precision</div>
-          <div className="text-lg font-bold text-orange-400">±0.01mm</div>
-          <div className="text-xs text-orange-300 mt-1">Ultra High</div>
-        </motion.div>
-        <motion.div className="bg-gray-800 rounded-lg p-4 border border-red-500/20" whileHover={{ scale: 1.05 }}>
-          <div className="text-xs text-gray-400 mb-1">Material</div>
-          <div className="text-lg font-bold text-red-400">Al-6061</div>
-          <div className="text-xs text-red-300 mt-1">Aerospace Grade</div>
-        </motion.div>
-      </div>
-    </div>
-  )
-}
-
-function ProductUIGraphic({ service }: { service: any }) {
-  return (
-    <div className="space-y-6">
-      {/* Product Analytics Dashboard */}
-      <div className="bg-gray-800 rounded-lg p-6 border border-cyan-500/20">
-        <div className="flex items-center justify-between mb-4">
-          <h3 className="text-white font-semibold">Product Analytics</h3>
-          <TrendingUp className="w-5 h-5 text-cyan-400" />
-        </div>
-        <div className="space-y-4">
-          {[
-            { label: "Market Validation", value: 92, color: "cyan" },
-            { label: "Development Progress", value: 68, color: "blue" },
-            { label: "User Feedback Score", value: 87, color: "green" },
-          ].map((metric, i) => (
-            <div key={i} className="flex items-center justify-between">
-              <span className="text-sm text-gray-400">{metric.label}</span>
-              <div className="flex items-center space-x-2">
-                <div className="w-24 h-2 bg-gray-700 rounded-full overflow-hidden">
-                  <motion.div
-                    className={`bg-${metric.color}-500 h-2 rounded-full`}
-                    initial={{ width: 0 }}
-                    animate={{ width: `${metric.value}%` }}
-                    transition={{ duration: 2, ease: "easeOut", delay: i * 0.3 }}
-                  ></motion.div>
-                </div>
-                <span className={`text-sm text-${metric.color}-400 font-medium`}>{metric.value}%</span>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Launch Timeline */}
-      <div className="bg-gray-800 rounded-lg p-4 border border-cyan-500/10">
-        <div className="text-sm text-gray-400 mb-3">Launch Timeline</div>
-        <div className="space-y-3">
-          {[
-            { phase: "MVP Complete", date: "Week 8", status: "done" },
-            { phase: "Beta Testing", date: "Week 12", status: "active" },
-            { phase: "Market Launch", date: "Week 16", status: "pending" },
-          ].map((item, i) => (
-            <motion.div
-              key={i}
-              className="flex items-center justify-between py-2 px-3 bg-gray-700/30 rounded"
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: i * 0.2 }}
-            >
-              <div className="flex items-center space-x-3">
-                <motion.div
-                  className={`w-3 h-3 rounded-full ${
-                    item.status === "done" ? "bg-green-400" : item.status === "active" ? "bg-cyan-400" : "bg-gray-600"
-                  }`}
-                  animate={
-                    item.status === "active"
-                      ? {
-                          scale: [1, 1.2, 1],
-                          opacity: [0.7, 1, 0.7],
-                        }
-                      : {}
-                  }
-                  transition={{ duration: 1.5, repeat: item.status === "active" ? Number.POSITIVE_INFINITY : 0 }}
-                ></motion.div>
-                <span className="text-sm text-white">{item.phase}</span>
-              </div>
-              <span className="text-xs text-gray-400 font-mono">{item.date}</span>
-            </motion.div>
-          ))}
-        </div>
-      </div>
-    </div>
-  )
-}
-
-function ArchitectureUIGraphic({ service }: { service: any }) {
-  return (
-    <div className="space-y-6">
-      {/* Blueprint View */}
-      <div className="bg-gray-800 rounded-lg p-6 border border-indigo-500/20">
-        <div className="flex items-center justify-between mb-4">
-          <h3 className="text-white font-semibold">Blueprint View</h3>
-          <Building2 className="w-5 h-5 text-indigo-400" />
-        </div>
-        <div className="bg-indigo-950/30 rounded p-4 h-40 relative overflow-hidden border border-indigo-500/20">
-          {/* Blueprint Grid */}
-          <div className="absolute inset-0 opacity-40">
-            <svg className="w-full h-full" viewBox="0 0 200 100">
-              <defs>
-                <pattern id="blueprint" width="12" height="12" patternUnits="userSpaceOnUse">
-                  <path d="M 12 0 L 0 0 0 12" fill="none" stroke="#6366f1" strokeWidth="0.4" />
-                </pattern>
-              </defs>
-              <rect width="100%" height="100%" fill="url(#blueprint)" />
-            </svg>
-          </div>
-
-          {/* Building Structure */}
-          <div className="absolute inset-0 flex items-center justify-center">
-            <motion.div
-              className="space-y-1"
-              animate={{ scale: [1, 1.02, 1] }}
-              transition={{ duration: 4, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" }}
-            >
-              <motion.div
-                className="w-24 h-2 bg-indigo-400 rounded shadow-lg"
-                animate={{ opacity: [0.8, 1, 0.8] }}
-                transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
-              ></motion.div>
-              <div className="w-20 h-12 bg-indigo-500/50 rounded border border-indigo-400 relative">
-                {/* Windows */}
-                <div className="absolute inset-2 grid grid-cols-3 gap-1">
-                  {[...Array(6)].map((_, i) => (
-                    <motion.div
-                      key={i}
-                      className="bg-indigo-300/30 rounded-sm"
-                      animate={{ opacity: [0.3, 0.7, 0.3] }}
-                      transition={{ duration: 3, repeat: Number.POSITIVE_INFINITY, delay: i * 0.2 }}
-                    ></motion.div>
-                  ))}
-                </div>
-              </div>
-              <div className="w-24 h-2 bg-indigo-400 rounded shadow-lg"></div>
-            </motion.div>
-          </div>
-
-          {/* Measurement Lines */}
-          <div className="absolute top-2 right-2 text-xs text-indigo-300 font-mono">
-            <motion.div
-              animate={{ opacity: [0.5, 1, 0.5] }}
-              transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
-            >
-              2,450 ft²
-            </motion.div>
-          </div>
-        </div>
-      </div>
-
-      {/* Project Stats */}
-      <div className="grid grid-cols-2 gap-4">
-        <motion.div className="bg-gray-800 rounded-lg p-4 border border-indigo-500/20" whileHover={{ scale: 1.05 }}>
-          <div className="text-xs text-gray-400 mb-1">Square Footage</div>
-          <div className="text-lg font-bold text-indigo-400">2,450 ft²</div>
-          <div className="text-xs text-indigo-300 mt-1">Optimized Layout</div>
-        </motion.div>
-        <motion.div className="bg-gray-800 rounded-lg p-4 border border-purple-500/20" whileHover={{ scale: 1.05 }}>
-          <div className="text-xs text-gray-400 mb-1">Completion</div>
-          <div className="text-lg font-bold text-purple-400">14 weeks</div>
-          <div className="text-xs text-purple-300 mt-1">Fast Track</div>
-        </motion.div>
       </div>
     </div>
   )

@@ -10,11 +10,12 @@ export function TypingHero() {
   const [isDeleting, setIsDeleting] = useState(false)
   const [showCursor, setShowCursor] = useState(true)
 
-  const phrases = [
-    { text: "vella  ", color: "text-emerald-400", cursorColor: "bg-emerald-400" },
-    { text: "something something", color: "text-blue-400", cursorColor: "bg-blue-400" },
-    { text: "free timepass ", color: "text-orange-400", cursorColor: "bg-orange-400" },
-  ]
+const phrases = [
+  { text: "crafting clarity through content", color: "text-emerald-400", cursorColor: "bg-emerald-400" },
+  { text: "training that sticks, not just clicks", color: "text-blue-400", cursorColor: "bg-blue-400" },
+  { text: "bridging product & people", color: "text-orange-400", cursorColor: "bg-orange-400" },
+  { text: "content with purpose", color: "text-purple-400", cursorColor: "bg-purple-400" },
+]
 
   const baseText = "Hi,I am Parth Khandal.I am  "
   const typingSpeed = 100
