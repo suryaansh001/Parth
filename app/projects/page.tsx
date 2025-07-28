@@ -31,20 +31,12 @@ export default function ProjectsPage() {
       client: "Smiths Detection",
       category: "web",
       status: "completed",
-      budget: "$100K+",
-      timeline: "10 months",
       completion: 100,
       rating: 5,
       description:
         "Developed 12+ technical training programs for defense-grade detection equipment like LCD, Hi-Trax, XDi & Trace. Simplified content reduced onboarding time by 28%.",
-      image: "/placeholder.svg?height=300&width=500",
-      logo: "/images/smiths-logo.png",
+      logo: "/placeholder.svg",
       tags: ["Instructional Design", "Defense", "Modular Learning", "SME Collaboration"],
-      metrics: {
-        revenue: "$NDA",
-        users: "Global Staff",
-        satisfaction: "8.2/10",
-      },
       featured: true,
     },
     {
@@ -53,20 +45,12 @@ export default function ProjectsPage() {
       client: "Saumya Vidyut",
       category: "web",
       status: "completed",
-      budget: "$70K",
-      timeline: "6 months",
       completion: 100,
       rating: 4,
       description:
         "Built an internal platform for tracking tenders, integrating past win ratios, competitor analysis, and product fit suggestions. Improved transformer efficiency by 18%.",
-      image: "/placeholder.svg?height=300&width=500",
-      logo: "/images/saumya-logo.png",
+      logo: "/placeholder.svg",
       tags: ["Internal Tool", "Efficiency", "Automation", "Documentation"],
-      metrics: {
-        revenue: "$NDA",
-        users: "30+ Internal",
-        satisfaction: "92%",
-      },
     },
     {
       id: "staragile",
@@ -74,19 +58,15 @@ export default function ProjectsPage() {
       client: "StarAgile",
       category: "branding",
       status: "completed",
-      budget: "$50K",
-      timeline: "8 months",
       completion: 100,
       rating: 5,
       description:
         "Authored 150+ SEO-rich articles on Agile, Scrum, AI & Product Management. Boosted organic reach by 60% and improved conversion rates by 15%.",
-      image: "/placeholder.svg?height=300&width=500",
-      logo: "/images/staragile-logo.png",
+      logo: "/placeholder.svg",
       tags: ["SEO", "Content Marketing", "Agile", "Google Analytics"],
       metrics: {
         revenue: "$1.1M",
         users: "40K+",
-        satisfaction: "95%",
       },
     },
     {
@@ -95,41 +75,17 @@ export default function ProjectsPage() {
       client: "StarAgile",
       category: "branding",
       status: "completed",
-      budget: "$30K",
-      timeline: "4 months",
       completion: 100,
       rating: 4,
       description:
         "Managed Clevertap + performance ad campaigns across Meta, Google & LinkedIn. Email open rates jumped from 0.12% to 3.56% via targeted segmentation.",
-      image: "/placeholder.svg?height=300&width=500",
-      logo: "/images/staragile-logo.png",
+      logo: "/placeholder.svg",
       tags: ["Meta Ads", "Google Ads", "Email Campaigns", "A/B Testing"],
       metrics: {
         revenue: "$500K+",
         users: "18K+",
-        satisfaction: "94%",
       },
-    },
-    {
-      id: "product-docs",
-      name: "Product Documentation Suite",
-      client: "Multiple Clients",
-      category: "web",
-      status: "completed",
-      budget: "$45K",
-      timeline: "3 months",
-      completion: 100,
-      rating: 4,
-      description:
-        "Created structured and user-centric product documentation and training manuals aligned with stakeholder workflows.",
-      image: "/placeholder.svg?height=300&width=500",
-      logo: "/placeholder.svg",
-      tags: ["Technical Writing", "CMS", "Agile", "Stakeholder Collaboration"],
-      metrics: {
-        revenue: "$NDA",
-        users: "Cross-Team",
-        satisfaction: "93%",
-      },
+    
     },
   ]
 
@@ -154,7 +110,7 @@ export default function ProjectsPage() {
   })
 
   const getCategoryIcon = (category: string) => {
-    const categoryInfo = categories[category]
+    const categoryInfo = categories[category as keyof typeof categories]
     return categoryInfo ? <categoryInfo.icon className="w-4 h-4" /> : <Globe className="w-4 h-4" />
   }
 
@@ -237,12 +193,7 @@ export default function ProjectsPage() {
                   onClick={() => router.push(`/projects/${project.id}`)}
                 >
                   <div className="bg-background/50 border border-border rounded-lg overflow-hidden hover:border-primary/50 transition-all duration-500 hover:shadow-[0_0_30px_rgba(52,211,153,0.15)]">
-                    <div className="relative h-48 overflow-hidden">
-                      <img
-                        src={project.image || "/placeholder.svg"}
-                        alt={project.name}
-                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                      />
+                    <div className="relative h-48 overflow-hidden bg-gradient-to-br from-primary/20 to-primary/5">
                       <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
                       <div className="absolute top-4 left-4">
                         <div className={`px-3 py-1 rounded-full text-xs font-medium border ${getStatusColor(project.status)}`}>
@@ -308,20 +259,6 @@ export default function ProjectsPage() {
                             +{project.tags.length - 3}
                           </span>
                         )}
-                      </div>
-                      <div className="grid grid-cols-3 gap-4 pt-4 border-t border-border">
-                        <div className="text-center">
-                          <p className="text-xs text-muted-foreground">Budget</p>
-                          <p className="text-sm font-medium">{project.budget}</p>
-                        </div>
-                        <div className="text-center">
-                          <p className="text-xs text-muted-foreground">Timeline</p>
-                          <p className="text-sm font-medium">{project.timeline}</p>
-                        </div>
-                        <div className="text-center">
-                          <p className="text-xs text-muted-foreground">Satisfaction</p>
-                          <p className="text-sm font-medium text-green-500">{project.metrics.satisfaction}</p>
-                        </div>
                       </div>
                     </div>
                   </div>
