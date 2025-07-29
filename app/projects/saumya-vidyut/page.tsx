@@ -20,7 +20,6 @@ import {
   ExternalLink,
   Image as ImageIcon,
 } from "lucide-react"
-import Link from "next/link"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
@@ -119,13 +118,15 @@ export default function SaumyaVidyutPage() {
             transition={{ duration: 0.6 }}
             className="mb-12"
           >
-            <Link
-              href="/"
+            <button
+              onClick={() => {
+                window.location.href = "/";
+              }}
               className="inline-flex items-center text-primary hover:text-primary/80 mb-6 transition-colors"
             >
               <ArrowLeft className="w-4 h-4 mr-2" />
-              Back to Projects
-            </Link>
+              Back to Products
+            </button>
 
             <div className="flex items-center gap-4 mb-6">
               <div className="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center">

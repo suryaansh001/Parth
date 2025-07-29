@@ -38,7 +38,6 @@ import {
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import Link from "next/link"
 import { NavBar } from "@/components/nav-bar"
 import { Footer } from "@/components/footer"
 import {
@@ -253,12 +252,15 @@ export default function StarAgileProject() {
       <div className="relative z-10">
         {/* Navigation */}
         <div className="px-6 py-4">
-          <Link href="/projects">
-            <Button variant="ghost" className="text-gray-400 hover:text-white">
-              <ArrowLeft className="w-4 h-4 mr-2" />
-              Back to Projects
-            </Button>
-          </Link>
+          <button
+            onClick={() => {
+              window.location.href = "/";
+            }}
+            className="inline-flex items-center text-gray-400 hover:text-white px-3 py-2 rounded-lg transition-colors"
+          >
+            <ArrowLeft className="w-4 h-4 mr-2" />
+            Back to Products
+          </button>
         </div>
 
         {/* Hero Section */}

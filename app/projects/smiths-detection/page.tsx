@@ -351,7 +351,15 @@ export default function SmithsDetectionPage() {
             transition={{ duration: 0.6 }}
             className="mb-12 pt-16"
           >
-  
+            <button
+              onClick={() => {
+                window.location.href = "/";
+              }}
+              className="inline-flex items-center text-emerald-400 hover:text-emerald-300 mb-6 transition-colors"
+            >
+              <ArrowLeft className="w-4 h-4 mr-2" />
+              Back to Products
+            </button>
 
             <div className="flex items-center gap-4 mb-6">
               <div className="w-16 h-16 bg-emerald-500/10 rounded-xl flex items-center justify-center">
