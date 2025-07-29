@@ -120,7 +120,7 @@ export function AboutMe() {
 
                     <div className="text-center space-y-2">
                       <h3 className="text-2xl font-bold text-foreground">Parth Khandal</h3>
-                      <p className="text-emerald-500 font-medium">Product-Oriented Professional</p>
+                     
                       <div className="flex items-center justify-center space-x-4 text-sm text-muted-foreground">
                         <div className="flex items-center space-x-1">
                           <MapPin className="w-4 h-4" />
@@ -131,6 +131,7 @@ export function AboutMe() {
                           <span>B.Tech Mechatronics</span>
                         </div>
                       </div>
+                      <p className="text-center text-sm text-muted-foreground mt-1">CSM, USA</p>
                     </div>
                   </motion.div>
 
@@ -148,10 +149,8 @@ export function AboutMe() {
                         whileInView={{ opacity: 1 }}
                         transition={{ duration: 0.8, delay: 0.5 }}
                       >
-                        Hello! I'm an analytical and creative Product-Oriented Professional with a passion for 
-                        cross-functional collaboration, content strategy, and digital product development. With 
-                        experience across technical and non-technical domains, I thrive at aligning teams to 
-                        deliver business-impacting outcomes.
+                        I'm a product-oriented professional who thrives at the intersection of user needs, strategy, process optimization, business goals, and functional design.
+                         I specialize in simplifying complex systems, building products, and creating structured experiences that improve efficiency and drive adoption.
                       </motion.p>
 
                       <motion.p
