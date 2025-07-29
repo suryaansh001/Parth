@@ -143,28 +143,39 @@ export default function Home() {
                 
                 <div className="h-px w-24 bg-gradient-to-r from-transparent via-primary to-transparent mx-auto my-6"></div>
                 
-                <p className="text-white/90 max-w-2xl mx-auto font-medium text-lg leading-relaxed">
-                  Analytical and creative <strong className="text-white">Product-Oriented Professional</strong> with a passion for cross-functional collaboration, 
-                  content strategy, and digital product development. Specializing in user research, product documentation, 
-                  content architecture, and digital optimization.
-                </p>
+                
 
                 {/* Quick stats or highlights */}
-                <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mt-8">
-                  <div className="text-center p-4 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20">
-                    <TrendingUp className="w-8 h-8 text-emerald-400 mx-auto mb-2" />
-                    <div className="text-2xl font-bold text-white">150+</div>
-                    <div className="text-sm text-white/70">Articles Written</div>
-                  </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-8 max-w-4xl mx-auto">
                   <div className="text-center p-4 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20">
                     <Users className="w-8 h-8 text-blue-400 mx-auto mb-2" />
                     <div className="text-2xl font-bold text-white">12+</div>
                     <div className="text-sm text-white/70">Training Programs</div>
                   </div>
-                  <div className="text-center p-4 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 col-span-2 md:col-span-1">
+                  <div className="text-center p-4 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20">
                     <Star className="w-8 h-8 text-yellow-400 mx-auto mb-2" />
                     <div className="text-2xl font-bold text-white">8.2/10</div>
                     <div className="text-sm text-white/70">Satisfaction Rating</div>
+                  </div>
+                  <div className="text-center p-4 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20">
+                    <Globe className="w-8 h-8 text-green-400 mx-auto mb-2" />
+                    <div className="text-2xl font-bold text-white">60%</div>
+                    <div className="text-sm text-white/70">Organic reach increase</div>
+                  </div>
+                  <div className="text-center p-4 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20">
+                    <Globe className="w-8 h-8 text-green-400 mx-auto mb-2" />
+                    <div className="text-2xl font-bold text-white">25%</div>
+                    <div className="text-sm text-white/70">Rollout Time reduced</div>
+                  </div>
+                  <div className="text-center p-4 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20">
+                    <Star className="w-8 h-8 text-yellow-400 mx-auto mb-2" />
+                    <div className="text-2xl font-bold text-white">22.5%</div>
+                    <div className="text-sm text-white/70">Increase in conversions</div>
+                  </div>
+                  <div className="text-center p-4 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20">
+                    <TrendingUp className="w-8 h-8 text-emerald-400 mx-auto mb-2" />
+                    <div className="text-2xl font-bold text-white">150+</div>
+                    <div className="text-sm text-white/70">Blogs Authored</div>
                   </div>
                 </div>
               </motion.div>
