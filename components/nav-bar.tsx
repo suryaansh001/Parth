@@ -22,7 +22,7 @@ export function NavBar() {
 
   const navItems = [
     { name: "Home", href: "/" },
-    { name: "Projects", href: "#projects", scroll: true },
+    { name: "Products", href: "#projects", scroll: true },
     { name: "Education", href: "/" },
     { name: "Resume" ,href: "/resume.pdf", target: "_blank", rel: "noopener noreferrer" },
   ]

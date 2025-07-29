@@ -351,10 +351,7 @@ export default function SmithsDetectionPage() {
             transition={{ duration: 0.6 }}
             className="mb-12 pt-16"
           >
-            <button className="inline-flex items-center text-emerald-400 hover:text-emerald-300 mb-6 transition-colors">
-              <ArrowLeft className="w-4 h-4 mr-2" />
-              Back to Projects
-            </button>
+  
 
             <div className="flex items-center gap-4 mb-6">
               <div className="w-16 h-16 bg-emerald-500/10 rounded-xl flex items-center justify-center">
@@ -362,7 +359,7 @@ export default function SmithsDetectionPage() {
               </div>
               <div>
                 <h1 className="text-4xl font-bold text-white mb-2">Smiths Detection</h1>
-                <p className="text-xl text-gray-400">Instructional Designer – Product Training Portfolio</p>
+                <p className="text-xl text-gray-400">Instructional Designer – Product Training </p>
               </div>
             </div>
 
