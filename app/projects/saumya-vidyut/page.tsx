@@ -1,6 +1,5 @@
 "use client"
 
-import { useState, useEffect } from "react"
 import { motion } from "framer-motion"
 import { NavBar } from "@/components/nav-bar"
 import { Footer } from "@/components/footer"
@@ -10,147 +9,101 @@ import {
   MapPin,
   Zap,
   Target,
-  TrendingUp,
-  Award,
   Package,
   Settings,
-  BarChart3,
-  Clock,
-  Star,
   CheckCircle,
   Building,
   Lightbulb,
+  AlertCircle,
+  Search,
+  FileText,
+  ExternalLink,
+  Image as ImageIcon,
 } from "lucide-react"
 import Link from "next/link"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import {
-  PieChart,
-  Pie,
-  Cell,
-  BarChart,
-  Bar,
-  LineChart,
-  Line,
-  XAxis,
-  YAxis,
-  CartesianGrid,
-  Tooltip,
-  Legend,
-  ResponsiveContainer,
-  RadialBarChart,
-  RadialBar,
-  ComposedChart,
-  Area,
-  AreaChart,
-} from 'recharts'
+import { Button } from "@/components/ui/button"
+import Image from "next/image"
 
 export default function SaumyaVidyutPage() {
-  const [chartData, setChartData] = useState({
-    efficiency: 0,
-    processOptimization: 0,
-    stakeholderAlignment: 0,
-    toolDevelopment: 0,
-  })
+  const openPDFReport = () => {
+    window.open('/images/project_images/saumya-electricals/saumyaElectricals.pdf', '_blank')
+  }
 
-  useEffect(() => {
-    // Animate chart values
-    const timer = setTimeout(() => {
-      setChartData({
-        efficiency: 18,
-        processOptimization: 100,
-        stakeholderAlignment: 95,
-        toolDevelopment: 1,
-      })
-    }, 500)
-    return () => clearTimeout(timer)
-  }, [])
-
-  // Data for different chart types
-  const efficiencyTrendData = [
-    { month: 'Jan', before: 67, after: 78, target: 85 },
-    { month: 'Feb', before: 68, after: 81, target: 85 },
-    { month: 'Mar', before: 70, after: 83, target: 85 },
-    { month: 'Apr', before: 72, after: 85, target: 85 },
-    { month: 'May', before: 71, after: 84, target: 85 },
-    { month: 'Jun', before: 73, after: 86, target: 85 },
-  ]
-
-  const processDistributionData = [
-    { name: 'Documentation', value: 25, color: '#10B981' },
-    { name: 'Training', value: 20, color: '#3B82F6' },
-    { name: 'Optimization', value: 30, color: '#8B5CF6' },
-    { name: 'Tool Development', value: 15, color: '#F59E0B' },
-    { name: 'Stakeholder Management', value: 10, color: '#EF4444' },
-  ]
-
-  const performanceMetrics = [
-    { metric: 'Efficiency', current: 86, previous: 68, improvement: 18 },
-    { metric: 'Process Speed', current: 92, previous: 75, improvement: 17 },
-    { metric: 'Quality Score', current: 95, previous: 82, improvement: 13 },
-    { metric: 'Stakeholder Satisfaction', current: 95, previous: 73, improvement: 22 },
-  ]
-
-  const toolUsageData = [
-    { feature: 'Tender Management', usage: 95, satisfaction: 9.2 },
-    { feature: 'Competitor Tracking', usage: 88, satisfaction: 8.8 },
-    { feature: 'Product Fit Analysis', usage: 92, satisfaction: 9.1 },
-    { feature: 'Billing Integration', usage: 87, satisfaction: 8.5 },
-    { feature: 'Report Generation', usage: 91, satisfaction: 8.9 },
-  ]
-
-  const COLORS = ['#10B981', '#3B82F6', '#8B5CF6', '#F59E0B', '#EF4444']
-
-  const achievements = [
+  const projects = [
     {
-      icon: <Zap className="w-6 h-6" />,
-      title: "Efficiency Improvement",
-      value: "18%",
-      description: "Transformer efficiency through process optimization",
-      color: "text-emerald-500",
-    },
-    {
-      icon: <Package className="w-6 h-6" />,
-      title: "Internal Tool Development",
-      value: "1",
-      description: "Comprehensive tender and billing management platform",
+      id: 1,
+      title: "TendeX – Government Tender Intelligence Tool",
+      role: "Assistant Product Manager | Product Ideation & Process Automation",
+      icon: <Search className="w-8 h-8" />,
       color: "text-blue-500",
+      bgColor: "bg-blue-500/10",
+      borderColor: "border-blue-500/20",
+      problem: "Create a centralized, intelligent system to automate the discovery, evaluation, and management of government tenders relevant to the company's product offerings, eliminating manual tracking, reducing delays, and improving success rates.",
+      impediments: [
+        "Tender data was scattered across multiple government websites with no unified access",
+        "Manual evaluation led to missed deadlines, mismatched product fit, and incomplete submissions",
+        "No system existed to track competitors, compliance standards, or historical bidding insights",
+        "Limited technical framework and no prior product to build upon internally"
+      ],
+      approach: [
+        "Mapped the complete tender lifecycle from discovery to documentation and post-submission analysis",
+        "Designed the architecture for TendeX, a smart internal tool capable of scraping live tender data from government portals",
+        "Integrated logic to match tenders with relevant company products based on technical fit, standards, and compliance requirements",
+        "Included modules for deadline alerts, required documentation, clearance workflows, and competitor eligibility analysis",
+        "Created a scalable foundation for cross-functional teams to collaborate and track tender activities in real-time"
+      ],
+      features: [
+        "Live Tender Scraping: Automatically extracts tender information from government websites",
+        "Product–Tender Matching: Matches tenders with company products based on technical specs and fit",
+        "Deadline & Alert System: Notifies teams of key dates, submission deadlines, and documentation requirements",
+        "Compliance & Benchmarking: Checks compliance requirements, certifications, and industry standards",
+        "Competitor Intelligence: Identifies eligible competitors and analyzes their product positioning",
+        "Document Checklist: Generates lists of required pre-approvals, clearances, and legal documentation",
+        "Success Ratio Insights: Tracks past tender performance to inform bidding strategy",
+        "Centralized Dashboard: Allows teams to track, assign, and manage tender actions collaboratively"
+      ],
+      outcome: "Successfully delivered a fully functional internal tool that automated tender tracking, improved internal coordination, reduced dependency on manual processes, and became a core system for sales and operations to evaluate and act on tenders with accuracy and speed."
     },
     {
-      icon: <Target className="w-6 h-6" />,
-      title: "Stakeholder Alignment",
-      value: "95%",
-      description: "Success rate in aligning product goals with stakeholders",
-      color: "text-yellow-500",
-    },
-    {
-      icon: <Settings className="w-6 h-6" />,
-      title: "Process Optimization",
-      value: "100%",
-      description: "Complete workflow redesign and documentation",
-      color: "text-purple-500",
-    },
-  ]
-
-  const keyResponsibilities = [
-    "Improved transformer efficiency by 18% through process and feedback optimization",
-    "Co-developed an internal tool for managing tenders and billing with features like competitor tracking and product fit suggestions",
-    "Created comprehensive training manuals and structured documentation",
-    "Led user-focused product documentation strategies aligned with stakeholder goals",
-    "Implemented data-driven approaches to identify bottlenecks and optimization opportunities",
-    "Collaborated with engineering teams to translate technical requirements into user-friendly solutions",
+      id: 2,
+      title: "High-Efficiency Single & Three-Phase Transformers",
+      role: "Assistant Product Manager | Product Improvement & Engineering Optimization",
+      icon: <Zap className="w-8 h-8" />,
+      color: "text-emerald-500",
+      bgColor: "bg-emerald-500/10",
+      borderColor: "border-emerald-500/20",
+      problem: "Improve the energy efficiency of existing single-phase and three-phase transformers to reduce power loss, meet new efficiency standards, and enhance market competitiveness.",
+      impediments: [
+        "Existing transformer designs were underperforming in terms of energy loss and heat dissipation",
+        "Product changes had to be made without compromising safety, reliability, or increasing manufacturing costs significantly",
+        "Required alignment with industry compliance and testing benchmarks for power devices",
+        "Cross-team coordination was essential across design, electrical, and production units"
+      ],
+      approach: [
+        "Conducted a technical audit of the existing transformer design and identified inefficiencies in materials and structural layout",
+        "Increased the cross-sectional area of the primary and secondary coils to reduce resistance and improve current handling",
+        "Replaced the transformer core with higher-grade material to reduce hysteresis losses",
+        "Enhanced insulation quality and upgraded the transformer oil to improve thermal performance and long-term stability",
+        "Collaborated with the engineering team to validate changes and integrate improvements into the production line"
+      ],
+      features: [],
+      outcome: "Successfully developed and deployed upgraded transformers that operated with significantly higher efficiency, aligning with industry standards and reducing power loss. The improved design enhanced product credibility and competitiveness while maintaining safety, cost-efficiency, and manufacturing viability."
+    }
   ]
 
   const technologies = [
     "Product Management",
-    "Process Optimization",
-    "Stakeholder Management",
-    "Data Analysis",
+    "Process Automation",
+    "Data Scraping",
+    "System Architecture",
+    "Engineering Optimization",
     "Technical Documentation",
-    "Workflow Design",
-    "User Research",
+    "Stakeholder Management",
     "Product Strategy",
     "Competitive Analysis",
+    "Compliance Management"
   ]
 
   return (
@@ -167,7 +120,7 @@ export default function SaumyaVidyutPage() {
             className="mb-12"
           >
             <Link
-              href="/projects"
+              href="/"
               className="inline-flex items-center text-primary hover:text-primary/80 mb-6 transition-colors"
             >
               <ArrowLeft className="w-4 h-4 mr-2" />
@@ -180,7 +133,7 @@ export default function SaumyaVidyutPage() {
               </div>
               <div>
                 <h1 className="text-4xl font-bold text-white mb-2">Saumya Vidyut</h1>
-                <p className="text-xl text-muted-foreground">Associate Product Manager</p>
+                <p className="text-xl text-muted-foreground">Assistant Product Manager</p>
               </div>
             </div>
 
@@ -200,60 +153,101 @@ export default function SaumyaVidyutPage() {
             </div>
           </motion.div>
 
-          {/* Problem Statement */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="mb-12"
-          >
-            <Card className="border-border bg-background/50">
-              <CardHeader>
-                <CardTitle className="text-2xl text-primary">Problem Solved</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-lg leading-relaxed text-muted-foreground">
-                  Saumya Vidyut faced challenges with transformer efficiency and operational workflows that were 
-                  impacting productivity and competitiveness. The company needed systematic process optimization 
-                  to improve transformer performance, streamline tender management, and enhance billing operations. 
-                  Additionally, there was a need for better product documentation strategies and internal tools 
-                  to manage complex business processes including competitor tracking and product fit analysis. 
-                  The solution required both technical optimization and strategic product management approaches.
-                </p>
-              </CardContent>
-            </Card>
-          </motion.div>
+          {/* Projects */}
+          {projects.map((project, projectIndex) => (
+            <motion.div
+              key={project.id}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 + projectIndex * 0.1 }}
+              className="mb-16"
+            >
+              <Card className={`border ${project.borderColor} ${project.bgColor}`}>
+                <CardHeader>
+                  <div className="flex items-center gap-4 mb-4">
+                    <div className={`${project.bgColor} p-3 rounded-xl ${project.color}`}>
+                      {project.icon}
+                    </div>
+                    <div>
+                      <CardTitle className="text-2xl text-white mb-2">{project.title}</CardTitle>
+                      <p className={`text-lg ${project.color}`}>{project.role}</p>
+                    </div>
+                  </div>
+                </CardHeader>
+                <CardContent className="space-y-8">
+                  {/* Problem Statement */}
+                  <div>
+                    <h3 className="text-xl font-semibold text-primary mb-4 flex items-center gap-2">
+                      <Target className="w-5 h-5" />
+                      Problem Statement
+                    </h3>
+                    <p className="text-muted-foreground leading-relaxed">{project.problem}</p>
+                  </div>
 
-          {/* Key Achievements Grid */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12"
-          >
-            {achievements.map((achievement, index) => (
-              <Card key={index} className="border-border bg-background/50 hover:bg-background/70 transition-all">
-                <CardContent className="p-6">
-                  <div className={`${achievement.color} mb-4`}>
-                    {achievement.icon}
+                  {/* Impediments */}
+                  <div>
+                    <h3 className="text-xl font-semibold text-red-400 mb-4 flex items-center gap-2">
+                      <AlertCircle className="w-5 h-5" />
+                      Impediments
+                    </h3>
+                    <div className="space-y-3">
+                      {project.impediments.map((impediment, index) => (
+                        <div key={index} className="flex items-start gap-3">
+                          <div className="w-2 h-2 bg-red-400 rounded-full mt-2 flex-shrink-0" />
+                          <span className="text-muted-foreground">{impediment}</span>
+                        </div>
+                      ))}
+                    </div>
                   </div>
-                  <div className={`text-3xl font-bold ${achievement.color} mb-2`}>
-                    <motion.span
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      transition={{ duration: 1, delay: 0.5 + index * 0.1 }}
-                    >
-                      {achievement.value}
-                    </motion.span>
+
+                  {/* Approach */}
+                  <div>
+                    <h3 className="text-xl font-semibold text-yellow-400 mb-4 flex items-center gap-2">
+                      <Lightbulb className="w-5 h-5" />
+                      Approach
+                    </h3>
+                    <div className="space-y-3">
+                      {project.approach.map((approach, index) => (
+                        <div key={index} className="flex items-start gap-3">
+                          <CheckCircle className="w-5 h-5 text-yellow-400 mt-0.5 flex-shrink-0" />
+                          <span className="text-muted-foreground">{approach}</span>
+                        </div>
+                      ))}
+                    </div>
                   </div>
-                  <h3 className="font-semibold text-white mb-2">{achievement.title}</h3>
-                  <p className="text-sm text-muted-foreground">{achievement.description}</p>
+
+                  {/* Features (only for TendeX) */}
+                  {project.features.length > 0 && (
+                    <div>
+                      <h3 className="text-xl font-semibold text-blue-400 mb-4 flex items-center gap-2">
+                        <Settings className="w-5 h-5" />
+                        Features
+                      </h3>
+                      <div className="space-y-3">
+                        {project.features.map((feature, index) => (
+                          <div key={index} className="flex items-start gap-3">
+                            <Package className="w-5 h-5 text-blue-400 mt-0.5 flex-shrink-0" />
+                            <span className="text-muted-foreground">{feature}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Outcome */}
+                  <div>
+                    <h3 className="text-xl font-semibold text-emerald-400 mb-4 flex items-center gap-2">
+                      <CheckCircle className="w-5 h-5" />
+                      Outcome
+                    </h3>
+                    <p className="text-muted-foreground leading-relaxed">{project.outcome}</p>
+                  </div>
                 </CardContent>
               </Card>
-            ))}
-          </motion.div>
+            </motion.div>
+          ))}
 
-          {/* Dynamic Chart Visualization */}
+          {/* Project Images */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -262,171 +256,49 @@ export default function SaumyaVidyutPage() {
           >
             <Card className="border-border bg-background/50">
               <CardHeader>
-                <CardTitle className="text-2xl text-primary">Performance Metrics & Analytics</CardTitle>
+                <CardTitle className="text-2xl text-primary flex items-center gap-2">
+                  <ImageIcon className="w-6 h-6" />
+                  Project Gallery
+                </CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                  {/* Transformer Efficiency Trend Line Chart */}
-                  <div className="space-y-4">
-                    <h4 className="text-lg font-semibold text-white">Transformer Efficiency Trend</h4>
-                    <div className="h-64 w-full">
-                      <ResponsiveContainer width="100%" height="100%">
-                        <LineChart data={efficiencyTrendData}>
-                          <CartesianGrid strokeDasharray="3 3" stroke="#374151" />
-                          <XAxis dataKey="month" stroke="#9CA3AF" />
-                          <YAxis stroke="#9CA3AF" />
-                          <Tooltip 
-                            contentStyle={{ 
-                              backgroundColor: '#1F2937', 
-                              border: '1px solid #374151',
-                              borderRadius: '8px',
-                              color: '#F9FAFB'
-                            }} 
-                          />
-                          <Legend />
-                          <Line 
-                            type="monotone" 
-                            dataKey="before" 
-                            stroke="#EF4444" 
-                            strokeWidth={3}
-                            name="Before Optimization"
-                            dot={{ fill: '#EF4444', strokeWidth: 2, r: 4 }}
-                          />
-                          <Line 
-                            type="monotone" 
-                            dataKey="after" 
-                            stroke="#10B981" 
-                            strokeWidth={3}
-                            name="After Optimization"
-                            dot={{ fill: '#10B981', strokeWidth: 2, r: 4 }}
-                          />
-                          <Line 
-                            type="monotone" 
-                            dataKey="target" 
-                            stroke="#F59E0B" 
-                            strokeWidth={2}
-                            strokeDasharray="5 5"
-                            name="Target"
-                            dot={{ fill: '#F59E0B', strokeWidth: 2, r: 3 }}
-                          />
-                        </LineChart>
-                      </ResponsiveContainer>
-                    </div>
-                  </div>
-
-                  {/* Process Distribution Pie Chart */}
-                  <div className="space-y-4">
-                    <h4 className="text-lg font-semibold text-white">Process Time Distribution</h4>
-                    <div className="h-64 w-full">
-                      <ResponsiveContainer width="100%" height="100%">
-                        <PieChart>
-                          <Pie
-                            data={processDistributionData}
-                            cx="50%"
-                            cy="50%"
-                            innerRadius={60}
-                            outerRadius={100}
-                            paddingAngle={5}
-                            dataKey="value"
-                          >
-                            {processDistributionData.map((entry, index) => (
-                              <Cell key={`cell-${index}`} fill={entry.color} />
-                            ))}
-                          </Pie>
-                          <Tooltip 
-                            contentStyle={{ 
-                              backgroundColor: '#1F2937', 
-                              border: '1px solid #374151',
-                              borderRadius: '8px',
-                              color: '#F9FAFB'
-                            }} 
-                            formatter={(value) => [`${value}%`, 'Time Allocation']}
-                          />
-                          <Legend />
-                        </PieChart>
-                      </ResponsiveContainer>
-                    </div>
-                  </div>
-
-                  {/* Performance Improvement Bar Chart */}
-                  <div className="space-y-4">
-                    <h4 className="text-lg font-semibold text-white">Performance Improvements</h4>
-                    <div className="h-64 w-full">
-                      <ResponsiveContainer width="100%" height="100%">
-                        <BarChart data={performanceMetrics} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
-                          <CartesianGrid strokeDasharray="3 3" stroke="#374151" />
-                          <XAxis dataKey="metric" stroke="#9CA3AF" />
-                          <YAxis stroke="#9CA3AF" />
-                          <Tooltip 
-                            contentStyle={{ 
-                              backgroundColor: '#1F2937', 
-                              border: '1px solid #374151',
-                              borderRadius: '8px',
-                              color: '#F9FAFB'
-                            }} 
-                          />
-                          <Legend />
-                          <Bar dataKey="previous" fill="#6B7280" name="Before" radius={[4, 4, 0, 0]} />
-                          <Bar dataKey="current" fill="#10B981" name="After" radius={[4, 4, 0, 0]} />
-                        </BarChart>
-                      </ResponsiveContainer>
-                    </div>
-                  </div>
-
-                  {/* Tool Usage Analytics - Radial Bar Chart */}
-                  <div className="space-y-4">
-                    <h4 className="text-lg font-semibold text-white">Internal Tool Usage Analytics</h4>
-                    <div className="h-64 w-full">
-                      <ResponsiveContainer width="100%" height="100%">
-                        <RadialBarChart cx="50%" cy="50%" innerRadius="20%" outerRadius="90%" data={toolUsageData}>
-                          <RadialBar
-                            dataKey="usage"
-                            fill="#8B5CF6"
-                          />
-                          <Tooltip 
-                            contentStyle={{ 
-                              backgroundColor: '#1F2937', 
-                              border: '1px solid #374151',
-                              borderRadius: '8px',
-                              color: '#F9FAFB'
-                            }} 
-                            formatter={(value, name) => [
-                              name === 'usage' ? `${value}%` : value,
-                              name === 'usage' ? 'Usage Rate' : 'Satisfaction Score'
-                            ]}
-                          />
-                          <Legend iconSize={10} />
-                        </RadialBarChart>
-                      </ResponsiveContainer>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Efficiency Progress Indicator */}
-                <div className="mt-8 p-6 bg-gradient-to-r from-emerald-500/10 to-green-600/10 rounded-xl border border-emerald-500/20">
-                  <div className="flex items-center justify-between mb-4">
-                    <h4 className="text-lg font-semibold text-white">Overall Efficiency Improvement</h4>
-                    <div className="text-3xl font-bold text-emerald-400">+18%</div>
-                  </div>
-                  <div className="w-full bg-gray-700 rounded-full h-4">
-                    <motion.div
-                      className="bg-gradient-to-r from-emerald-500 to-green-400 h-4 rounded-full"
-                      initial={{ width: 0 }}
-                      animate={{ width: "72%" }}
-                      transition={{ duration: 2, delay: 1 }}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                  <div className="space-y-2">
+                    <Image
+                      src="/images/project_images/saumya-electricals/saumay1.jpeg"
+                      alt="Saumya Electricals Project Image 1"
+                      width={400}
+                      height={300}
+                      className="rounded-lg w-full h-48 object-cover"
                     />
+                    <p className="text-sm text-muted-foreground text-center">Project Implementation</p>
                   </div>
-                  <div className="flex justify-between text-sm text-muted-foreground mt-2">
-                    <span>Baseline: 68%</span>
-                    <span>Current: 86%</span>
-                    <span>Target: 90%</span>
+                  <div className="space-y-2">
+                    <Image
+                      src="/images/project_images/saumya-electricals/saumya2.jpeg"
+                      alt="Saumya Electricals Project Image 2"
+                      width={400}
+                      height={300}
+                      className="rounded-lg w-full h-48 object-cover"
+                    />
+                    <p className="text-sm text-muted-foreground text-center">Technical Development</p>
+                  </div>
+                  <div className="space-y-2">
+                    <Image
+                      src="/images/project_images/saumya-electricals/saumya3.jpeg"
+                      alt="Saumya Electricals Project Image 3"
+                      width={400}
+                      height={300}
+                      className="rounded-lg w-full h-48 object-cover"
+                    />
+                    <p className="text-sm text-muted-foreground text-center">Final Results</p>
                   </div>
                 </div>
               </CardContent>
             </Card>
           </motion.div>
 
-          {/* Key Responsibilities */}
+          {/* Project Report */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -435,22 +307,24 @@ export default function SaumyaVidyutPage() {
           >
             <Card className="border-border bg-background/50">
               <CardHeader>
-                <CardTitle className="text-2xl text-primary">Key Responsibilities</CardTitle>
+                <CardTitle className="text-2xl text-primary flex items-center gap-2">
+                  <FileText className="w-6 h-6" />
+                  Project Documentation
+                </CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="space-y-4">
-                  {keyResponsibilities.map((responsibility, index) => (
-                    <motion.div
-                      key={index}
-                      initial={{ opacity: 0, x: -20 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ duration: 0.5, delay: 0.5 + index * 0.1 }}
-                      className="flex items-start gap-3"
-                    >
-                      <CheckCircle className="w-5 h-5 text-emerald-500 mt-0.5 flex-shrink-0" />
-                      <span className="text-muted-foreground">{responsibility}</span>
-                    </motion.div>
-                  ))}
+                <div className="flex items-center justify-between p-6 bg-gradient-to-r from-primary/5 to-primary/10 rounded-xl border border-primary/20">
+                  <div>
+                    <h4 className="text-lg font-semibold text-white mb-2">Detailed Project Report</h4>
+                    <p className="text-muted-foreground">Comprehensive analysis and documentation of project outcomes</p>
+                  </div>
+                  <Button
+                    onClick={openPDFReport}
+                    className="bg-primary hover:bg-primary/90 text-white"
+                  >
+                    <ExternalLink className="w-4 h-4 mr-2" />
+                    View Report
+                  </Button>
                 </div>
               </CardContent>
             </Card>
@@ -481,48 +355,6 @@ export default function SaumyaVidyutPage() {
                       </Badge>
                     </motion.div>
                   ))}
-                </div>
-              </CardContent>
-            </Card>
-          </motion.div>
-
-          {/* Impact Summary */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.6 }}
-            className="mb-12"
-          >
-            <Card className="border-primary/20 bg-gradient-to-br from-primary/5 to-primary/10">
-              <CardHeader>
-                <CardTitle className="text-2xl text-primary">Project Impact</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="space-y-4">
-                  <div className="flex items-center gap-3">
-                    <Zap className="w-6 h-6 text-emerald-500" />
-                    <span className="text-lg text-white">
-                      <strong>Performance Enhancement:</strong> 18% improvement in transformer efficiency through systematic optimization
-                    </span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <Package className="w-6 h-6 text-blue-500" />
-                    <span className="text-lg text-white">
-                      <strong>Tool Development:</strong> Built internal platform for tender management with competitive intelligence
-                    </span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <Target className="w-6 h-6 text-yellow-500" />
-                    <span className="text-lg text-white">
-                      <strong>Strategic Alignment:</strong> 95% stakeholder satisfaction through goal-oriented documentation
-                    </span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <Lightbulb className="w-6 h-6 text-purple-500" />
-                    <span className="text-lg text-white">
-                      <strong>Process Innovation:</strong> Complete workflow redesign with data-driven insights
-                    </span>
-                  </div>
                 </div>
               </CardContent>
             </Card>

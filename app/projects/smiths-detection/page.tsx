@@ -371,10 +371,7 @@ export default function SmithsDetectionPage() {
                 <Calendar className="w-4 h-4" />
                 <span>Sep 2024 – Jun 2025</span>
               </div>
-              <div className="flex items-center gap-2">
-                <Building className="w-4 h-4" />
-                <span>Security Systems & Defense Technology</span>
-              </div>
+              
               <div className="flex items-center gap-2">
                 <Globe className="w-4 h-4" />
                 <span>Global Deployment</span>

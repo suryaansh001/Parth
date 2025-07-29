@@ -22,13 +22,29 @@ export function NavBar() {
 
   const navItems = [
     { name: "Home", href: "/" },
-    { name: "Projects", href: "/projects" },
+    { name: "Projects", href: "#projects", scroll: true },
     { name: "Education", href: "/" },
     { name: "Resume" ,href: "/resume.pdf", target: "_blank", rel: "noopener noreferrer" },
   ]
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" })
+  }
+
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId)
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" })
+    }
+  }
+
+  const handleNavClick = (item: typeof navItems[0]) => {
+    if (item.scroll && item.href.startsWith('#')) {
+      const sectionId = item.href.substring(1)
+      scrollToSection(sectionId)
+    } else if (item.href === '/') {
+      scrollToTop()
+    }
   }
 
   return (
@@ -54,29 +70,44 @@ export function NavBar() {
           {/* Desktop Navigation - centered */}
           <div className="hidden lg:flex items-center space-x-8">
             {navItems.map((item) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                onClick={scrollToTop}
-                className={`flex items-center space-x-1 text-sm font-medium transition-colors duration-300 ${
-                  pathname === item.href
-                    ? "text-emerald-400 shadow-[0_0_10px_#34d39980] font-semibold"
-                    : "text-gray-300 hover:text-white"
-                }`}
-                {...(item.target ? { target: item.target, rel: item.rel } : {})}
-              >
-                <span>{item.name}</span>
-              </Link>
+              <div key={item.name}>
+                {item.scroll ? (
+                  <button
+                    onClick={() => handleNavClick(item)}
+                    className={`flex items-center space-x-1 text-sm font-medium transition-colors duration-300 ${
+                      pathname === item.href
+                        ? "text-emerald-400 shadow-[0_0_10px_#34d39980] font-semibold"
+                        : "text-gray-300 hover:text-white"
+                    }`}
+                  >
+                    <span>{item.name}</span>
+                  </button>
+                ) : (
+                  <Link
+                    href={item.href}
+                    onClick={() => handleNavClick(item)}
+                    className={`flex items-center space-x-1 text-sm font-medium transition-colors duration-300 ${
+                      pathname === item.href
+                        ? "text-emerald-400 shadow-[0_0_10px_#34d39980] font-semibold"
+                        : "text-gray-300 hover:text-white"
+                    }`}
+                    {...(item.target ? { target: item.target, rel: item.rel } : {})}
+                  >
+                    <span>{item.name}</span>
+                  </Link>
+                )}
+              </div>
             ))}
           </div>
 
           {/* Contact button - positioned absolutely to the right */}
           <div className="hidden lg:flex absolute right-0">
-            <Link href="#contact" onClick={scrollToTop}>
-              <Button className="bg-gradient-to-r from-emerald-500 to-green-500 hover:from-emerald-600 hover:to-green-600 text-white font-medium shadow-lg">
-                Contact Me
-              </Button>
-            </Link>
+            <Button 
+              onClick={() => scrollToSection('contact')}
+              className="bg-gradient-to-r from-emerald-500 to-green-500 hover:from-emerald-600 hover:to-green-600 text-white font-medium shadow-lg"
+            >
+              Contact Me
+            </Button>
           </div>
 
           {/* Mobile menu button */}
@@ -97,35 +128,50 @@ export function NavBar() {
             >
               <div className="px-4 py-6 space-y-4 text-center">
                 {navItems.map((item) => (
-                  <Link
-                    key={item.name}
-                    href={item.href}
-                    onClick={() => {
-                      setIsOpen(false)
-                      scrollToTop()
-                    }}
-                    className={`block text-base font-medium transition-colors duration-300 ${
-                      pathname === item.href
-                        ? "text-emerald-400 shadow-[0_0_10px_#34d39980] font-semibold"
-                        : "text-gray-300 hover:text-white"
-                    }`}
-                    {...(item.target ? { target: item.target, rel: item.rel } : {})}
-                  >
-                    <span>{item.name}</span>
-                  </Link>
+                  <div key={item.name}>
+                    {item.scroll ? (
+                      <button
+                        onClick={() => {
+                          setIsOpen(false)
+                          handleNavClick(item)
+                        }}
+                        className={`block w-full text-base font-medium transition-colors duration-300 ${
+                          pathname === item.href
+                            ? "text-emerald-400 shadow-[0_0_10px_#34d39980] font-semibold"
+                            : "text-gray-300 hover:text-white"
+                        }`}
+                      >
+                        <span>{item.name}</span>
+                      </button>
+                    ) : (
+                      <Link
+                        href={item.href}
+                        onClick={() => {
+                          setIsOpen(false)
+                          handleNavClick(item)
+                        }}
+                        className={`block text-base font-medium transition-colors duration-300 ${
+                          pathname === item.href
+                            ? "text-emerald-400 shadow-[0_0_10px_#34d39980] font-semibold"
+                            : "text-gray-300 hover:text-white"
+                        }`}
+                        {...(item.target ? { target: item.target, rel: item.rel } : {})}
+                      >
+                        <span>{item.name}</span>
+                      </Link>
+                    )}
+                  </div>
                 ))}
                 <div className="pt-4 border-t border-white/20">
-                  <Link
-                    href="#contact"
+                  <Button
                     onClick={() => {
                       setIsOpen(false)
-                      scrollToTop()
+                      scrollToSection('contact')
                     }}
+                    className="w-full bg-gradient-to-r from-emerald-500 to-green-500 hover:from-emerald-600 hover:to-green-600 text-white font-medium shadow-md"
                   >
-                    <Button className="w-full bg-gradient-to-r from-emerald-500 to-green-500 hover:from-emerald-600 hover:to-green-600 text-white font-medium shadow-md">
-                      Contact Me
-                    </Button>
-                  </Link>
+                    Contact Me
+                  </Button>
                 </div>
               </div>
             </motion.div>

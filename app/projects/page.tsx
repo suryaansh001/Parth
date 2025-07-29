@@ -27,9 +27,9 @@ export default function ProjectsPage() {
   const projects = [
     {
       id: "smiths-detection",
-      name: "Technical Training Suite",
+      name: "Smiths Detection",
       client: "Smiths Detection",
-      category: "web",
+      
       status: "completed",
       completion: 100,
       rating: 5,
@@ -38,19 +38,6 @@ export default function ProjectsPage() {
       logo: "/placeholder.svg",
       tags: ["Instructional Design", "Defense", "Modular Learning", "SME Collaboration"],
       featured: true,
-    },
-    {
-      id: "saumya-vidyut",
-      name: "Internal Tender Tool",
-      client: "Saumya Vidyut",
-      category: "web",
-      status: "completed",
-      completion: 100,
-      rating: 4,
-      description:
-        "Built an internal platform for tracking tenders, integrating past win ratios, competitor analysis, and product fit suggestions. Improved transformer efficiency by 18%.",
-      logo: "/placeholder.svg",
-      tags: ["Internal Tool", "Efficiency", "Automation", "Documentation"],
     },
     {
       id: "staragile",
