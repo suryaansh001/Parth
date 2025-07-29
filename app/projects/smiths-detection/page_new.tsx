@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react"
 import { motion } from "framer-motion"
-import { NavBar } from "@/components/nav-bar"
 import {
   ArrowLeft,
   Calendar,
@@ -54,7 +53,6 @@ import {
 
 export default function SmithsDetectionPage() {
   const [activeProject, setActiveProject] = useState(0)
-  const [activeSection, setActiveSection] = useState('overview')
   const [chartData, setChartData] = useState({
     trainingTime: 0,
     satisfaction: 0,
@@ -72,28 +70,6 @@ export default function SmithsDetectionPage() {
       })
     }, 500)
     return () => clearTimeout(timer)
-  }, [])
-
-  // Scroll spy functionality
-  useEffect(() => {
-    const handleScroll = () => {
-      const sections = ['overview', 'timeline', 'projects', 'detailed-view', 'analytics', 'skills', 'impact']
-      const scrollPosition = window.scrollY + 100
-
-      for (const section of sections) {
-        const element = document.getElementById(section)
-        if (element) {
-          const { offsetTop, offsetHeight } = element
-          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
-            setActiveSection(section)
-            break
-          }
-        }
-      }
-    }
-
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
   // XDi Project Data
@@ -130,18 +106,18 @@ export default function SmithsDetectionPage() {
   // Overall Portfolio Data
   const portfolioOverviewData = [
     { project: 'XDi Detection', completion: 100, satisfaction: 8.2, impact: 95 },
-    { project: 'LCD Chemical Detector', completion: 100, satisfaction: 8.6, impact: 90 },
-    { project: 'Hi-Trax Scanner', completion: 100, satisfaction: 8.4, impact: 85 },
+    { project: 'HI-SCAN Systems', completion: 100, satisfaction: 7.9, impact: 88 },
+    { project: 'IONSCAN Training', completion: 100, satisfaction: 8.0, impact: 82 },
   ]
 
   const timelineData = [
-    { month: 'Sep 2024', xdi: 15, lcd: 80, hitrax: 100 },
-    { month: 'Oct 2024', xdi: 35, lcd: 90, hitrax: 100 },
-    { month: 'Nov 2024', xdi: 55, lcd: 95, hitrax: 100 },
-    { month: 'Dec 2024', xdi: 72, lcd: 100, hitrax: 100 },
-    { month: 'Jan 2025', xdi: 88, lcd: 100, hitrax: 100 },
-    { month: 'Feb 2025', xdi: 95, lcd: 100, hitrax: 100 },
-    { month: 'Mar 2025', xdi: 100, lcd: 100, hitrax: 100 },
+    { month: 'Sep 2024', xdi: 15, hiscan: 80, ionscan: 100 },
+    { month: 'Oct 2024', xdi: 35, hiscan: 90, ionscan: 100 },
+    { month: 'Nov 2024', xdi: 55, hiscan: 95, ionscan: 100 },
+    { month: 'Dec 2024', xdi: 72, hiscan: 100, ionscan: 100 },
+    { month: 'Jan 2025', xdi: 88, hiscan: 100, ionscan: 100 },
+    { month: 'Feb 2025', xdi: 95, hiscan: 100, ionscan: 100 },
+    { month: 'Mar 2025', xdi: 100, hiscan: 100, ionscan: 100 },
   ]
 
   const projects = [
@@ -151,10 +127,10 @@ export default function SmithsDetectionPage() {
       client: 'Israeli Airport Authority (IAA)',
       status: 'Main Project',
       icon: <Radar className="w-6 h-6" />,
-      color: 'emerald' as const,
+      color: 'emerald',
       description: 'Next-gen diffraction imaging training for advanced airport security',
       stats: {
-        timeline: '6 weeks',
+        timeline: '6 months',
         stakeholders: '7 involved',
         satisfaction: '8.2/10',
         reusability: '92%'
@@ -175,86 +151,64 @@ export default function SmithsDetectionPage() {
       ]
     },
     {
-      id: 'lcd',
-      title: 'LCD – Liquid Chemical Detector',
-      client: 'Indian Navy',
+      id: 'hiscan',
+      title: 'HI-SCAN 6040aTiX Training Program',
+      client: 'Multiple Government Agencies',
       status: 'Completed',
-      icon: <Activity className="w-6 h-6" />,
-      color: 'blue' as const,
-      description: 'High-reliability, field-critical training for chemical threat detection',
+      icon: <Search className="w-6 h-6" />,
+      color: 'blue',
+      description: 'Standardized training for advanced X-ray screening systems',
       stats: {
-        modules: '6 core units',
-        duration: '90 min/session',
-        satisfaction: '8.6/10',
-        improvement: '35% faster'
+        timeline: '4 months',
+        agencies: '5 agencies',
+        satisfaction: '7.9/10',
+        reduction: '25% faster'
       },
       challenges: [
-        'No prior training exposure among field operatives to similar detection systems',
-        'Training needed to simulate mission-critical scenarios with minimal tolerance for operational errors',
-        'Limited and outdated engineering documentation at early development stages',
-        'Too much compliances and regulations imposed'
+        'Multiple agency requirements and compliance standards',
+        'Varying technical skill levels across users',
+        'Integration with existing security protocols',
+        'Standardization across different operational environments'
       ],
       achievements: [
-        'Delivered 6 core scenario-based units',
-        '35% faster onboarding compared to legacy formats',
-        '40% field error reduction post-training improvement',
-        'Created 40+ visual aids (response workflows, diagrams, starter guides)',
-        '15+ short-form microlearning training units',
-        '100% of learners completed personal skill statements for role-based performance mapping',
-        '95% assessment completion rate with operational proficiency'
-      ],
-      approach: [
-        'Use-Case Focused Design: Structured modules around real-world application—deployment, emergency response, diagnostics, and decontamination',
-        'Scenario-Based Learning: Integrated field-simulated missions and quick-response drills to reflect realistic usage',
-        'Visual-First Documentation: Developed intuitive visual guides, checklists, and flowcharts for rapid comprehension',
-        'Microlearning Strategy: Delivered modular content in compact formats to fit into highly dynamic field schedules',
-        'Performance-Focused Assessment: Introduced structured assessments and personal skill statements to benchmark individual proficiency and support continuous improvement of field technicians',
-        'Collaborative Validation: Partnered with SMEs, service engineers, and defense trainers for content accuracy and field relevance'
+        'Unified training across 5 government agencies',
+        'Standardized 15+ operational procedures',
+        'Reduced false positive rates by 18%',
+        '25% reduction in onboarding time',
+        'Zero compliance violations post-deployment'
       ]
     },
     {
-      id: 'hitrax',
-      title: 'Hi-Trax Scanner Training',
-      client: 'UK Civil Aviation Authority',
+      id: 'ionscan',
+      title: 'IONSCAN Trace Detection Training',
+      client: 'Transportation Security',
       status: 'Completed',
-      icon: <Search className="w-6 h-6" />,
-      color: 'purple' as const,
-      description: 'Process optimization & scalable enablement for high-speed baggage scanning',
+      icon: <Activity className="w-6 h-6" />,
+      color: 'purple',
+      description: 'Chemical trace detection training for security personnel',
       stats: {
-        modules: '10+ updated',
-        reduction: '7 to 5 days',
-        satisfaction: '8.4/10',
-        reusability: '80% global'
+        timeline: '3 months',
+        trainees: '200+ personnel',
+        satisfaction: '8.0/10',
+        accuracy: '15% improved'
       },
       challenges: [
-        'Outdated training structure heavily reliant on live virtual delivery',
-        'Technical modules contained error due to language translations',
-        'Inconsistent knowledge levels across regions due to lack of standardized modules',
-        'Limited engagement and retention in existing sessions',
-        'Training included limited practical and hands on training',
-        'Absence of structured learning paths or prerequisites'
+        'Complex chemical detection principles',
+        'Safety protocol integration',
+        'Real-time decision making training',
+        'High-stakes operational environment'
       ],
       achievements: [
-        'Updated/Created 10+ modules',
-        'Reduced training time from 7 days to 5 days',
-        '80% content reusability adaptable globally',
-        'Resolved 60+ documentation gaps and inconsistencies',
-        'Created 50+ visual assets (instructional diagrams and UI walkthroughs)',
-        '25% reduction in troubleshooting mistakes post-training',
-        'Reduced trainer time investment by 30%, improved retention and accessibility',
-        '100% Safety Module Completion Rate before technical sessions'
-      ],
-      approach: [
-        'Training Model Shift: Transitioned from 100% live virtual sessions to a hybrid model combining asynchronous pre-learning with live practical workshops',
-        'Structured Learning Flow: Established Safety Training as a mandatory prerequisite, ensuring foundational knowledge before technical modules',
-        'Modular Redesign: Rebuilt content into standalone modules tailored for different user roles (operator, technician, trainer)',
-        'Feedback Loops: Collected feedback across pilot regions to iterate quickly and localize where needed',
-        'Cross-Functional Collaboration: Worked with SMEs, QA leads, and trainers across 3 regions to consolidate material and streamline delivery'
+        'Trained 200+ security personnel',
+        'Improved detection accuracy by 15%',
+        'Zero safety incidents post-training',
+        '22% faster onboarding process',
+        'Standardized safety protocols across all transport hubs'
       ]
     }
   ]
 
-  const getColorClass = (color: 'emerald' | 'blue' | 'purple', type = 'text') => {
+  const getColorClass = (color, type = 'text') => {
     const colors = {
       emerald: type === 'text' ? 'text-emerald-500' : type === 'bg' ? 'bg-emerald-500' : 'border-emerald-500',
       blue: type === 'text' ? 'text-blue-500' : type === 'bg' ? 'bg-blue-500' : 'border-blue-500',
@@ -296,59 +250,14 @@ export default function SmithsDetectionPage() {
 
   return (
     <main className="min-h-screen bg-gray-900 text-gray-100">
-      {/* Main Navigation */}
-      <NavBar />
-      
-      {/* Fixed Navigation Bar */}
-      <motion.nav
-        initial={{ y: -100 }}
-        animate={{ y: 0 }}
-        className="fixed top-16 left-0 right-0 z-40 bg-gray-900/95 backdrop-blur-sm border-b border-gray-700"
-      >
-        <div className="container mx-auto px-4">
-          <div className="flex items-center justify-between h-16">
-            <div className="flex items-center gap-3">
-              <Shield className="w-6 h-6 text-emerald-400" />
-              <span className="font-semibold text-white">Smiths Detection Portfolio</span>
-            </div>
-            <div className="hidden md:flex items-center gap-1">
-              {[
-                { id: 'overview', label: 'Overview' },
-                { id: 'timeline', label: 'Timeline' },
-                { id: 'projects', label: 'Projects' },
-                { id: 'detailed-view', label: 'Details' },
-                { id: 'analytics', label: 'Analytics' },
-                { id: 'skills', label: 'Skills' },
-                { id: 'impact', label: 'Impact' }
-              ].map((section) => (
-                <button
-                  key={section.id}
-                  onClick={() => {
-                    document.getElementById(section.id)?.scrollIntoView({ behavior: 'smooth' })
-                  }}
-                  className={`px-3 py-2 rounded-lg text-sm transition-colors ${
-                    activeSection === section.id
-                      ? 'bg-emerald-500/20 text-emerald-400'
-                      : 'text-gray-400 hover:text-gray-300'
-                  }`}
-                >
-                  {section.label}
-                </button>
-              ))}
-            </div>
-          </div>
-        </div>
-      </motion.nav>
-
-      <div className="container mx-auto px-4 py-32">
+      <div className="container mx-auto px-4 py-24">
         <div className="max-w-7xl mx-auto">
           {/* Header */}
           <motion.div
-            id="overview"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="mb-12 pt-16"
+            className="mb-12"
           >
             <button className="inline-flex items-center text-emerald-400 hover:text-emerald-300 mb-6 transition-colors">
               <ArrowLeft className="w-4 h-4 mr-2" />
@@ -410,7 +319,6 @@ export default function SmithsDetectionPage() {
 
           {/* Portfolio Timeline */}
           <motion.div
-            id="timeline"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
@@ -433,8 +341,8 @@ export default function SmithsDetectionPage() {
                       }} 
                     />
                     <Legend />
-                    <Area type="monotone" dataKey="hitrax" stackId="1" stroke="#8B5CF6" fill="#8B5CF6" fillOpacity={0.6} name="Hi-Trax Scanner" />
-                    <Area type="monotone" dataKey="lcd" stackId="1" stroke="#3B82F6" fill="#3B82F6" fillOpacity={0.6} name="LCD Chemical Detector" />
+                    <Area type="monotone" dataKey="ionscan" stackId="1" stroke="#8B5CF6" fill="#8B5CF6" fillOpacity={0.6} name="IONSCAN Training" />
+                    <Area type="monotone" dataKey="hiscan" stackId="1" stroke="#3B82F6" fill="#3B82F6" fillOpacity={0.6} name="HI-SCAN Systems" />
                     <Area type="monotone" dataKey="xdi" stackId="1" stroke="#10B981" fill="#10B981" fillOpacity={0.6} name="XDi Detection" />
                   </AreaChart>
                 </ResponsiveContainer>
@@ -444,7 +352,6 @@ export default function SmithsDetectionPage() {
 
           {/* Project Selection */}
           <motion.div
-            id="projects"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
@@ -496,7 +403,6 @@ export default function SmithsDetectionPage() {
 
           {/* Detailed Project View */}
           <motion.div
-            id="detailed-view"
             key={activeProject}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -753,61 +659,13 @@ export default function SmithsDetectionPage() {
               )}
 
               {(activeProject === 1 || activeProject === 2) && (
-                <div className="space-y-8">
-                  {/* Problem Statement */}
-                  <div className="bg-gradient-to-r from-red-500/5 to-orange-500/5 rounded-xl p-6 border border-red-500/20">
-                    <h3 className="text-xl font-bold text-red-400 mb-4">Problem Statement</h3>
-                    <p className="text-gray-300 leading-relaxed">
-                      {activeProject === 1 ? 
-                        "Develop a comprehensive, high-impact training solution for the LCD (Liquid Chemical Detector), aimed at field technicians and defense personnel responsible for rapid chemical threat detection and response." :
-                        "Redesign and standardize training for the Hi-Trax scanner, a high-speed baggage scanning system, to ensure global consistency, reduce knowledge gaps, and align training with the latest system upgrades."
-                      }
-                    </p>
-                  </div>
-
-                  {/* Product-Oriented Approach */}
-                  {projects[activeProject].approach && (
-                    <div className="bg-gradient-to-r from-blue-500/5 to-purple-500/5 rounded-xl p-6 border border-blue-500/20">
-                      <h3 className="text-xl font-bold text-blue-400 mb-4">Product-Oriented Approach</h3>
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div className="space-y-4">
-                          {projects[activeProject].approach?.slice(0, Math.ceil(projects[activeProject].approach?.length / 2)).map((approach, idx) => {
-                            const [title, description] = approach.split(': ')
-                            return (
-                              <div key={idx} className="flex items-start gap-3">
-                                <div className="w-2 h-2 bg-blue-400 rounded-full mt-2 flex-shrink-0" />
-                                <div>
-                                  <h4 className="text-white font-semibold">{title}</h4>
-                                  <p className="text-gray-300 text-sm">{description}</p>
-                                </div>
-                              </div>
-                            )
-                          })}
-                        </div>
-                        <div className="space-y-4">
-                          {projects[activeProject].approach?.slice(Math.ceil(projects[activeProject].approach?.length / 2)).map((approach, idx) => {
-                            const [title, description] = approach.split(': ')
-                            return (
-                              <div key={idx} className="flex items-start gap-3">
-                                <div className="w-2 h-2 bg-blue-400 rounded-full mt-2 flex-shrink-0" />
-                                <div>
-                                  <h4 className="text-white font-semibold">{title}</h4>
-                                  <p className="text-gray-300 text-sm">{description}</p>
-                                </div>
-                              </div>
-                            )
-                          })}
-                        </div>
-                      </div>
-                    </div>
-                  )}
-
-                  {/* Challenges & Achievements */}
+                <div className="space-y-6">
+                  {/* Other Projects Overview */}
                   <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                     <div className="bg-yellow-500/5 rounded-xl p-6 border border-yellow-500/20">
                       <h3 className="text-xl font-bold text-yellow-400 mb-4 flex items-center gap-2">
                         <AlertTriangle className="w-5 h-5" />
-                        Project Impediments
+                        Project Challenges
                       </h3>
                       <ul className="space-y-3">
                         {projects[activeProject].challenges.map((challenge, idx) => (
@@ -835,17 +693,6 @@ export default function SmithsDetectionPage() {
                     </div>
                   </div>
 
-                  {/* Outcome Summary */}
-                  <div className={`bg-gradient-to-r ${getColorClass(projects[activeProject].color, 'text').replace('text-', 'from-').replace('500', '500/10')} to-gray-500/5 rounded-xl p-6 border ${getColorClass(projects[activeProject].color, 'border').replace('border-', 'border-').replace('500', '500/20')}`}>
-                    <h3 className={`text-xl font-bold ${getColorClass(projects[activeProject].color)} mb-4`}>Outcome</h3>
-                    <p className="text-gray-300 leading-relaxed">
-                      {activeProject === 1 ? 
-                        "Delivered a user-centric, scenario-driven training solution that significantly enhanced readiness, reduced errors, and introduced measurable quality benchmarks for field technicians." :
-                        "Improved learning efficiency, engagement, and training scalability across regions through a modular, hybrid training model. Ensured foundational safety compliance before skill-specific modules, enhancing learner outcomes."
-                      }
-                    </p>
-                  </div>
-
                   {/* Project Statistics */}
                   <div className={`bg-gradient-to-r ${getColorClass(projects[activeProject].color, 'text').replace('text-', 'from-').replace('500', '500/10')} to-gray-500/5 rounded-xl p-6 border ${getColorClass(projects[activeProject].color, 'border').replace('border-', 'border-').replace('500', '500/20')}`}>
                     <h3 className={`text-xl font-bold ${getColorClass(projects[activeProject].color)} mb-4`}>Project Statistics</h3>
@@ -865,7 +712,6 @@ export default function SmithsDetectionPage() {
 
           {/* Portfolio Overview Analytics */}
           <motion.div
-            id="analytics"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.5 }}
@@ -913,7 +759,6 @@ export default function SmithsDetectionPage() {
 
           {/* Technologies & Skills */}
           <motion.div
-            id="skills"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.6 }}
@@ -958,7 +803,6 @@ export default function SmithsDetectionPage() {
 
           {/* Final Impact Summary */}
           <motion.div
-            id="impact"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.7 }}
