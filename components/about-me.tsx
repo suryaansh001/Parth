@@ -41,12 +41,15 @@ export function AboutMe() {
   }
 
   const skills = [
-    { name: "Product Management", icon: Target },
-    { name: "User Research", icon: Users },
-    { name: "Content Strategy", icon: TrendingUp },
-    { name: "Training Design", icon: BookOpen },
-    { name: "Process Optimization", icon: Lightbulb },
-    { name: "Data Analytics", icon: BarChart }
+
+    { name: "Develop Products", icon: BarChart },
+    { name: "Define Requirements", icon: Target },
+    { name: "Conduct Research", icon: Target },
+    { name: "Collaborate Cross-Functionally", icon: Users },
+    { name: "Optimize Processes", icon: TrendingUp },
+    { name: "Documentation & Reporting", icon: BookOpen },
+    { name: "Prioritize Backlogs & Manage Sprints", icon: Lightbulb },
+    { name: "Align Visual Design with User Journeys", icon: BarChart }
   ]
 
   return (

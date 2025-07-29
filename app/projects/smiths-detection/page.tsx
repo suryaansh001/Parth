@@ -189,13 +189,10 @@ export default function SmithsDetectionPage() {
                 <Calendar className="w-4 h-4" />
                 <span>Sep 2024 – Jun 2025</span>
               </div>
-              <div className="flex items-center gap-2">
-                <MapPin className="w-4 h-4" />
-                <span>Global Defense Technology</span>
-              </div>
+             
               <div className="flex items-center gap-2">
                 <Building className="w-4 h-4" />
-                <span>Mission-Critical Equipment</span>
+                <span>Security Systems </span>
               </div>
             </div>
           </motion.div>
@@ -284,7 +281,7 @@ export default function SmithsDetectionPage() {
                             }} 
                           />
                           <Legend />
-                          <Bar dataKey="completion" fill="#10B981" name="Completion %" radius={[4, 4, 0, 0]} />
+                          <Bar dataKey="completion" fill="#10B981" name="Completion %" />
                           <Line 
                             type="monotone" 
                             dataKey="engagement" 
@@ -359,8 +356,8 @@ export default function SmithsDetectionPage() {
                             }} 
                           />
                           <ReferenceLine x={8} stroke="#F59E0B" strokeDasharray="3 3" />
-                          <Bar dataKey="score" fill="#8B5CF6" radius={[0, 4, 4, 0]} />
-                          <Bar dataKey="target" fill="#6B7280" radius={[0, 2, 2, 0]} />
+                          <Bar dataKey="score" fill="#8B5CF6" />
+                          <Bar dataKey="target" fill="#6B7280" />
                         </BarChart>
                       </ResponsiveContainer>
                     </div>
@@ -388,8 +385,8 @@ export default function SmithsDetectionPage() {
                             ]}
                           />
                           <Legend />
-                          <Bar dataKey="before" fill="#EF4444" name="Before (hours)" radius={[4, 4, 0, 0]} />
-                          <Bar dataKey="after" fill="#10B981" name="After (hours)" radius={[4, 4, 0, 0]} />
+                          <Bar dataKey="before" fill="#EF4444" name="Before (hours)" />
+                          <Bar dataKey="after" fill="#10B981" name="After (hours)" />
                         </BarChart>
                       </ResponsiveContainer>
                     </div>
