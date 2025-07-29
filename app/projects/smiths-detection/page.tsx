@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
+import Image from "next/image"
 import { motion } from "framer-motion"
 import { NavBar } from "@/components/nav-bar"
 import {
@@ -214,7 +215,7 @@ export default function SmithsDetectionPage() {
     },
     {
       id: 'hitrax',
-      title: 'Hi-Trax Scanner Training',
+      title: 'Hi-Trax',
       client: 'UK Civil Aviation Authority',
       status: 'Completed',
       icon: <Search className="w-6 h-6" />,
@@ -579,6 +580,29 @@ export default function SmithsDetectionPage() {
                     </div>
                   </div>
 
+                  {/* XDi Project Images */}
+                  <div className="bg-gradient-to-r from-emerald-500/5 to-gray-500/5 rounded-xl p-6 border border-emerald-500/20">
+                    <h3 className="text-xl font-bold text-emerald-400 mb-6">XDi System Overview</h3>
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                      {[1, 2, 3, 4, 5].map((num) => (
+                        <div key={num} className="relative group">
+                          <div className="aspect-video bg-gray-700/30 rounded-lg overflow-hidden border border-gray-600">
+                            <Image
+                              src={`/images/project_images/smiths/xdi/xd${num}.png`}
+                              alt={`XDi Detection System - View ${num}`}
+                              width={500}
+                              height={500}
+                              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                            />
+                          </div>
+                          <div className="absolute inset-0 bg-emerald-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-center justify-center">
+                            <span className="text-emerald-400 font-medium">View {num}</span>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
                   {/* Challenges & Achievements */}
                   <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                     <div className="bg-red-500/5 rounded-xl p-6 border border-red-500/20">
@@ -797,6 +821,53 @@ export default function SmithsDetectionPage() {
                               </div>
                             )
                           })}
+                        </div>
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Project Images */}
+                  {activeProject === 1 && (
+                    <div className="bg-gradient-to-r from-blue-500/5 to-gray-500/5 rounded-xl p-6 border border-blue-500/20">
+                      <h3 className="text-xl font-bold text-blue-400 mb-6">LCD Chemical Detector System</h3>
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        {[1, 2].map((num) => (
+                          <div key={num} className="relative group">
+                            <div className="aspect-video bg-gray-700/30 rounded-lg overflow-hidden border border-gray-600">
+                              <Image
+                                src={`/images/project_images/smiths/lcd/lcd${num}.png`}
+                                alt={`LCD Chemical Detector - View ${num}`}
+                                width={425}
+                                height={325}
+                                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                              />
+                            </div>
+                            <div className="absolute inset-0 bg-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-center justify-center">
+                              <span className="text-blue-400 font-medium">LCD System View {num}</span>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+
+                  {activeProject === 2 && (
+                    <div className="bg-gradient-to-r from-purple-500/5 to-gray-500/5 rounded-xl p-6 border border-purple-500/20">
+                      <h3 className="text-xl font-bold text-purple-400 mb-6">Hi-Trax Scanner System</h3>
+                      <div className="flex justify-center">
+                        <div className="relative group max-w-md">
+                          <div className="aspect-video bg-gray-700/30 rounded-lg overflow-hidden border border-gray-600">
+                            <Image
+                              src="/images/project_images/smiths/hitrax/image.png"
+                              alt="Hi-Trax Scanner System"
+                              width={425}
+                              height={325}
+                              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                            />
+                          </div>
+                          <div className="absolute inset-0 bg-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-center justify-center">
+                            <span className="text-purple-400 font-medium">Hi-Trax Scanner</span>
+                          </div>
                         </div>
                       </div>
                     </div>
