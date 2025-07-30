@@ -68,7 +68,7 @@ const projects = [
     title: "Saumya Vidyut",
     subtitle: "Product Management & Process Optimization",
     description:
-      "Led development of internal tools for transformer efficiency and tender/billing automation. Streamlined product fit analysis and structured product documentation based on feedback loops.",
+      "Redesigned and rebuilt industrial transformers for higher energy efficiency, and co-developed a smart internal tool to monitor government tenders, track product fit, and manage documentation.",
     icon: <Package className="w-8 h-8" />,
     color: "cyan",
     gradient: "from-cyan-500 to-blue-600",
@@ -81,7 +81,7 @@ const projects = [
     ],
     stats: [
       { label: "Efficiency Gain", value: "18%" },
-      { label: "Tool Built", value: "Tender Tracker" },
+      { label: "Tool Built", value: "TendeX" },
       { label: "Process Impact", value: "High" },
     ],
     technologies: ["Agile", "Product Fit Analysis", "Documentation"],
