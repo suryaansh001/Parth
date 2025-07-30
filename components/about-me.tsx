@@ -4,6 +4,7 @@ import { motion } from "framer-motion"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { User, MapPin, Calendar, Target, Users, TrendingUp, BookOpen, Lightbulb, BarChart } from "lucide-react"
+import Image from "next/image"
 
 export function AboutMe() {
   const containerVariants = {
@@ -109,8 +110,14 @@ export function AboutMe() {
                         whileHover={{ scale: 1.05, rotate: 5 }}
                         transition={{ duration: 0.3 }}
                       >
-                        <div className="w-full h-full rounded-full bg-background flex items-center justify-center">
-                          <User className="w-16 h-16 text-emerald-500" />
+                        <div className="w-full h-full rounded-full bg-background flex items-center justify-center overflow-hidden">
+                          <Image
+                            src="/images/cropped_circle_image.png"
+                            alt="Parth Khandal"
+                            width={120}
+                            height={120}
+                            className="w-full h-full object-cover rounded-full"
+                          />
                         </div>
                       </motion.div>
                       <motion.div
@@ -125,16 +132,13 @@ export function AboutMe() {
                       <h3 className="text-2xl font-bold text-foreground">Parth Khandal</h3>
                      
                       <div className="flex items-center justify-center space-x-4 text-sm text-muted-foreground">
-                        <div className="flex items-center space-x-1">
-                          <MapPin className="w-4 h-4" />
-                          <span>India</span>
-                        </div>
+                        
                         <div className="flex items-center space-x-1">
                           <Calendar className="w-4 h-4" />
                           <span>B.Tech Mechatronics</span>
                         </div>
                       </div>
-                      <p className="text-center text-sm text-muted-foreground mt-1">CSM, USA</p>
+                      <p className="text-center text-sm text-muted-foreground mt-1">Scrum Master </p>
                     </div>
                   </motion.div>
 
