@@ -94,7 +94,7 @@ const projects = [
   {
     id: "staragile-ads",
     title: "StarAgile",
-    subtitle: "Performance Marketing & Campaign Optimization",
+    subtitle: "Marketing and Content Strategist",
     description:
       "Managed Clevertap + performance ad campaigns across Meta, Google & LinkedIn. Email open rates jumped from 0.12% to 3.56% via targeted segmentation and A/B testing strategies.",
     icon: <Lightbulb className="w-8 h-8" />,
