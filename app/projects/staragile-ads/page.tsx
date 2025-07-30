@@ -439,7 +439,25 @@ export default function StarAgileProject() {
                     <CheckCircle className="w-5 h-5" />
                     Outcome
                   </h3>
-                  <p className="text-gray-300 leading-relaxed">{projects[activeProject].outcome}</p>
+                  <p className="text-gray-300 leading-relaxed">
+                    {(() => {
+                      // Function to highlight statistics in outcome text
+                      const highlightStats = (text: string) => {
+                        const statRegex = /(\d+(?:\.\d+)?%|\d+(?:\.\d+)?\s*(?:days?|hours?|weeks?|months?|x|times?)|<\d+%|\d+\+|±\d+|\d+:\d+|from\s+\d+(?:\.\d+)?%?\s+to\s+\d+(?:\.\d+)?%?)/gi;
+                        const parts = text.split(statRegex);
+                        
+                        return parts.map((part, index) => 
+                          statRegex.test(part) ? (
+                            <strong key={index} className="font-bold text-emerald-300">{part}</strong>
+                          ) : (
+                            part
+                          )
+                        );
+                      };
+                      
+                      return highlightStats(projects[activeProject].outcome);
+                    })()}
+                  </p>
                 </div>
               </CardContent>
             </Card>
@@ -618,12 +636,30 @@ export default function StarAgileProject() {
               <CardContent className="p-8">
                 <h2 className="text-3xl font-bold text-white mb-4">Portfolio Impact</h2>
                 <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-                  Successfully built and managed a comprehensive content and marketing ecosystem that delivered 
-                  exceptional results: 150+ SEO-optimized content pieces driving 60% organic growth, 
-                  coordinated 20+ external contributors for seamless delivery, and achieved remarkable 
-                  campaign performance with email open rates improving by 2,867% and WhatsApp CTR reaching 17%. 
-                  This integrated approach established StarAgile as a thought leader in the edtech space 
-                  while significantly improving lead generation and conversion metrics.
+                  {(() => {
+                    const text = `Successfully built and managed a comprehensive content and marketing ecosystem that delivered 
+                    exceptional results: 150+ SEO-optimized content pieces driving 60% organic growth, 
+                    coordinated 20+ external contributors for seamless delivery, and achieved remarkable 
+                    campaign performance with email open rates improving by 2,867% and WhatsApp CTR reaching 17%. 
+                    This integrated approach established StarAgile as a thought leader in the edtech space 
+                    while significantly improving lead generation and conversion metrics.`;
+                    
+                    // Function to highlight statistics
+                    const highlightStats = (text: string) => {
+                      const statRegex = /(\d+(?:\.\d+)?%|\d+(?:\.\d+)?\s*(?:days?|hours?|weeks?|months?|x|times?)|<\d+%|\d+\+|±\d+|\d+:\d+|by\s+\d+(?:,\d+)*%?|reaching\s+\d+%?)/gi;
+                      const parts = text.split(statRegex);
+                      
+                      return parts.map((part, index) => 
+                        statRegex.test(part) ? (
+                          <strong key={index} className="font-bold text-emerald-300">{part}</strong>
+                        ) : (
+                          part
+                        )
+                      );
+                    };
+                    
+                    return highlightStats(text);
+                  })()}
                 </p>
               </CardContent>
             </Card>

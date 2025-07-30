@@ -241,7 +241,25 @@ export default function SaumyaVidyutPage() {
                       <CheckCircle className="w-5 h-5" />
                       Outcome
                     </h3>
-                    <p className="text-muted-foreground leading-relaxed">{project.outcome}</p>
+                    <p className="text-muted-foreground leading-relaxed">
+                      {(() => {
+                        // Function to highlight statistics in outcome text
+                        const highlightStats = (text: string) => {
+                          const statRegex = /(\d+(?:\.\d+)?%|\d+(?:\.\d+)?\s*(?:days?|hours?|weeks?|months?|x|times?)|<\d+%|\d+\+|±\d+|\d+:\d+)/gi;
+                          const parts = text.split(statRegex);
+                          
+                          return parts.map((part, index) => 
+                            statRegex.test(part) ? (
+                              <strong key={index} className="font-bold text-emerald-300">{part}</strong>
+                            ) : (
+                              part
+                            )
+                          );
+                        };
+                        
+                        return highlightStats(project.outcome);
+                      })()}
+                    </p>
                   </div>
                 </CardContent>
               </Card>

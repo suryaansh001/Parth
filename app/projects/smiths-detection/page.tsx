@@ -648,6 +648,20 @@ export default function SmithsDetectionPage() {
                           const beforeColon = colonIndex !== -1 ? achievement.substring(0, colonIndex) : '';
                           const afterColon = colonIndex !== -1 ? achievement.substring(colonIndex) : achievement;
                           
+                          // Function to highlight statistics (numbers with %, days, etc.)
+                          const highlightStats = (text: string) => {
+                            const statRegex = /(\d+(?:\.\d+)?%|\d+(?:\.\d+)?\s*(?:days?|hours?|weeks?|months?|x|times?)|<\d+%|\d+\+|±\d+|\d+:\d+)/gi;
+                            const parts = text.split(statRegex);
+                            
+                            return parts.map((part, index) => 
+                              statRegex.test(part) ? (
+                                <strong key={index} className="font-bold text-emerald-300">{part}</strong>
+                              ) : (
+                                part
+                              )
+                            );
+                          };
+                          
                           return (
                             <li key={idx} className="flex items-start gap-3">
                               <CheckCircle className="w-4 h-4 text-emerald-400 mt-0.5 flex-shrink-0" />
@@ -655,10 +669,10 @@ export default function SmithsDetectionPage() {
                                 {colonIndex !== -1 ? (
                                   <>
                                     <strong className="font-semibold">{beforeColon}</strong>
-                                    {afterColon}
+                                    {highlightStats(afterColon)}
                                   </>
                                 ) : (
-                                  achievement
+                                  highlightStats(achievement)
                                 )}
                               </span>
                             </li>
@@ -928,12 +942,41 @@ export default function SmithsDetectionPage() {
                         Key Achievements
                       </h3>
                       <ul className="space-y-3">
-                        {projects[activeProject].achievements.map((achievement, idx) => (
-                          <li key={idx} className="flex items-start gap-3">
-                            <CheckCircle className={`w-4 h-4 ${getColorClass(projects[activeProject].color)} mt-0.5 flex-shrink-0`} />
-                            <span className="text-gray-300 text-sm">{achievement}</span>
-                          </li>
-                        ))}
+                        {projects[activeProject].achievements.map((achievement, idx) => {
+                          const colonIndex = achievement.indexOf(':');
+                          const beforeColon = colonIndex !== -1 ? achievement.substring(0, colonIndex) : '';
+                          const afterColon = colonIndex !== -1 ? achievement.substring(colonIndex) : achievement;
+                          
+                          // Function to highlight statistics (numbers with %, days, etc.)
+                          const highlightStats = (text: string) => {
+                            const statRegex = /(\d+(?:\.\d+)?%|\d+(?:\.\d+)?\s*(?:days?|hours?|weeks?|months?|x|times?)|<\d+%|\d+\+|±\d+|\d+:\d+)/gi;
+                            const parts = text.split(statRegex);
+                            
+                            return parts.map((part, index) => 
+                              statRegex.test(part) ? (
+                                <strong key={index} className={`font-bold ${getColorClass(projects[activeProject].color)}`}>{part}</strong>
+                              ) : (
+                                part
+                              )
+                            );
+                          };
+                          
+                          return (
+                            <li key={idx} className="flex items-start gap-3">
+                              <CheckCircle className={`w-4 h-4 ${getColorClass(projects[activeProject].color)} mt-0.5 flex-shrink-0`} />
+                              <span className="text-gray-300 text-sm">
+                                {colonIndex !== -1 ? (
+                                  <>
+                                    <strong className="font-semibold">{beforeColon}</strong>
+                                    {highlightStats(afterColon)}
+                                  </>
+                                ) : (
+                                  highlightStats(achievement)
+                                )}
+                              </span>
+                            </li>
+                          );
+                        })}
                       </ul>
                     </div>
                   </div>
