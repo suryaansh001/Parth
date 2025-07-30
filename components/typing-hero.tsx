@@ -14,7 +14,7 @@ const phrases = [
   { text: "the gap between ideas and execution", color: "text-emerald-400", cursorColor: "bg-emerald-400" },
  ]
 
-  const baseText = "Hi,I am Parth .I bridge  "
+  const baseText = "Hi, I am Parth. I bridge  "
   const typingSpeed = 100
   const deletingSpeed = 50
   const pauseTime = 2000
