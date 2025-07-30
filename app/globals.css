@@ -81,3 +81,16 @@ html,
 body {
   overflow-x: hidden;
 }
+
+/* Hide navbar when modal is open */
+body.modal-open nav {
+  display: none !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  transform: translateY(-100%) !important;
+  visibility: hidden !important;
+}
+
+body.modal-open nav * {
+  display: none !important;
+}

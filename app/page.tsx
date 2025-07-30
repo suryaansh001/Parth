@@ -1,14 +1,19 @@
 "use client"
 
+
 import Link from "next/link"
-import { CodeRain } from "@/components/code-rain"
 import { NavBar } from "@/components/nav-bar"
 import { Footer } from "@/components/footer"
 import { SpinningEarth } from "@/components/spinning-earth"
 import { TypingHero } from "@/components/typing-hero"
 import { AboutMe } from "@/components/about-me"
 import { motion } from "framer-motion"
-import { Calendar, Mail, Users, Phone, MessageCircle, MapPin, GraduationCap, Briefcase, Award, Code, Building, ExternalLink, CheckCircle, Star, TrendingUp, Globe } from "lucide-react"
+import { Calendar, Mail, Users, Phone, MessageCircle, MapPin, GraduationCap, Briefcase, Award, Code, Building, ExternalLink, CheckCircle, Star, TrendingUp, Globe ,ArrowUpRight,TrendingUp,
+  TrendingDown,
+  BarChart2,
+  FileText,
+  
+} from "lucide-react"
 import { ServicesViewportSection } from "@/components/services-viewport-section"
 
 export default function Home() {
@@ -139,82 +144,62 @@ export default function Home() {
                 <TypingHero />
                 
                 <div className="h-px w-24 bg-gradient-to-r from-transparent via-primary to-transparent mx-auto my-6"></div>
-                
-                
 
-                {/* Quick stats or highlights */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-8 max-w-4xl mx-auto">
-                  <div className="text-center p-4 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20">
-                    <Globe className="w-8 h-8 text-green-400 mx-auto mb-2" />
-                    <div className="text-2xl font-bold text-white">60%</div>
-                    <div className="text-sm text-white/70">Organic reach increase</div>
-                  </div>
-                  <div className="text-center p-4 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20">
-                    <div className="flex justify-center items-center mb-2">
-                      {[1, 2, 3, 4, 5].map((star) => (
-                        <div key={star} className="relative">
-                          {star <= 4 ? (
-                            // Full star
-                            <Star className="w-4 h-4 text-yellow-400 fill-yellow-400" />
-                          ) : star === 5 ? (
-                            // Half star
-                            <div className="relative">
-                              <Star className="w-4 h-4 text-yellow-400" />
-                              <div className="absolute inset-0 overflow-hidden w-1/2">
-                                <Star className="w-4 h-4 text-yellow-400 fill-yellow-400" />
-                              </div>
-                            </div>
-                          ) : (
-                            // Empty star
-                            <Star className="w-4 h-4 text-yellow-400" />
-                          )}
-                        </div>
-                      ))}
-                    </div>
-                    <div className="text-2xl font-bold text-white">22.5%</div>
-                    <div className="text-sm text-white/70">Increase in conversions</div>
-                  </div>
-                  <div className="text-center p-4 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20">
-                    <Globe className="w-8 h-8 text-green-400 mx-auto mb-2" />
-                    <div className="text-2xl font-bold text-white">25%</div>
-                    <div className="text-sm text-white/70">Rollout Time reduced</div>
-                  </div>
-                  <div className="text-center p-4 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20">
-                    <div className="flex justify-center items-center mb-2">
-                      {[1, 2, 3, 4, 5].map((star) => (
-                        <div key={star} className="relative">
-                          {star <= 4 ? (
-                            // Full star
-                            <Star className="w-4 h-4 text-yellow-400 fill-yellow-400" />
-                          ) : star === 5 ? (
-                            // Half star
-                            <div className="relative">
-                              <Star className="w-4 h-4 text-yellow-400" />
-                              <div className="absolute inset-0 overflow-hidden w-1/2">
-                                <Star className="w-4 h-4 text-yellow-400 fill-yellow-400" />
-                              </div>
-                            </div>
-                          ) : (
-                            // Empty star
-                            <Star className="w-4 h-4 text-yellow-400" />
-                          )}
-                        </div>
-                      ))}
-                    </div>
-                    <div className="text-2xl font-bold text-white">8.2</div>
-                    <div className="text-sm text-white/70">Satisfaction Rating</div>
-                  </div>
-                  <div className="text-center p-4 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20">
-                    <Users className="w-8 h-8 text-blue-400 mx-auto mb-2" />
-                    <div className="text-2xl font-bold text-white">45+</div>
-                    <div className="text-sm text-white/70">Assets Built</div>
-                  </div>
-                  <div className="text-center p-4 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20">
-                    <TrendingUp className="w-8 h-8 text-emerald-400 mx-auto mb-2" />
-                    <div className="text-2xl font-bold text-white">150+</div>
-                    <div className="text-sm text-white/70">Blogs Authored</div>
-                  </div>
-                </div>
+{/* Quick stats or highlights */}
+<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-8 max-w-4xl mx-auto">
+  <div className="text-center p-4 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20">
+    <ArrowUpRight className="w-8 h-8 text-green-400 mx-auto mb-2" />
+    <div className="text-2xl font-bold text-white">60%</div>
+    <div className="text-sm text-white/70">Organic reach increase</div>
+  </div>
+
+  <div className="text-center p-4 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20">
+    <BarChart2 className="w-8 h-8 text-yellow-400 mx-auto mb-2" />
+    <div className="text-2xl font-bold text-white">22.5%</div>
+    <div className="text-sm text-white/70">Increase in conversions</div>
+  </div>
+
+  <div className="text-center p-4 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20">
+    <TrendingDown className="w-8 h-8 text-red-400 mx-auto mb-2" />
+    <div className="text-2xl font-bold text-white">25%</div>
+    <div className="text-sm text-white/70">Rollout Time reduced</div>
+  </div>
+
+  <div className="text-center p-4 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20">
+    <div className="flex justify-center items-center mb-2">
+      {[1, 2, 3, 4, 5].map((star) => (
+        <div key={star} className="relative">
+          {star <= 4 ? (
+            <Star className="w-4 h-4 text-yellow-400 fill-yellow-400" />
+          ) : star === 5 ? (
+            <div className="relative">
+              <Star className="w-4 h-4 text-yellow-400" />
+              <div className="absolute inset-0 overflow-hidden w-1/2">
+                <Star className="w-4 h-4 text-yellow-400 fill-yellow-400" />
+              </div>
+            </div>
+          ) : (
+            <Star className="w-4 h-4 text-yellow-400" />
+          )}
+        </div>
+      ))}
+    </div>
+    <div className="text-2xl font-bold text-white">8.2</div>
+    <div className="text-sm text-white/70">Satisfaction Rating</div>
+  </div>
+
+  <div className="text-center p-4 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20">
+    <Users className="w-8 h-8 text-blue-400 mx-auto mb-2" />
+    <div className="text-2xl font-bold text-white">45+</div>
+    <div className="text-sm text-white/70">Assets Built</div>
+  </div>
+
+  <div className="text-center p-4 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20">
+    <FileText className="w-8 h-8 text-purple-400 mx-auto mb-2" />
+    <div className="text-2xl font-bold text-white">150+</div>
+    <div className="text-sm text-white/70">Blogs Authored</div>
+  </div>
+</div>
               </motion.div>
             </div>
           </div>

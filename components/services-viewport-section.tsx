@@ -128,6 +128,14 @@ export function ServicesViewportSection() {
   const containerRef = useRef<HTMLDivElement>(null)
   const projectRefs = useRef<(HTMLDivElement | null)[]>([])
 
+  // Cleanup modal state on unmount
+  useEffect(() => {
+    return () => {
+      document.body.classList.remove('modal-open')
+      document.body.style.overflow = 'unset'
+    }
+  }, [])
+
  
 
   const scrollToProject = (index: number) => {
@@ -141,11 +149,15 @@ export function ServicesViewportSection() {
   const openProjectModal = (projectId: string) => {
     setSelectedProject(projectId)
     document.body.style.overflow = 'hidden'
+    // Add class to hide navbar when modal is open
+    document.body.classList.add('modal-open')
   }
 
   const closeProjectModal = () => {
     setSelectedProject(null)
     document.body.style.overflow = 'unset'
+    // Remove class to show navbar when modal is closed
+    document.body.classList.remove('modal-open')
   }
 
   // Get selected project component
