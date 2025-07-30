@@ -282,7 +282,7 @@ export default function SmithsDetectionPage() {
     {
       icon: <Star className="w-6 h-6" />,
       title: "Average Satisfaction",
-      value: "8.0/10",
+      value: "8.2/10",
       description: "Consistent high ratings across all deployments",
       color: "text-yellow-500",
     },
@@ -613,12 +613,27 @@ export default function SmithsDetectionPage() {
                         Key Impediments
                       </h3>
                       <ul className="space-y-3">
-                        {projects[activeProject].challenges.map((challenge, idx) => (
-                          <li key={idx} className="flex items-start gap-3">
-                            <div className="w-2 h-2 bg-red-400 rounded-full mt-2 flex-shrink-0" />
-                            <span className="text-gray-300 text-sm">{challenge}</span>
-                          </li>
-                        ))}
+                        {projects[activeProject].challenges.map((challenge, idx) => {
+                          const colonIndex = challenge.indexOf(':');
+                          const beforeColon = colonIndex !== -1 ? challenge.substring(0, colonIndex) : '';
+                          const afterColon = colonIndex !== -1 ? challenge.substring(colonIndex) : challenge;
+                          
+                          return (
+                            <li key={idx} className="flex items-start gap-3">
+                              <div className="w-2 h-2 bg-red-400 rounded-full mt-2 flex-shrink-0" />
+                              <span className="text-gray-300 text-sm">
+                                {colonIndex !== -1 ? (
+                                  <>
+                                    <strong className="font-bold">{beforeColon}</strong>
+                                    {afterColon}
+                                  </>
+                                ) : (
+                                  challenge
+                                )}
+                              </span>
+                            </li>
+                          );
+                        })}
                       </ul>
                     </div>
 
@@ -628,12 +643,27 @@ export default function SmithsDetectionPage() {
                         Key Achievements
                       </h3>
                       <ul className="space-y-3">
-                        {projects[activeProject].achievements.map((achievement, idx) => (
-                          <li key={idx} className="flex items-start gap-3">
-                            <CheckCircle className="w-4 h-4 text-emerald-400 mt-0.5 flex-shrink-0" />
-                            <span className="text-gray-300 text-sm">{achievement}</span>
-                          </li>
-                        ))}
+                        {projects[activeProject].achievements.map((achievement, idx) => {
+                          const colonIndex = achievement.indexOf(':');
+                          const beforeColon = colonIndex !== -1 ? achievement.substring(0, colonIndex) : '';
+                          const afterColon = colonIndex !== -1 ? achievement.substring(colonIndex) : achievement;
+                          
+                          return (
+                            <li key={idx} className="flex items-start gap-3">
+                              <CheckCircle className="w-4 h-4 text-emerald-400 mt-0.5 flex-shrink-0" />
+                              <span className="text-gray-300 text-sm">
+                                {colonIndex !== -1 ? (
+                                  <>
+                                    <strong className="font-semibold">{beforeColon}</strong>
+                                    {afterColon}
+                                  </>
+                                ) : (
+                                  achievement
+                                )}
+                              </span>
+                            </li>
+                          );
+                        })}
                       </ul>
                     </div>
                   </div>
