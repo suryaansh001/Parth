@@ -225,12 +225,20 @@ export default function SaumyaVidyutPage() {
                         Features
                       </h3>
                       <div className="space-y-3">
-                        {project.features.map((feature, index) => (
-                          <div key={index} className="flex items-start gap-3">
-                            <Package className="w-5 h-5 text-blue-400 mt-0.5 flex-shrink-0" />
-                            <span className="text-muted-foreground">{feature}</span>
-                          </div>
-                        ))}
+                        {project.features.map((feature, index) => {
+                          const [featureName, ...descriptionParts] = feature.split(': ');
+                          const description = descriptionParts.join(': ');
+                          
+                          return (
+                            <div key={index} className="flex items-start gap-3">
+                              <Package className="w-5 h-5 text-blue-400 mt-0.5 flex-shrink-0" />
+                              <span className="text-muted-foreground">
+                                <strong className="font-bold text-white">{featureName}</strong>
+                                {description && `: ${description}`}
+                              </span>
+                            </div>
+                          );
+                        })}
                       </div>
                     </div>
                   )}
