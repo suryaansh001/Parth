@@ -33,7 +33,7 @@ export default function SaumyaVidyutPage() {
   const projects = [
     {
       id: 1,
-      title: "TendeX – Government Tender Intelligence Tool",
+      title: "TendeX – Smart Tender Tracking Tool",
       role: "Assistant Product Manager | Product Ideation & Process Automation",
       icon: <Search className="w-8 h-8" />,
       color: "text-blue-500",
