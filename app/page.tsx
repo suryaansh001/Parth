@@ -171,7 +171,7 @@ export default function Home() {
                         </div>
                       ))}
                     </div>
-                    <div className="text-2xl font-bold text-white">4.5</div>
+                    <div className="text-2xl font-bold text-white">22.5%</div>
                     <div className="text-sm text-white/70">Increase in conversions</div>
                   </div>
                   <div className="text-center p-4 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20">
@@ -201,7 +201,7 @@ export default function Home() {
                         </div>
                       ))}
                     </div>
-                    <div className="text-2xl font-bold text-white">4.5</div>
+                    <div className="text-2xl font-bold text-white">8.2</div>
                     <div className="text-sm text-white/70">Satisfaction Rating</div>
                   </div>
                   <div className="text-center p-4 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20">
