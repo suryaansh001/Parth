@@ -23,7 +23,7 @@ export function NavBar() {
   const navItems = [
     { name: "Home", href: "/", alwaysWhite: true },
     { name: "Products", href: "#projects", scroll: true },
-    { name: "Education", href: "#education", alwaysWhite: true },
+    { name: "Education", href: "#education", scroll: true, alwaysWhite: true },
     { name: "Resume" ,href: "/resume.pdf", target: "_blank", rel: "noopener noreferrer" },
   ]
 
