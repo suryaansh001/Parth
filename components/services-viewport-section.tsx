@@ -108,9 +108,9 @@ const projects = [
       { icon: <Zap className="w-5 h-5" />, text: "Performance optimization via A/B testing" },
     ],
     stats: [
-      { label: "Email Open Rate", value: "3.56%" },
-      { label: "Platforms Managed", value: "3+" },
-      { label: "Campaign ROI", value: "High" },
+      { label: "Agile, Product, Project & Tech Content", value: "✍️ 150+ Blogs Authored" },
+      { label: "Across Ads, Email & Social Campaigns", value: "🎯 3,800+ Leads Generated" },
+      { label: "Achieved via Content-Led Social Strategy", value: "📢 41% Higher Engagement" },
     ],
     technologies: ["CleverTap", "Meta Ads", "Google Ads", "LinkedIn Ads"],
     cta: "View Project Details",
