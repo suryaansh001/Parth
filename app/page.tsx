@@ -1,6 +1,6 @@
 "use client"
 
-
+import { useState } from "react"
 import Link from "next/link"
 import { NavBar } from "@/components/nav-bar"
 import { Footer } from "@/components/footer"
@@ -12,11 +12,44 @@ import { Calendar, Mail, Users, Phone, MessageCircle, MapPin, GraduationCap, Bri
   TrendingDown,
   BarChart2,
   FileText,
-  
+  X,
 } from "lucide-react"
 import { ServicesViewportSection } from "@/components/services-viewport-section"
 
 export default function Home() {
+  const [showSuccessDialog, setShowSuccessDialog] = useState(false)
+  const [isSubmitting, setIsSubmitting] = useState(false)
+
+  const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    setIsSubmitting(true)
+    
+    const form = e.currentTarget
+    const formData = new FormData(form)
+    
+    try {
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      })
+      
+      if (response.ok) {
+        setShowSuccessDialog(true)
+        form.reset()
+      } else {
+        throw new Error('Form submission failed')
+      }
+    } catch (error) {
+      console.error('Form submission error:', error)
+      // You could add error handling here if needed
+    } finally {
+      setIsSubmitting(false)
+    }
+  }
+
   const contactMethods = [
     {
       name: "Email",
@@ -504,6 +537,7 @@ export default function Home() {
                   <form
                     action="https://formspree.io/f/xeozklrl"
                     method="POST"
+                    onSubmit={handleFormSubmit}
                     className="space-y-6"
                   >
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -569,11 +603,12 @@ export default function Home() {
                     <div className="pt-4">
                       <button
                         type="submit"
-                        className="w-full md:w-auto px-8 py-4 bg-gradient-to-r from-emerald-500 to-green-600 text-white rounded-lg font-medium text-lg hover:from-emerald-400 hover:to-green-500 transition-all duration-300 transform hover:scale-105 hover:shadow-[0_0_25px_rgba(52,211,153,0.4)] focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2 focus:ring-offset-black/30"
+                        disabled={isSubmitting}
+                        className="w-full md:w-auto px-8 py-4 bg-gradient-to-r from-emerald-500 to-green-600 text-white rounded-lg font-medium text-lg hover:from-emerald-400 hover:to-green-500 transition-all duration-300 transform hover:scale-105 hover:shadow-[0_0_25px_rgba(52,211,153,0.4)] focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2 focus:ring-offset-black/30 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
                       >
                         <span className="flex items-center justify-center space-x-2">
                           <Mail className="w-5 h-5" />
-                          <span>Send Message</span>
+                          <span>{isSubmitting ? 'Sending...' : 'Send Message'}</span>
                         </span>
                       </button>
                     </div>
@@ -609,6 +644,41 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+        {/* Success Dialog */}
+        {showSuccessDialog && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.8, y: 20 }}
+              className="bg-white/10 backdrop-blur-lg border border-white/20 rounded-3xl p-8 max-w-md w-full mx-4 shadow-2xl"
+            >
+              <div className="text-center space-y-6">
+                <div className="text-6xl">🎉</div>
+                <div className="space-y-3">
+                  <h3 className="text-2xl font-bold text-white">Message Sent Successfully!</h3>
+                  <p className="text-white/80 leading-relaxed">
+                    Thank you for reaching out! 😊 I've successfully received your message and will get back to you soon. 
+                    Thanks for contacting me! 🚀
+                  </p>
+                </div>
+                <button
+                  onClick={() => setShowSuccessDialog(false)}
+                  className="w-full px-6 py-3 bg-gradient-to-r from-emerald-500 to-green-600 text-white rounded-lg font-medium hover:from-emerald-400 hover:to-green-500 transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                >
+                  Close
+                </button>
+              </div>
+              <button
+                onClick={() => setShowSuccessDialog(false)}
+                className="absolute top-4 right-4 w-8 h-8 bg-white/20 hover:bg-white/30 rounded-full flex items-center justify-center transition-colors"
+              >
+                <X className="w-4 h-4 text-white" />
+              </button>
+            </motion.div>
+          </div>
+        )}
 
         <Footer />
       </div>
