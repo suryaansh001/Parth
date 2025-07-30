@@ -40,7 +40,7 @@ const projects = [
     title: "Smiths Detection",
     subtitle: "Instructional Design & Product Training",
     description:
-      "Designed and delivered mission-critical training for defense-grade detection systems like LCD, Hi-Trax, XDi, and Trace. Turned complex tech into digestible content for global government agencies.",
+      "Designed and delivered training material for security systems and defense-grade detection systems like LCD, Hi-Trax, XDi, and Trace. Turned complex tech into digestible content for global government agencies.",
     icon: <Users className="w-8 h-8" />,
     color: "purple",
     gradient: "from-purple-500 to-pink-600",
