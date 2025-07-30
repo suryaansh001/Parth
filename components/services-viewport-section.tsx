@@ -46,10 +46,10 @@ const projects = [
     gradient: "from-purple-500 to-pink-600",
     bgGradient: "from-purple-500/10 to-pink-600/10",
     features: [
-      { icon: <Zap className="w-5 h-5" />, text: "Reduced training time by 28%" },
-      { icon: <Award className="w-5 h-5" />, text: "Rated 8.2/10 by learners" },
-      { icon: <Layers className="w-5 h-5" />, text: "Standardized 30+ training assets" },
-      { icon: <Cog className="w-5 h-5" />, text: "Modular, scalable content design" },
+      { icon: <Zap className="w-5 h-5" />, text: "Converted raw tech inputs into structured training" },
+      { icon: <Award className="w-5 h-5" />, text: "Bridged teams across engineering, SMEs, and users" },
+      { icon: <Layers className="w-5 h-5" />, text: "Built first-ever training for undocumented tech" },
+      { icon: <Cog className="w-5 h-5" />, text: "Used Agile and Scrum for better and faster output" },
     ],
     stats: [
       { label: "Trainings Built", value: "12+" },
@@ -418,21 +418,7 @@ export function ServicesViewportSection() {
                           ))}
                         </div>
 
-                        {/* Technologies */}
-                        <div className="mt-8">
-                          <h4 className="text-sm font-semibold text-gray-400 mb-4">Technologies & Tools</h4>
-                          <div className="flex flex-wrap gap-2">
-                            {project.technologies.map((tech, techIndex) => (
-                              <Badge
-                                key={techIndex}
-                                variant="secondary"
-                                className="bg-white/10 text-white border-white/20 hover:bg-white/20 transition-colors"
-                              >
-                                {tech}
-                              </Badge>
-                            ))}
-                          </div>
-                        </div>
+                        
                       </motion.div>
                     </div>
                   </div>
