@@ -94,7 +94,7 @@ const projects = [
   {
     id: "staragile-ads",
     title: "StarAgile",
-    subtitle: "Marketing and Content Strategist",
+    subtitle: "Content strategy & Campaign Optimization",
     description:
       "Managed Clevertap + performance ad campaigns across Meta, Google & LinkedIn. Email open rates jumped from 0.12% to 3.56% via targeted segmentation and A/B testing strategies.",
     icon: <Lightbulb className="w-8 h-8" />,
@@ -115,7 +115,7 @@ const projects = [
     technologies: ["CleverTap", "Meta Ads", "Google Ads", "LinkedIn Ads"],
     cta: "View Project Details",
     period: "Sep 2022 – Oct 2023",
-    role: "Performance Marketing Specialist",
+    role: "Marketing and Content Strategist",
     company: "StarAgile",
     component: StarAgileAdsPage,
   },
