@@ -21,9 +21,9 @@ export function NavBar() {
   }, [])
 
   const navItems = [
-    { name: "Home", href: "/" },
+    { name: "Home", href: "/", alwaysWhite: true },
     { name: "Products", href: "#projects", scroll: true },
-    { name: "Education", href: "/" },
+    { name: "Education", href: "#education", alwaysWhite: true },
     { name: "Resume" ,href: "/resume.pdf", target: "_blank", rel: "noopener noreferrer" },
   ]
 
@@ -75,7 +75,9 @@ export function NavBar() {
                   <button
                     onClick={() => handleNavClick(item)}
                     className={`flex items-center space-x-1 text-sm font-medium transition-colors duration-300 ${
-                      pathname === item.href
+                      item.alwaysWhite 
+                        ? "text-gray-300 hover:text-white"
+                        : pathname === item.href
                         ? "text-emerald-400 shadow-[0_0_10px_#34d39980] font-semibold"
                         : "text-gray-300 hover:text-white"
                     }`}
@@ -87,7 +89,9 @@ export function NavBar() {
                     href={item.href}
                     onClick={() => handleNavClick(item)}
                     className={`flex items-center space-x-1 text-sm font-medium transition-colors duration-300 ${
-                      pathname === item.href
+                      item.alwaysWhite 
+                        ? "text-gray-300 hover:text-white"
+                        : pathname === item.href
                         ? "text-emerald-400 shadow-[0_0_10px_#34d39980] font-semibold"
                         : "text-gray-300 hover:text-white"
                     }`}
@@ -136,7 +140,9 @@ export function NavBar() {
                           handleNavClick(item)
                         }}
                         className={`block w-full text-base font-medium transition-colors duration-300 ${
-                          pathname === item.href
+                          item.alwaysWhite 
+                            ? "text-gray-300 hover:text-white"
+                            : pathname === item.href
                             ? "text-emerald-400 shadow-[0_0_10px_#34d39980] font-semibold"
                             : "text-gray-300 hover:text-white"
                         }`}
@@ -151,7 +157,9 @@ export function NavBar() {
                           handleNavClick(item)
                         }}
                         className={`block text-base font-medium transition-colors duration-300 ${
-                          pathname === item.href
+                          item.alwaysWhite 
+                            ? "text-gray-300 hover:text-white"
+                            : pathname === item.href
                             ? "text-emerald-400 shadow-[0_0_10px_#34d39980] font-semibold"
                             : "text-gray-300 hover:text-white"
                         }`}

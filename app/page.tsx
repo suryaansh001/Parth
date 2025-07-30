@@ -116,12 +116,9 @@ export default function Home() {
       <div className="fixed inset-0 z-0">
         {/* Spinning Earth */}
         <div className="opacity-10">
-          <SpinningEarth />
+          
         </div>
-        {/* Code rain */}
-        <div className="opacity-20 dark:opacity-20 light:opacity-5">
-          <CodeRain />
-        </div>
+        
       </div>
 
       {/* Content container */}
@@ -182,6 +179,10 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+
+        {/* Services viewport section */}
+        <ServicesViewportSection />
 
         {/* About Me section with full-width translucent card */}
         <section className="relative">
@@ -356,8 +357,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Services viewport section */}
-        <ServicesViewportSection />
 
         {/* Certifications Section */}
         <section className="py-20 px-4 sm:px-6">

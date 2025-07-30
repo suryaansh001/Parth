@@ -128,29 +128,7 @@ export function ServicesViewportSection() {
   const containerRef = useRef<HTMLDivElement>(null)
   const projectRefs = useRef<(HTMLDivElement | null)[]>([])
 
-  // Intersection observer for section visibility
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setIsVisible(true)
-            const index = projectRefs.current.findIndex((ref) => ref === entry.target)
-            if (index !== -1) {
-              setActiveProject(index)
-            }
-          }
-        })
-      },
-      { threshold: 0.5, rootMargin: "-20% 0px -20% 0px" },
-    )
-
-    projectRefs.current.forEach((ref) => {
-      if (ref) observer.observe(ref)
-    })
-
-    return () => observer.disconnect()
-  }, [])
+ 
 
   const scrollToProject = (index: number) => {
     setActiveProject(index)

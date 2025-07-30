@@ -156,28 +156,7 @@ export function AboutMe() {
                          I specialize in simplifying complex systems, building products, and creating structured experiences that improve efficiency and drive adoption.
                       </motion.p>
 
-                      <motion.p
-                        className="text-lg leading-relaxed text-muted-foreground"
-                        initial={{ opacity: 0 }}
-                        whileInView={{ opacity: 1 }}
-                        transition={{ duration: 0.8, delay: 0.7 }}
-                      >
-                        Specializing in user research, product documentation, content architecture, and digital 
-                        optimization — I bring a structured yet innovative approach to solving complex problems. 
-                        My background in Mechatronics Engineering provides me with a unique technical foundation 
-                        for product development.
-                      </motion.p>
-
-                      <motion.p
-                        className="text-lg leading-relaxed text-muted-foreground"
-                        initial={{ opacity: 0 }}
-                        whileInView={{ opacity: 1 }}
-                        transition={{ duration: 0.8, delay: 0.9 }}
-                      >
-                        From developing training programs for defense equipment to optimizing transformer efficiency 
-                        and creating SEO strategies that drive 60% organic growth, I consistently deliver measurable 
-                        results. Let's collaborate to create impactful solutions together!
-                      </motion.p>
+                     
                     </div>
 
                     {/* Skills Section */}
