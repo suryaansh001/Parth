@@ -145,19 +145,34 @@ export default function Home() {
                 {/* Quick stats or highlights */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-8 max-w-4xl mx-auto">
                   <div className="text-center p-4 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20">
-                    <Users className="w-8 h-8 text-blue-400 mx-auto mb-2" />
-                    <div className="text-2xl font-bold text-white">12+</div>
-                    <div className="text-sm text-white/70">Training Programs</div>
-                  </div>
-                  <div className="text-center p-4 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20">
-                    <Star className="w-8 h-8 text-yellow-400 mx-auto mb-2" />
-                    <div className="text-2xl font-bold text-white">8.2/10</div>
-                    <div className="text-sm text-white/70">Satisfaction Rating</div>
-                  </div>
-                  <div className="text-center p-4 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20">
                     <Globe className="w-8 h-8 text-green-400 mx-auto mb-2" />
                     <div className="text-2xl font-bold text-white">60%</div>
                     <div className="text-sm text-white/70">Organic reach increase</div>
+                  </div>
+                  <div className="text-center p-4 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20">
+                    <div className="flex justify-center items-center mb-2">
+                      {[1, 2, 3, 4, 5].map((star) => (
+                        <div key={star} className="relative">
+                          {star <= 4 ? (
+                            // Full star
+                            <Star className="w-4 h-4 text-yellow-400 fill-yellow-400" />
+                          ) : star === 5 ? (
+                            // Half star
+                            <div className="relative">
+                              <Star className="w-4 h-4 text-yellow-400" />
+                              <div className="absolute inset-0 overflow-hidden w-1/2">
+                                <Star className="w-4 h-4 text-yellow-400 fill-yellow-400" />
+                              </div>
+                            </div>
+                          ) : (
+                            // Empty star
+                            <Star className="w-4 h-4 text-yellow-400" />
+                          )}
+                        </div>
+                      ))}
+                    </div>
+                    <div className="text-2xl font-bold text-white">4.5</div>
+                    <div className="text-sm text-white/70">Increase in conversions</div>
                   </div>
                   <div className="text-center p-4 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20">
                     <Globe className="w-8 h-8 text-green-400 mx-auto mb-2" />
@@ -165,9 +180,34 @@ export default function Home() {
                     <div className="text-sm text-white/70">Rollout Time reduced</div>
                   </div>
                   <div className="text-center p-4 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20">
-                    <Star className="w-8 h-8 text-yellow-400 mx-auto mb-2" />
-                    <div className="text-2xl font-bold text-white">22.5%</div>
-                    <div className="text-sm text-white/70">Increase in conversions</div>
+                    <div className="flex justify-center items-center mb-2">
+                      {[1, 2, 3, 4, 5].map((star) => (
+                        <div key={star} className="relative">
+                          {star <= 4 ? (
+                            // Full star
+                            <Star className="w-4 h-4 text-yellow-400 fill-yellow-400" />
+                          ) : star === 5 ? (
+                            // Half star
+                            <div className="relative">
+                              <Star className="w-4 h-4 text-yellow-400" />
+                              <div className="absolute inset-0 overflow-hidden w-1/2">
+                                <Star className="w-4 h-4 text-yellow-400 fill-yellow-400" />
+                              </div>
+                            </div>
+                          ) : (
+                            // Empty star
+                            <Star className="w-4 h-4 text-yellow-400" />
+                          )}
+                        </div>
+                      ))}
+                    </div>
+                    <div className="text-2xl font-bold text-white">4.5</div>
+                    <div className="text-sm text-white/70">Satisfaction Rating</div>
+                  </div>
+                  <div className="text-center p-4 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20">
+                    <Users className="w-8 h-8 text-blue-400 mx-auto mb-2" />
+                    <div className="text-2xl font-bold text-white">45+</div>
+                    <div className="text-sm text-white/70">Assets Built</div>
                   </div>
                   <div className="text-center p-4 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20">
                     <TrendingUp className="w-8 h-8 text-emerald-400 mx-auto mb-2" />
