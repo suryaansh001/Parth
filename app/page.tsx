@@ -535,7 +535,7 @@ export default function Home() {
                 <div className="max-w-2xl mx-auto">
                   {/* Contact Form using Formspree */}
                   <form
-                    action="https://formspree.io/f/xeozklrl"
+                    action="https://formspree.io/f/xeozzznq"
                     method="POST"
                     onSubmit={handleFormSubmit}
                     className="space-y-6"
