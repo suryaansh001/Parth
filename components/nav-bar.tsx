@@ -24,7 +24,7 @@ export function NavBar() {
     { name: "Home", href: "/", alwaysWhite: true },
     { name: "Products", href: "#projects", scroll: true },
     { name: "Education", href: "#education", scroll: true, alwaysWhite: true },
-    { name: "Resume" ,href: "/resume.pdf", target: "_blank", rel: "noopener noreferrer" },
+    { name: "Resume" ,href: "/Parth-Khandal-Resume.pdf", target: "_blank", rel: "noopener noreferrer" },
   ]
 
   const scrollToTop = () => {
